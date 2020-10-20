@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>风车小站</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://fengchexz.github.io/"/>
+  <updated>2020-10-01T07:25:20.985Z</updated>
+  <id>https://fengchexz.github.io/</id>
+  
+  <author>
+    <name>丨fengche丨</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MO 论文分享：Data-free Learning of Student Networks</title>
+    <link href="https://fengchexz.github.io/posts/34070.html"/>
+    <id>https://fengchexz.github.io/posts/34070.html</id>
+    <published>2020-09-29T05:47:00.000Z</published>
+    <updated>2020-10-01T07:25:20.985Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>软件推荐（一）</title>
+    <link href="https://fengchexz.github.io/posts/46698.html"/>
+    <id>https://fengchexz.github.io/posts/46698.html</id>
+    <published>2020-09-28T01:56:00.000Z</published>
+    <updated>2020-10-01T15:15:15.177Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="推荐" scheme="https://fengchexz.github.io/categories/%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="推荐" scheme="https://fengchexz.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
+    <link href="https://fengchexz.github.io/posts/10868.html"/>
+    <id>https://fengchexz.github.io/posts/10868.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-09-29T09:45:30.277Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 2-Convolutional Neural network</title>
+    <link href="https://fengchexz.github.io/posts/8586.html"/>
+    <id>https://fengchexz.github.io/posts/8586.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-09-29T09:45:23.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Why-CNN-for-Image？&quot;&gt;&lt;a href=&quot;#Why-CNN-for-Image？&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
+    <link href="https://fengchexz.github.io/posts/22725.html"/>
+    <id>https://fengchexz.github.io/posts/22725.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-09-29T09:45:16.824Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 4-Unsupervised Learning</title>
+    <link href="https://fengchexz.github.io/posts/50926.html"/>
+    <id>https://fengchexz.github.io/posts/50926.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-09-29T09:45:10.473Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Federated Learning for Vision-and-Language Grounding Problems</title>
+    <link href="https://fengchexz.github.io/posts/8974.html"/>
+    <id>https://fengchexz.github.io/posts/8974.html</id>
+    <published>2020-08-07T12:25:00.000Z</published>
+    <updated>2020-09-29T09:47:46.107Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;文章背景&quot;&gt;&lt;a href=&quot;#文章背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Multi-modal Self-Supervision from Generalized Data Transformations</title>
+    <link href="https://fengchexz.github.io/posts/6875.html"/>
+    <id>https://fengchexz.github.io/posts/6875.html</id>
+    <published>2020-07-31T12:25:00.000Z</published>
+    <updated>2020-09-29T09:47:52.839Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;自监督学习&quot;&gt;&lt;a href=&quot;#自监督学习&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="对比学习" scheme="https://fengchexz.github.io/tags/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fitnets：Cross Modal Distillation for Supervision Transfer</title>
+    <link href="https://fengchexz.github.io/posts/30669.html"/>
+    <id>https://fengchexz.github.io/posts/30669.html</id>
+    <published>2020-07-22T08:27:00.000Z</published>
+    <updated>2020-09-29T09:47:59.503Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;看完这篇文章我的内心是崩溃的……
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实用网站汇总（长期更新）</title>
+    <link href="https://fengchexz.github.io/posts/48156.html"/>
+    <id>https://fengchexz.github.io/posts/48156.html</id>
+    <published>2020-07-19T14:42:00.000Z</published>
+    <updated>2020-10-01T15:15:25.735Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;做一个各种良心网站的汇总，另外有时间会做实用软件的分享，大家有什么的好的网站或者软件也可以告诉我～&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="推荐" scheme="https://fengchexz.github.io/categories/%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="推荐" scheme="https://fengchexz.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FedMD：Heterogenous Federated Learning via Model Distillation</title>
+    <link href="https://fengchexz.github.io/posts/43465.html"/>
+    <id>https://fengchexz.github.io/posts/43465.html</id>
+    <published>2020-07-17T07:36:00.000Z</published>
+    <updated>2020-09-29T09:48:06.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="联邦学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="联邦学习" scheme="https://fengchexz.github.io/tags/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAYING MORE ATTENTION TO ATTENTION：IMPROVING THE PERFORMANCE OF CONVOLUTIONAL NEURAL NETWORKS VIA ATTENTION TRANSFER</title>
+    <link href="https://fengchexz.github.io/posts/19568.html"/>
+    <id>https://fengchexz.github.io/posts/19568.html</id>
+    <published>2020-07-10T07:41:00.000Z</published>
+    <updated>2020-09-29T09:48:20.076Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;这是蒸馏论文的第四篇，将注意力机制引入知识蒸馏中，总体来说还算比较好懂。作者提出了基于 Activation 和基于
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%92%B8%E9%A6%8F/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Squeeze-and-Excitation Networks</title>
+    <link href="https://fengchexz.github.io/posts/64344.html"/>
+    <id>https://fengchexz.github.io/posts/64344.html</id>
+    <published>2020-07-10T05:14:00.000Z</published>
+    <updated>2020-09-29T09:48:13.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;读这篇论文主要是为了学习注意力机制 (Attention)，论文没有做精度，想对文章做快速了解的可以观看 b 站视频：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="Attention" scheme="https://fengchexz.github.io/tags/Attention/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A Gift from Knowledge Distillation：Fast Optimization，Network Minimization and Transfer Learning</title>
+    <link href="https://fengchexz.github.io/posts/46070.html"/>
+    <id>https://fengchexz.github.io/posts/46070.html</id>
+    <published>2020-07-09T13:52:00.000Z</published>
+    <updated>2020-09-29T09:48:40.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%92%B8%E9%A6%8F/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fitnets：Hints for Thin Deep Nets</title>
+    <link href="https://fengchexz.github.io/posts/18035.html"/>
+    <id>https://fengchexz.github.io/posts/18035.html</id>
+    <published>2020-07-09T13:51:00.000Z</published>
+    <updated>2020-09-29T09:48:26.579Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;这是知识蒸馏的第二篇文章，文章认为 Hinton 提出的 knowledge distillation 方法 (KD) 简单的拟合
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%92%B8%E9%A6%8F/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Distilling the Knowledge in a Neural Network</title>
+    <link href="https://fengchexz.github.io/posts/45831.html"/>
+    <id>https://fengchexz.github.io/posts/45831.html</id>
+    <published>2020-07-09T13:50:00.000Z</published>
+    <updated>2020-09-29T09:48:33.739Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;蒸馏的定义&quot;&gt;&lt;a href=&quot;#蒸馏的定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%92%B8%E9%A6%8F/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生成式对抗网络综述</title>
+    <link href="https://fengchexz.github.io/posts/32841.html"/>
+    <id>https://fengchexz.github.io/posts/32841.html</id>
+    <published>2020-07-08T14:18:00.000Z</published>
+    <updated>2020-09-29T09:56:08.428Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;GAN&quot;&gt;&lt;a href=&quot;#GAN&quot; class=&quot;headerlink&quot; title=&quot;GAN&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="GAN" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/GAN/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="GAN" scheme="https://fengchexz.github.io/tags/GAN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1061 Dating</title>
+    <link href="https://fengchexz.github.io/posts/21107.html"/>
+    <id>https://fengchexz.github.io/posts/21107.html</id>
+    <published>2020-01-30T12:30:00.000Z</published>
+    <updated>2020-06-07T09:23:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Sherlock Holmes received a note with some strange strings: &lt;code&gt;Let&#39;s date! 3485djDkxh4hhGE 2984akDfkkkkggEdsb
+        
+      
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://fengchexz.github.io/categories/algorithm/"/>
+    
+      <category term="PAT" scheme="https://fengchexz.github.io/categories/algorithm/PAT/"/>
+    
+    
+      <category term="c/c++" scheme="https://fengchexz.github.io/tags/c-c/"/>
+    
+      <category term="algorithm" scheme="https://fengchexz.github.io/tags/algorithm/"/>
+    
+      <category term="PAT" scheme="https://fengchexz.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1027 Colors in Mars</title>
+    <link href="https://fengchexz.github.io/posts/31924.html"/>
+    <id>https://fengchexz.github.io/posts/31924.html</id>
+    <published>2020-01-30T07:46:00.000Z</published>
+    <updated>2020-01-30T07:47:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color
+        
+      
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://fengchexz.github.io/categories/algorithm/"/>
+    
+      <category term="PAT" scheme="https://fengchexz.github.io/categories/algorithm/PAT/"/>
+    
+    
+      <category term="c/c++" scheme="https://fengchexz.github.io/tags/c-c/"/>
+    
+      <category term="algorithm" scheme="https://fengchexz.github.io/tags/algorithm/"/>
+    
+      <category term="PAT" scheme="https://fengchexz.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1019 General Palindromic Number</title>
+    <link href="https://fengchexz.github.io/posts/12312.html"/>
+    <id>https://fengchexz.github.io/posts/12312.html</id>
+    <published>2020-01-30T07:31:00.000Z</published>
+    <updated>2020-01-30T07:47:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;A number that will be the same when it is written forwards or backwards is known as a &lt;strong&gt;Palindromic
+        
+      
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://fengchexz.github.io/categories/algorithm/"/>
+    
+      <category term="PAT" scheme="https://fengchexz.github.io/categories/algorithm/PAT/"/>
+    
+    
+      <category term="c/c++" scheme="https://fengchexz.github.io/tags/c-c/"/>
+    
+      <category term="algorithm" scheme="https://fengchexz.github.io/tags/algorithm/"/>
+    
+      <category term="PAT" scheme="https://fengchexz.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+</feed>
