@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2">
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="zb10JnwKprtS4ysj5dzX51O4jtbQtpF-scmypRV9BFk">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="4c8byqizxG">
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/touch.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"shrinkIn","post_header":"slideLeftIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：知识蒸馏是什么？一份入门随笔。这里，我们先简单的回顾一下知识蒸馏。 什么是知识蒸馏我们知道在深度学习的大部分网络中，有很多神经元是冗余的，但是在很多移动端，比如手机上，是跑不动这么大的网络的。所以知识蒸馏的一开始的目标是做模型压缩，它的目标就是让一个更小的网络去拟合甚至是超">
+<meta name="keywords" content="机器学习,深度学习,蒸馏,论文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MO 论文分享：Data-free Learning of Student Networks">
+<meta property="og:url" content="https://fengchexz.github.io/posts/34070.html">
+<meta property="og:site_name" content="风车小站">
+<meta property="og:description" content="这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：知识蒸馏是什么？一份入门随笔。这里，我们先简单的回顾一下知识蒸馏。 什么是知识蒸馏我们知道在深度学习的大部分网络中，有很多神经元是冗余的，但是在很多移动端，比如手机上，是跑不动这么大的网络的。所以知识蒸馏的一开始的目标是做模型压缩，它的目标就是让一个更小的网络去拟合甚至是超">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7hq7ysmvj30zk0k00va.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7hr09qdgj30zk0k0ac4.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ht16mdpj30zk0k0jto.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7i26wjcgj30zk0k0n1a.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7i5j5jokj30zk0k0abc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ieaakh9j30zk0k0q5l.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ig8odpzj30zk0k0q5b.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7iguyhlbj30zk0k0wh7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ihra9pjj30zk0k0772.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ii4ye7nj30zk0k0jtp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7iihtt23j30zk0k0jtl.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ijiuky3j30zk0k0wii.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ik0974sj30zk0k0wi2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ikylcyij30zk0k0goc.jpg">
+<meta property="og:updated_time" content="2020-10-01T07:25:20.985Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MO 论文分享：Data-free Learning of Student Networks">
+<meta name="twitter:description" content="这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：知识蒸馏是什么？一份入门随笔。这里，我们先简单的回顾一下知识蒸馏。 什么是知识蒸馏我们知道在深度学习的大部分网络中，有很多神经元是冗余的，但是在很多移动端，比如手机上，是跑不动这么大的网络的。所以知识蒸馏的一开始的目标是做模型压缩，它的目标就是让一个更小的网络去拟合甚至是超">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7hq7ysmvj30zk0k00va.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="风车小站" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://fengchexz.github.io/posts/34070">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>MO 论文分享：Data-free Learning of Student Networks | 风车小站</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+ 
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风车小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-时间轴">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-电影">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/movies/" rel="section"><i class="menu-item-icon fa fa-fw fa-youtube-play"></i> <br>电影</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-友链">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fengchexz.github.io/posts/34070.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨fengche丨">
+      <meta itemprop="description" content="风过轻轻，侧耳倾听。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风车小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MO 论文分享：Data-free Learning of Student Networks
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-09-29 13:47:00" itemprop="dateCreated datePublished" datetime="2020-09-29T13:47:00+08:00">2020-09-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-01 15:25:20" itemprop="dateModified" datetime="2020-10-01T15:25:20+08:00">2020-10-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<p>这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：<a href="https://zhuanlan.zhihu.com/p/90049906" target="_blank" rel="noopener">知识蒸馏是什么？一份入门随笔。</a>这里，我们先简单的回顾一下知识蒸馏。</p>
+<h2 id="什么是知识蒸馏"><a href="#什么是知识蒸馏" class="headerlink" title="什么是知识蒸馏"></a>什么是知识蒸馏</h2><p>我们知道在深度学习的大部分网络中，有很多神经元是冗余的，但是在很多移动端，比如手机上，是跑不动这么大的网络的。所以知识蒸馏的一开始的目标是做模型压缩，它的目标就是让一个更小的网络去拟合甚至是超越教师网络的性能。在通常情况下，学生网络的在蒸馏阶段的目标可以用这样的一个函数来表示，这里的损失函数 L 根据算法对知识的定义不同也会有不同的函数表示。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7hq7ysmvj30zk0k00va.jpg" alt="幻灯片2.JPG"></p>
+<p>比如 Hinton 在最初的知识蒸馏文章中将教师网络的知识定义为网络输出的每个类别的概率，也就是软标签。所以再这个算法中，损失函数就是教师网络和学生网络输出软标签的 KL 散度。这里 f~T~ 就是教师的输出，f~S~ 是学生的输出，下面的 T 是温度参数，我们通过让学生网络去最小化这个函数，来学习教师网络的知识，从而达到蒸馏的效果。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7hr09qdgj30zk0k0ac4.jpg" alt="幻灯片3.JPG"></p>
+<p>还有之前提到过的 Hint，通过拟合教师网络和学生网络中间层的输出来达到蒸馏的效果。这里的损失函数 L 就是教师网络和学生网络中间层输出的 L2 距离，这里的 β 是为了让输出大小相同做的一个变换。我们会发现，通过改变损失函数 L，可以得到多种多样的蒸馏方法，但是这些蒸馏方法都有个特点，就是需要教师网络和学生网络在训练的时候有着同样的输入。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ht16mdpj30zk0k0jto.jpg" alt="幻灯片4.JPG"></p>
+<h2 id="Why-GAN"><a href="#Why-GAN" class="headerlink" title="Why GAN?"></a>Why GAN?</h2><p>但是在实际应用环境下，很有可能教师端训练时用的是一些隐私性的数据，比如医疗时所用的一些病人的数据，学生网络没有办法去获取这些数据，这样传统的一些蒸馏方法就不能使用了。为了解决这个问题，我们很自然的会想到，是不是可以生成一个假的数据集，然后用这个假数据集作为教师和学生公用的数据集，并在上面做蒸馏操作。在生成假数据方面，近几年最流行的就是生成式对抗网络 GAN 了。这就是为什么我们想把 GAN 和蒸馏去做一个结合。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7i26wjcgj30zk0k0n1a.jpg" alt="幻灯片5.JPG"></p>
+<h3 id="生成式对抗网络"><a href="#生成式对抗网络" class="headerlink" title="生成式对抗网络"></a>生成式对抗网络</h3><p>这里简单的介绍一下生成式对抗网络，GAN 是由两个网络组成的，一个是左边的生成器网络，另一个是右边的判别器网络。生成器接收一个随机向量，并生成一个假样本。以 MNIST 数据集为例，这里的真实数据就是 MNIST 数据集中的手写数字图像，而生成器就需要去生成类似于手写数字的图片。判别器就是一个二分类器，他需要尽可能的去分辨输入的图像是真实的图片还是生成器生成的。当输入的图像是真实图片的时候，判别器需要给他一个很高的分数，当输入的图像是生成器生成的图片的时候，判别器需要给他一个很低的分数。而生成器的目标，就是让自己生成的图像尽可能的被打出一个高分。GAN 就是通过这样一种对抗的形式，来获得生成器和判别器彼此性能的提升。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7i5j5jokj30zk0k0abc.jpg" alt="幻灯片6.JPG"></p>
+<h3 id="训练判别器"><a href="#训练判别器" class="headerlink" title="训练判别器"></a>训练判别器</h3><p>我们可以通过 GAN 的训练过程来对它做一个更加深入的理解。还是以 MNIST 数据集为例，首先我们需要更新判别器的参数。需要注意的是，在更新判别器参数的时候，生成器的参数是需要完全固定的。还是以 MNIST 数据集为例，我们看上面的绿色虚线框起来的部分，这里输入判别器的是 MNIST 数据集中的一张真实图像，经过判别器之后，会输出其属于真假两个类别的概率，我们假设输出真的概率是 0.6 假的概率是 0.4。对于输入的真实图像，我们希望判别器很确定的将其判断为真，也就是真的概率是 1，假的概率是 0。这样，我们就可以计算两者的一个交叉熵作为判别器的优化目标。这里因为判别器所作的是一个二分类任务，我们可以对交叉熵做进一步的优化，只需要其输出为真的概率，也就是上面的 0.6 尽可能的接近 1 就好了。后面的这个式子中的 D (x) 就是这里的 0.6，我们希望它越大越好。同样的，我们看到下面这里黄色虚线框起来的部分，这里输入生成器的随机向量，在这个例子中我们可以简单的理解为 100 维的服从高斯分布的向量，这个向量提供了一些跟更高维度的信息，生成器通过网络添加更多的细节，从而生成了一张假的图像。所以在这个阶段输入判别器的是生成器生成的加图像，同样的我们也会得到它属于真假两个类别的概率，判别器希望其被判定为真的概率越低越好，也就是这里的 D（G（z））越低越好。通过这里两个优化目标，我们可以对判别器计算损失并反向传播做第一次的参数更新。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ieaakh9j30zk0k0q5l.jpg" alt="幻灯片7.JPG"></p>
+<h3 id="训练生成器"><a href="#训练生成器" class="headerlink" title="训练生成器"></a>训练生成器</h3><p>在上个阶段，判别器更新完成后，我们把判别器的参数固定，开始训练生成器。同样的，生成器生成一张假图片输入判别器，得到真假两个类别的概率。与前面不同的是，生成器希望自己生成的图片被尽可能的判定为真的，所以它需要让这里的 D (G (Z)) 越大越好。这样，整个生成式对抗网路的优化目标就很好理解了。这个阶段我们更新了生成器的参数，与前面判别器的参数更新放在一起就是 GAN 训练完整的一轮过程。不断的重复这个过程直到网络达到一个收敛的状态。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ig8odpzj30zk0k0q5b.jpg" alt="幻灯片8.JPG"></p>
+<h2 id="蒸馏-meets-GAN"><a href="#蒸馏-meets-GAN" class="headerlink" title="蒸馏 meets GAN"></a>蒸馏 meets GAN</h2><p>在了解了生成式对抗网络之后，我们去想它怎么和蒸馏去结合起来。有、有一种很简单很直接的方法就是，直接把教师网络的数据集丢给一个随机初始化的 GAN，让他从头开始训练，然后生成假图片用来蒸馏。这种方法确实没有问题，但是从头开始训练一个 GAN, 是非常非常慢的。我们可以想一下现在所拥有的工具，除了教师端私有的数据集之外，还有一个已经训练好的性能很棒的教师网络。如果可以把这个教师网络利用起来，就可帮助生成模型更快的达到收敛状态，从而降低计算消耗。怎么去用这个教师网络呢，我们知道教师网络是在真实数据上训练出来的，比如说我们用的是 mnist 数据集，那这个预训练好的教师网络就可以很好的提取真实图像的特征，然后用这些特征去分类输入图像。这一点和 GAN 中判别器所作的任务是非常的相似的。所以我们可以把教师网络看作是一个判别器，但是这个判别器和传统的 GAN 的判别器是不一样，他的参数都是预训练好的，而不是随机初始化的，如果还是用原来的训练方法的话，那么随机初始化的生成器无论生成什么样的图片，都会被判别器以很高的置信度判定为假，这样生成器就不知道自己优化的方向了。还有一点就是，教师网络作为判别器做的也不是真假的二分类任务，如果是 mnist 数据集，那他做的就是一个 10 分类，而不是之前我们说过的输出图片属于真假类别的概率。所以对于生成器的优化目标，我们需要做一定的变化。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7iguyhlbj30zk0k0wh7.jpg" alt="幻灯片9.JPG"></p>
+<h3 id="生成器损失1"><a href="#生成器损失1" class="headerlink" title="生成器损失1"></a>生成器损失 1</h3><p>既然生成器是用来生成图片的，我们可以想一想怎么衡量生成器生成图片的好坏呢？这其实是一个非常困难的任务，我们以生成一只猫的图片为例子，可能生成器生成了一只躺着的猫，而真实图像是一只站着的猫，所以不是说生成器生成的图像和数据集中某一张真实的猫的图像一模一样他就是好的，因此也不能的直接对两者去计算 L1L2 损失。我们可以从真实图像的某些特征上出发，因为教师网络是在真实图像上训练出来，所以一个比较好的教师网络，在输入是真实图片的时候，必定会在某一个类别的概率特别的大，在其他类别的概率特别的小。所以我们希望生成器生成的图像也具有这样的性质。这里的 yt 就是对于生成图像，教师网络得到的其属于每个类别的概率，小 t 就是取了概率最大的类别并做成 one-hot 的向量，用交叉熵来衡量他们的相似度。通过最小化这个函数来对生成图像做一个限制。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ihra9pjj30zk0k0772.jpg" alt="幻灯片10.JPG"></p>
+<h3 id="生成器损失2"><a href="#生成器损失2" class="headerlink" title="生成器损失2"></a>生成器损失 2</h3><p>同样的，我们知道卷积神经网络的卷积核就是一个特征提取器，相比于一个随机的向量，真实的输入图片会有更多与之相符合的特征，也就是它被激活的神经元会更多。所以，如果生成的图像和真实图像相似，那么他在中间层被激活的神经元也应该更多，这里用 L1 范数来衡量激活神经元的个数。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ii4ye7nj30zk0k0jtp.jpg" alt="幻灯片11.JPG"></p>
+<h3 id="生成器损失3"><a href="#生成器损失3" class="headerlink" title="生成器损失3"></a>生成器损失 3</h3><p>最后第三项，我们从生成图片本身出发。我们的生成器是随机初始化的，一开始他生成的完全是没有意义的图像，假设生成器经过优化先生成了一张类似于手写数字 0 的图像，只是后判别器给他的分数相对是比较高，这种情况下生成器会觉的 0 这个数字是比较好的，之后无论输入是什么，他都朝着生成一个更好的数字 0 去做。这明显和我们想要的生成器是不一样的，所以对于他在每一个 batch 中生成的图像，我们需要对其做一个限制，最好的情况就是生成的图片在每一个类别上的分布都是均衡的，此时信息量也是最大的，所以我们用这样的一个函数来对它生成图片的多样性做一个限制。加上之前的两项就是生成器总的目标函数，通过这个目标函数，我们可以对生成器进行优化从而得到很多的假图像。有了假图像之后就十分简单了，只需要把之前的蒸馏方法套进来就行了，这里作者选用的是 Hinton 的软标签。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7iihtt23j30zk0k0jtl.jpg" alt="幻灯片12.JPG"></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>我们看论文的实验结果，首先看红色框框里面的三行，这里三行是说，在教师网络的数据集可以被获取到的情况下，学生网络所能达到的性能。这里教师网络是 ResNet34，学生网络是 ResNet18，数据集用的是 CIFAR10，可以看到第三行 Hinton 的知识蒸馏方法在网络参数量减少一倍的情况下，仍然保持了一个较高的分类准确率。但是到了第四行，在不能得到教师网络数据的情况下，他只能达到 14.89 的准确率。而用作者的方法，则可以达到 92.22 的准确率，这说明作者提出的算法是确实有效的。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ijiuky3j30zk0k0wii.jpg" alt="幻灯片13.JPG"></p>
+<p>这是作者另外作的一个剥离实验，就是去验证之前所说的生成器三项损失的有效性。我们首先看红色的框框，这个是说生成器不进行优化，随机的去生成数据，这种情况下学生网络也能达到 88 的准确率。这个和之前说的 14 的准确率不一样是因为他用的是更加简单的 MNIST 数据集。但是我们看到绿色框框中，单独的使用 one-hot 或者是激活损失，得到结果反而会比随机的要差很多。这是因为缺乏了信息熵损失函数，生成器生成的图片是非常不均衡的，这样学生就无法充分的学习到教师网络的知识。最后我们看到在综合使用三项的情况下的结果是最好的。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ik0974sj30zk0k0wi2.jpg" alt="幻灯片14.JPG"></p>
+<p>此外作者还做了两个额外的实验。左边这张表是说教师网络和学生网络结构一样的情况下，在不同的数据集上用作者的方法所能达到的性能。而右边这个图，是把教师网络和学生网络的卷积核进行可视化后的结果，我们可以看到，在 13456 列学生网络和教师网络卷积核的可视化结果非常的相似，这就说明学生网络确实对教师网络进行了有效的学习。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gj7ikylcyij30zk0k0goc.jpg" alt="幻灯片15.JPG"></p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/images/wechat.png" alt="丨fengche丨 wechat" style="width: 200px; max-width: 100%;">
+  <div>来找我聊天吧~</div>
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>fengche</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://fengchexz.github.io/posts/34070.html" title="MO 论文分享：Data-free Learning of Student Networks">https://fengchexz.github.io/posts/34070.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/蒸馏/" rel="tag"><i class="fa fa-tag"></i> 蒸馏</a>
+          
+            <a href="/tags/论文/" rel="tag"><i class="fa fa-tag"></i> 论文</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/46698.html" rel="next" title="软件推荐（一）">
+                <i class="fa fa-chevron-left"></i> 软件推荐（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="丨fengche丨">
+            
+              <p class="site-author-name" itemprop="name">丨fengche丨</p>
+              <div class="site-description motion-element" itemprop="description">风过轻轻，侧耳倾听。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-book"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hao.su/531/" title="https://hao.su/531/" rel="noopener" target="_blank">影视大全</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bbs.talkop.com/" title="http://bbs.talkop.com/" rel="noopener" target="_blank">talkop</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.chongbuluo.com/" title="https://www.chongbuluo.com/" rel="noopener" target="_blank">虫部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liuchuo.net/" title="https://www.liuchuo.net/" rel="noopener" target="_blank">柳神博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://site.sciping.com/" title="https://site.sciping.com/" rel="noopener" target="_blank">学术导航</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是知识蒸馏"><span class="nav-number">1.</span> <span class="nav-text">什么是知识蒸馏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-GAN"><span class="nav-number">2.</span> <span class="nav-text">Why GAN?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成式对抗网络"><span class="nav-number">2.1.</span> <span class="nav-text">生成式对抗网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练判别器"><span class="nav-number">2.2.</span> <span class="nav-text">训练判别器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练生成器"><span class="nav-number">2.3.</span> <span class="nav-text">训练生成器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#蒸馏-meets-GAN"><span class="nav-number">3.</span> <span class="nav-text">蒸馏 meets GAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器损失1"><span class="nav-number">3.1.</span> <span class="nav-text">生成器损失 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器损失2"><span class="nav-number">3.2.</span> <span class="nav-text">生成器损失 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器损失3"><span class="nav-number">3.3.</span> <span class="nav-text">生成器损失 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验"><span class="nav-number">4.</span> <span class="nav-text">实验</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fengche</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"> 站点字数合计:</i>
+    </span>
+    
+    <span title="站点总字数">230k</span>
+  
+  
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<div class="run_time" style=" text-align:center;">
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("07/23/2017 10:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+    setInterval("createtime()",250);
+  </script>
+</div>
+        
+<div class="busuanzi-count" style=" text-align:center;">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="0,0,0" opacity="0.5" zindex="-1" count="150" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+<!-- 看板娘 -->
+<script src="/live2d/autoload.js"></script>
+
+</body>
+</html>
+<!-- 页面点击烟花 -->
+<script type="text/javascript" src="/js/src/fireworks.js"></script>
+<!-- 页面点击烟花 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+<!--彩色星星跟随-->
+<script src="/js/src/cursor.js"></script>
