@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -151,7 +133,7 @@
 
 
   <meta name="description" content="A number that will be the same when it is written forwards or backwards is known as a Palindromic Number. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers">
-<meta name="keywords" content="c&#x2F;c++,algorithm,PAT">
+<meta name="keywords" content="c/c++,algorithm,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1019 General Palindromic Number">
 <meta property="og:url" content="https://fengchexz.github.io/posts/12312.html">
@@ -580,7 +562,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
                 
                 <span title="阅读时长">2 分钟</span>
               
@@ -602,17 +584,17 @@
       
 
       
-        <p>A number that will be the same when it is written forwards or backwards is known as a <strong>Palindromic Number</strong>. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers.</p>
-<p>Although palindromic numbers are most often considered in the decimal system, the concept of palindromicity can be applied to the natural numbers in any numeral system. Consider a number <em>N</em>&gt;0 in base <em>b</em>≥2, where it is written in standard notation with <em>k</em>+1 digits <em>a</em>~i~ as ∑~<em>i</em>=0<em>~^k^(</em>a<em>~i~b^i^). Here, as usual, 0≤</em>a<em>~i~&lt;</em>b<em> for all </em>i<em> and </em>a<em>~k~ is non-zero. Then </em>N<em> is palindromic if and only if </em>a<em>~i~=</em>a<em>~k−i~for all </em>i*. Zero is written 0 in any base and is also palindromic by definition.</p>
+        <meta name="generator" content="Hexo 3.9.0"><p>A number that will be the same when it is written forwards or backwards is known as a <strong>Palindromic Number</strong>. For example, 1234321 is a palindromic number. All single digit numbers are palindromic numbers.</p>
+<p>Although palindromic numbers are most often considered in the decimal system, the concept of palindromicity can be applied to the natural numbers in any numeral system. Consider a number <em>N</em>>0 in base <em>b</em>≥2, where it is written in standard notation with <em>k</em>+1 digits <em>a</em>~i~ as ∑~<em>i</em>=0<em>~^k^(</em>a<em>~i~b^i^). Here, as usual, 0≤</em>a<em>~i~<</em>b<em> for all </em>i<em> and </em>a<em>~k~ is non-zero. Then </em>N<em> is palindromic if and only if </em>a<em>~i~=</em>a<em>~k−i~for all </em>i*. Zero is written 0 in any base and is also palindromic by definition.</p>
 <p>Given any positive decimal integer <em>N</em> and a base <em>b</em>, you are supposed to tell if <em>N</em> is a palindromic number in base <em>b</em>.</p>
-<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case consists of two positive numbers <em>N</em> and <em>b</em>, where 0&lt;<em>N</em>≤10^9^ is the decimal number and 2≤<em>b</em>≤10^9^ is the base. The numbers are separated by a space.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case consists of two positive numbers <em>N</em> and <em>b</em>, where 0<<em>N</em>≤10^9^ is the decimal number and 2≤<em>b</em>≤10^9^ is the base. The numbers are separated by a space.</p>
 <h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, first print in one line <code>Yes</code> if <em>N</em> is a palindromic number in base <em>b</em>, or <code>No</code> if not. Then in the next line, print <em>N</em> as the number in base <em>b</em> in the form “<em>a</em>~k~ <em>a</em>~k−1~ … <em>a</em>~0~”. Notice that there must be no extra space at the end of output.</p>
 <h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">27 2</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Yes</span><br><span class="line">1 1 0 1 1</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">121 5</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">No</span><br><span class="line">4 4 1</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="浅析"><a href="#浅析" class="headerlink" title="浅析"></a>浅析</h2><p>进制转换 + 回文数，送分题。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> n, p;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;p;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">    <span class="keyword">do</span>{</span><br><span class="line">        v.push_back(n%p);</span><br><span class="line">        n /= p;</span><br><span class="line">    } <span class="keyword">while</span> (n != <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;v.size()/<span class="number">2</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(v[i]!=v[v.size()<span class="number">-1</span>-i]){</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    <span class="built_in">printf</span>(flag ? <span class="string">"Yes\n"</span> : <span class="string">"No\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = v.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>;i--){</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, v[i]);</span><br><span class="line">        <span class="keyword">if</span>(i!=<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><vector></vector></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> n, p;</span><br><span class="line">    <span class="built_in">cin</span>>>n>>p;</span><br><span class="line">    <span class="built_in">vector</span><<span class="keyword">int</span>> v;</span><br><span class="line">    <span class="keyword">do</span>{</span><br><span class="line">        v.push_back(n%p);</span><br><span class="line">        n /= p;</span><br><span class="line">    } <span class="keyword">while</span> (n != <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i<v.size() <span class="number">2</v.size()></span>;i++)<br><span class="line">        <span class="keyword">if</span>(v[i]!=v[v.size()<span class="number">-1</span>-i]){</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    <span class="built_in">printf</span>(flag ? <span class="string">"Yes\n"</span> : <span class="string">"No\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = v.size() - <span class="number">1</span>; i >= <span class="number">0</span>;i--){</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, v[i]);</span><br><span class="line">        <span class="keyword">if</span>(i!=<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
       
     </div>
 
@@ -888,7 +870,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -899,7 +881,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -910,7 +892,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -921,7 +903,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1008,7 +990,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1639,13 +1621,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-</body>
-</html>
-<!-- 页面点击烟花 -->
+
+
+
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script>
+<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->

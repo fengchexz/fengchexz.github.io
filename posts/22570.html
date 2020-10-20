@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -151,7 +133,7 @@
 
 
   <meta name="description" content="If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×105 with simple chopping. Now given the number of significa">
-<meta name="keywords" content="c&#x2F;c++,algorithm,PAT">
+<meta name="keywords" content="c/c++,algorithm,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1060 Are They Equal">
 <meta property="og:url" content="https://fengchexz.github.io/posts/22570.html">
@@ -592,7 +574,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
                 
                 <span title="阅读时长">2 分钟</span>
               
@@ -614,18 +596,18 @@
       
 
       
-        <p>If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×105 with simple chopping. Now given the number of significant digits on a machine and two float numbers, you are supposed to tell if they are treated equal in that machine.</p>
-<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case which gives three numbers <em>N</em>, <em>A</em> and <em>B</em>, where <em>N</em> (&lt;100) is the number of significant digits, and <em>A</em> and <em>B</em> are the two float numbers to be compared. Each float number is non-negative, no greater than 10^100^, and that its total digit number is less than 100.</p>
-<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print in a line <code>YES</code> if the two numbers are treated equal, and then the number in the standard form <code>0.d[1]...d[N]*10^k</code> (<code>d[1]</code>&gt;0 unless the number is 0); or <code>NO</code> if they are not treated equal, and then the two numbers in their standard form. All the terms must be separated by a space, with no extra space at the end of a line.</p>
+        <meta name="generator" content="Hexo 3.9.0"><p>If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×105 with simple chopping. Now given the number of significant digits on a machine and two float numbers, you are supposed to tell if they are treated equal in that machine.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case which gives three numbers <em>N</em>, <em>A</em> and <em>B</em>, where <em>N</em> (<100) is the number of significant digits, and <em>A and <em>B</em> are the two float numbers to be compared. Each float number is non-negative, no greater than 10^100^, and that its total digit number is less than 100.<!--100)--></em></p><em>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print in a line <code>YES</code> if the two numbers are treated equal, and then the number in the standard form <code>0.d[1]...d[N]*10^k</code> (<code>d[1]</code>>0 unless the number is 0); or <code>NO</code> if they are not treated equal, and then the two numbers in their standard form. All the terms must be separated by a space, with no extra space at the end of a line.</p>
 <p>Note: Simple chopping is assumed without rounding</p>
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 12300 12358.9</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YES 0.123*10^5</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 120 128</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NO 0.120*10^3 0.128*10^3</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">deal</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span>&amp; e)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(s.length()&gt;<span class="number">0</span>&amp;&amp;s[<span class="number">0</span>]==<span class="string">'0'</span>)</span><br><span class="line">        s.erase(s.begin());</span><br><span class="line">    <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'.'</span>){</span><br><span class="line">        s.erase(s.begin());</span><br><span class="line">        <span class="keyword">while</span>(s.length()&gt;<span class="number">0</span>&amp;&amp;s[<span class="number">0</span>]==<span class="string">'0'</span>){</span><br><span class="line">            s.erase(s.begin());</span><br><span class="line">            e--;</span><br><span class="line">        }</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        <span class="keyword">while</span>(i&lt;s.length()&amp;&amp;s[i]!=<span class="string">'.'</span>){</span><br><span class="line">            e++;</span><br><span class="line">            i++;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'.'</span>)</span><br><span class="line">            s.erase(s.begin() + i);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span>(s.length()==<span class="number">0</span>) e=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n;j++){</span><br><span class="line">        <span class="keyword">if</span>(j&lt;s.length())</span><br><span class="line">            res += s[j];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res += <span class="string">'0'</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="built_in">string</span> s1, s2, s3, s4;</span><br><span class="line">    <span class="keyword">int</span> e1 = <span class="number">0</span>, e2 = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    s3 = deal(s1, e1);</span><br><span class="line">    s4 = deal(s2, e2);</span><br><span class="line">    <span class="keyword">if</span>(s3==s4&amp;&amp;e1==e2)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES 0."</span> &lt;&lt; s3 &lt;&lt; <span class="string">"*10^"</span> &lt;&lt; e1&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO 0."</span> &lt;&lt; s3 &lt;&lt; <span class="string">"*10^"</span> &lt;&lt; e1 &lt;&lt; <span class="string">" 0."</span> &lt;&lt; s4 &lt;&lt; <span class="string">"*10^"</span> &lt;&lt; e2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><string></string></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">deal</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span>& e)</span></span>{</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(s.length()><span class="number">0</span>&&s[<span class="number">0</span>]==<span class="string">'0'</span>)</span><br><span class="line">        s.erase(s.begin());</span><br><span class="line">    <span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'.'</span>){</span><br><span class="line">        s.erase(s.begin());</span><br><span class="line">        <span class="keyword">while</span>(s.length()><span class="number">0</span>&&s[<span class="number">0</span>]==<span class="string">'0'</span>){</span><br><span class="line">            s.erase(s.begin());</span><br><span class="line">            e--;</span><br><span class="line">        }</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        <span class="keyword">while</span>(i<s.length()&&s[i]!=<span class="string">'.'</s.length()&&s[i]!=<span></span>){<br><span class="line">            e++;</span><br><span class="line">            i++;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'.'</span>)</span><br><span class="line">            s.erase(s.begin() + i);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span>(s.length()==<span class="number">0</span>) e=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> res;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j < n;j++){</span><br><span class="line">        <span class="keyword">if</span>(j<s.length())< span><br><span class="line">            res += s[j];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res += <span class="string">'0'</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="built_in">string</span> s1, s2, s3, s4;</span><br><span class="line">    <span class="keyword">int</span> e1 = <span class="number">0</span>, e2 = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span> >> n >> s1 >> s2;</span><br><span class="line">    s3 = deal(s1, e1);</span><br><span class="line">    s4 = deal(s2, e2);</span><br><span class="line">    <span class="keyword">if</span>(s3==s4&&e1==e2)</span><br><span class="line">        <span class="built_in">cout</span> << <span class="string">"YES 0."</span> << s3 << <span class="string">"*10^"</span> << e1<<<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> << <span class="string">"NO 0."</span> << s3 << <span class="string">"*10^"</span> << e1 << <span class="string">" 0."</span> << s4 << <span class="string">"*10^"</span> << e2<<<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></s.length())<></span></pre></td></tr></tbody></table></figure>
 
       
-    </div>
+    </em></div><em>
 
     
       
@@ -727,24 +709,24 @@
       
       
     </footer>
-  </div>
+  </em></div><em>
   
   
   
-  </article>
+  </em></article><em>
 
 
-  </div>
+  </em></div><em>
 
 
-          </div>
+          </em></div><em>
           
 
   
 
 
 
-        </div>
+        </em></div><em>
         
           
   
@@ -899,7 +881,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -910,7 +892,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -921,7 +903,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -932,7 +914,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1014,12 +996,12 @@
 
 
         
-      </div>
-    </main>
+      </em></div><em>
+    </em></main><em>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1108,7 +1090,7 @@
     
 
     
-  </div>
+  </em></div><em>
 
   
 
@@ -1650,13 +1632,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-</body>
-</html>
-<!-- 页面点击烟花 -->
+
+
+
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script>
+<script src="/js/src/cursor.js"></script></em><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->

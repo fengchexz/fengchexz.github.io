@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-
-<head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -150,13 +132,13 @@
 
 
 
-  <meta name="description" content="蒸馏的定义将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。 Hard targets&amp;amp;Soft targetsHard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（">
+  <meta name="description" content="蒸馏的定义将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。 Hard targets&Soft targetsHard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（集成模型">
 <meta name="keywords" content="机器学习,深度学习,蒸馏,论文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Distilling the Knowledge in a Neural Network">
 <meta property="og:url" content="https://fengchexz.github.io/posts/45831.html">
 <meta property="og:site_name" content="风车小站">
-<meta property="og:description" content="蒸馏的定义将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。 Hard targets&amp;amp;Soft targetsHard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（">
+<meta property="og:description" content="蒸馏的定义将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。 Hard targets&Soft targetsHard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（集成模型">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggihvyrzfcj30an04gaa0.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggihwgkofbj30bk04wt8t.jpg">
@@ -164,7 +146,7 @@
 <meta property="og:updated_time" content="2020-09-29T09:48:33.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Distilling the Knowledge in a Neural Network">
-<meta name="twitter:description" content="蒸馏的定义将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。 Hard targets&amp;amp;Soft targetsHard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（">
+<meta name="twitter:description" content="蒸馏的定义将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。 Hard targets&Soft targetsHard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（集成模型">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggihvyrzfcj30an04gaa0.jpg">
 
 
@@ -596,7 +578,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
                 
                 <span title="阅读时长">1 分钟</span>
               
@@ -618,17 +600,17 @@
       
 
       
-        <meta name="referrer" content="no-referrer">
+        <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
 
 <h2 id="蒸馏的定义"><a href="#蒸馏的定义" class="headerlink" title="蒸馏的定义"></a>蒸馏的定义</h2><p>将预先训练好的复杂模型的 “知识” 转移到较为轻量的模型上的操作称为蒸馏。（这里的 “知识” 在以前被定义为网络的参数，而在文中作者将其定义为从输入到输出的映射。</p>
-<h2 id="Hard-targets-amp-Soft-targets"><a href="#Hard-targets-amp-Soft-targets" class="headerlink" title="Hard targets&amp;Soft targets"></a>Hard targets&amp;Soft targets</h2><p>Hard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（集成模型中可以是几何或者算数平均）</p>
+<h2 id="Hard-targets-amp-Soft-targets"><a href="#Hard-targets-amp-Soft-targets" class="headerlink" title="Hard targets&Soft targets"></a>Hard targets&Soft targets</h2><p>Hard targets 是指在分类问题中预测的最终目标通常是一个 one-hot 形式的向量，而 Soft targets 是指保留预测结果中属于每一类别的概率（集成模型中可以是几何或者算数平均）</p>
 <h2 id="为什么Soft-targets有效？"><a href="#为什么Soft-targets有效？" class="headerlink" title="为什么Soft targets有效？"></a>为什么 Soft targets 有效？</h2><p>模型给出的当前输入属于其他错误类别的概率，即使很小，也隐藏了一定的信息。以 MNIST 分类为例，数字 “2” 的写法不同会导致其像数字 3（后面多出一点）或者数字 7（少画了一点），一个训练好的模型，即使最终的预测结果是 2，其在 3 或者 7 的类别中也会有一定的概率，这个概率表示模型认为这两者有一定的相似性。直接使用 one-hot 形式会丢失掉这部分的信息。</p>
 <h2 id="带温度的Softmax"><a href="#带温度的Softmax" class="headerlink" title="带温度的Softmax"></a>带温度的 Softmax</h2><p>​                                 <img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggihvyrzfcj30an04gaa0.jpg" alt="Snipaste_2020-07-07_16-35-37.png" style="zoom:50%;">—————————–<img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggihwgkofbj30bk04wt8t.jpg" alt="Snipaste_2020-07-07_16-36-18.png" style="zoom:55%;"></p>
 <p>在新的公式中，参数 T 就是温度值，当 T 设置为 1 时，公式与 Softmax 一致。T 值升高会避免原先的 sofrmax 对最大值的凸显，这样就避免了 teacher model 在正确类别上给出的置信度过高。</p>
 <h2 id="Student的损失函数"><a href="#Student的损失函数" class="headerlink" title="Student的损失函数"></a>Student 的损失函数</h2><p>$$<br>\huge L =\lambda<em>L_{soft}+(1-\lambda)</em>L_{hard}<br>$$</p>
 <p>这里如果 $\lambda$ 设置为 1，可以理解为这就是传统的模型压缩，用一个小模型去学习了大模型的预测结果。而后面的一项则是 Student 在此基础上做进一步的自我学习，这样 Student 的能力是完全有可能超过 Teacher 的。</p>
 <h2 id="为什么蒸馏会有效"><a href="#为什么蒸馏会有效" class="headerlink" title="为什么蒸馏会有效"></a>为什么蒸馏会有效</h2><p>虽然 Teacher 模型更加的复杂，但是其网络中有很多参数是冗余的，也就是说其学得的映射关系并不是看上去这么复杂，因此我们可以用更小的 Student 模型来更加精炼的学习这种映射关系。</p>
-<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p><img src="https://i1.wp.com/upload-images.jianshu.io/upload_images/274100-b992c45650497df0.png?zoom=1.2395833730697632&amp;w=640&amp;ssl=1" alt="image.png"></p>
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p><img src="https://i1.wp.com/upload-images.jianshu.io/upload_images/274100-b992c45650497df0.png?zoom=1.2395833730697632&w=640&ssl=1" alt="image.png"></p>
 <ol>
 <li>在训练集上训练好一个大模型 Teacher model</li>
 <li> 使用 Teacher model 生成训练集的 soft target</li>
@@ -999,7 +981,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1010,7 +992,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1021,7 +1003,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1032,7 +1014,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1091,7 +1073,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#蒸馏的定义"><span class="nav-number">1.</span> <span class="nav-text">蒸馏的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hard-targets-amp-Soft-targets"><span class="nav-number">2.</span> <span class="nav-text">Hard targets&amp;Soft targets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么Soft-targets有效？"><span class="nav-number">3.</span> <span class="nav-text">为什么 Soft targets 有效？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带温度的Softmax"><span class="nav-number">4.</span> <span class="nav-text">带温度的 Softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Student的损失函数"><span class="nav-number">5.</span> <span class="nav-text">Student 的损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么蒸馏会有效"><span class="nav-number">6.</span> <span class="nav-text">为什么蒸馏会有效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法流程"><span class="nav-number">7.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验"><span class="nav-number">8.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary-experiments-on-MNIST"><span class="nav-number">8.1.</span> <span class="nav-text">Preliminary experiments on MNIST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments-on-speech-recognition"><span class="nav-number">8.2.</span> <span class="nav-text">Experiments on speech recognition</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#蒸馏的定义"><span class="nav-number">1.</span> <span class="nav-text">蒸馏的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hard-targets-amp-Soft-targets"><span class="nav-number">2.</span> <span class="nav-text">Hard targets&Soft targets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么Soft-targets有效？"><span class="nav-number">3.</span> <span class="nav-text">为什么 Soft targets 有效？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带温度的Softmax"><span class="nav-number">4.</span> <span class="nav-text">带温度的 Softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Student的损失函数"><span class="nav-number">5.</span> <span class="nav-text">Student 的损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么蒸馏会有效"><span class="nav-number">6.</span> <span class="nav-text">为什么蒸馏会有效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法流程"><span class="nav-number">7.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验"><span class="nav-number">8.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary-experiments-on-MNIST"><span class="nav-number">8.1.</span> <span class="nav-text">Preliminary experiments on MNIST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiments-on-speech-recognition"><span class="nav-number">8.2.</span> <span class="nav-text">Experiments on speech recognition</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1119,7 +1101,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1750,13 +1732,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-</body>
-</html>
-<!-- 页面点击烟花 -->
+
+
+
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script>
+<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->

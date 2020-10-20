@@ -29,9 +29,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;p&gt;这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：&lt;a
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;这一次咱们要看的论文是一篇华为的 AAAI2019 的 GAN 和蒸馏相结合的论文。知识蒸馏的基础概念大家可以看这个介绍：&lt;a
         
       
     
@@ -65,7 +65,7 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot;
         
       
     
@@ -75,36 +75,6 @@
     
     
       <category term="推荐" scheme="https://fengchexz.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
-    <link href="https://fengchexz.github.io/posts/10868.html"/>
-    <id>https://fengchexz.github.io/posts/10868.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:53:17.876Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a href=&quot;#Good-Results-on-Training-Data&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -121,9 +91,39 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;Why-CNN-for-Image？&quot;&gt;&lt;a href=&quot;#Why-CNN-for-Image？&quot; class=&quot;headerlink&quot; title=&quot;Why CNN
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Why-CNN-for-Image？&quot;&gt;&lt;a href=&quot;#Why-CNN-for-Image？&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
+    <link href="https://fengchexz.github.io/posts/10868.html"/>
+    <id>https://fengchexz.github.io/posts/10868.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-10-20T06:53:17.876Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
         
       
     
@@ -151,9 +151,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
         
       
     
@@ -181,9 +181,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
         
       
     
@@ -211,9 +211,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;文章背景&quot;&gt;&lt;a href=&quot;#文章背景&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;文章背景&quot;&gt;&lt;a href=&quot;#文章背景&quot; class=&quot;headerlink&quot;
         
       
     
@@ -243,9 +243,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;自监督学习&quot;&gt;&lt;a href=&quot;#自监督学习&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;自监督学习&quot;&gt;&lt;a href=&quot;#自监督学习&quot; class=&quot;headerlink&quot;
         
       
     
@@ -277,9 +277,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;p&gt;看完这篇文章我的内心是崩溃的…… 因为是第一次接触多模态深度学习，所以去搜索了解了一些基本的概念，然后在千辛万苦弄懂理解了他的方法之后，发现和之前的蒸馏文章 &lt;a
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;看完这篇文章我的内心是崩溃的……
         
       
     
@@ -313,10 +313,10 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;p&gt;做一个各种良心网站的汇总，另外有时间会做实用软件的分享，大家有什么的好的网站或者软件也可以告诉我～&lt;/p&gt;
-&lt;h2 id=&quot;学习&quot;&gt;&lt;a href=&quot;#学习&quot;
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;做一个各种良心网站的汇总，另外有时间会做实用软件的分享，大家有什么的好的网站或者软件也可以告诉我～&lt;/p&gt;
+&lt;h2
         
       
     
@@ -342,9 +342,7 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;p&gt;在做工作总结的时候，老师问我们看了这么多联邦学习和蒸馏的论文，有没有什么自己的想法呢？具体的比如怎么将蒸馏应用到联邦学习中呢？确实，在之前的工作中大部分都是带任务性的 “被动”
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot;
         
       
     
@@ -378,10 +376,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;p&gt;这是蒸馏论文的第四篇，将注意力机制引入知识蒸馏中，总体来说还算比较好懂。作者提出了基于 Activation 和基于 Gradient 两种注意力迁移的方法。&lt;/p&gt;
-&lt;h2
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;这是蒸馏论文的第四篇，将注意力机制引入知识蒸馏中，总体来说还算比较好懂。作者提出了基于 Activation 和基于
         
       
     
@@ -415,9 +412,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;p&gt;读这篇论文主要是为了学习注意力机制 (Attention)，论文没有做精度，想对文章做快速了解的可以观看 b 站视频：&lt;a
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;读这篇论文主要是为了学习注意力机制 (Attention)，论文没有做精度，想对文章做快速了解的可以观看 b 站视频：&lt;a
         
       
     
@@ -449,7 +446,7 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot;
         
       
     
@@ -483,9 +480,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;p&gt;这是知识蒸馏的第二篇文章，文章认为 Hinton 提出的 knowledge distillation 方法 (KD) 简单的拟合 Teacher 模型的输出并不能使
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;这是知识蒸馏的第二篇文章，文章认为 Hinton 提出的 knowledge distillation 方法 (KD) 简单的拟合
         
       
     
@@ -519,9 +516,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;蒸馏的定义&quot;&gt;&lt;a href=&quot;#蒸馏的定义&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;蒸馏的定义&quot;&gt;&lt;a href=&quot;#蒸馏的定义&quot; class=&quot;headerlink&quot;
         
       
     
@@ -555,9 +552,9 @@
       
         
         
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;h2 id=&quot;GAN&quot;&gt;&lt;a href=&quot;#GAN&quot; class=&quot;headerlink&quot; title=&quot;GAN&quot;&gt;&lt;/a&gt;&lt;a
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;GAN&quot;&gt;&lt;a href=&quot;#GAN&quot; class=&quot;headerlink&quot; title=&quot;GAN&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
@@ -589,7 +586,7 @@
       
         
         
-          &lt;p&gt;Sherlock Holmes received a note with some strange strings: &lt;code&gt;Let&#39;s date! 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;amp;hgsfdk
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Sherlock Holmes received a note with some strange strings: &lt;code&gt;Let&#39;s date! 3485djDkxh4hhGE 2984akDfkkkkggEdsb
         
       
     
@@ -621,7 +618,7 @@
       
         
         
-          &lt;p&gt;People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color is represented by a
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color
         
       
     
@@ -653,7 +650,7 @@
       
         
         
-          &lt;p&gt;A number that will be the same when it is written forwards or backwards is known as a &lt;strong&gt;Palindromic Number&lt;/strong&gt;. For example,
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;A number that will be the same when it is written forwards or backwards is known as a &lt;strong&gt;Palindromic
         
       
     
