@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -133,7 +151,7 @@
 
 
   <meta name="description" content="Weibo is known as the Chinese version of Twitter. One user on Weibo may have many followers, and may follow many other users as well. Hence a social network is formed with followers relations. When a">
-<meta name="keywords" content="c/c++,algorithm,PAT">
+<meta name="keywords" content="c&#x2F;c++,algorithm,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1076 Forwards on Weibo">
 <meta property="og:url" content="https://fengchexz.github.io/posts/1399.html">
@@ -249,7 +267,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -266,7 +284,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -283,7 +301,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -293,7 +311,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -317,7 +352,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -327,7 +362,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -557,7 +592,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">3 分钟</span>
               
@@ -579,7 +614,7 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><p>Weibo is known as the Chinese version of Twitter. One user on Weibo may have many followers, and may follow many other users as well. Hence a social network is formed with followers relations. When a user makes a post on Weibo, all his/her followers can view and forward his/her post, which can then be forwarded again by their followers. Now given a social network, you are supposed to calculate the maximum potential amount of forwards for any specific user, assuming that only L levels of indirect followers are counted.</p>
+        <p>Weibo is known as the Chinese version of Twitter. One user on Weibo may have many followers, and may follow many other users as well. Hence a social network is formed with followers relations. When a user makes a post on Weibo, all his/her followers can view and forward his/her post, which can then be forwarded again by their followers. Now given a social network, you are supposed to calculate the maximum potential amount of forwards for any specific user, assuming that only L levels of indirect followers are counted.</p>
 <h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. For each case, the first line contains 2 positive integers: <em>N</em> (≤1000), the number of users; and <em>L</em> (≤6), the number of levels of indirect followers that are counted. Hence it is assumed that all the users are numbered from 1 to <em>N</em>. Then <em>N</em> lines follow, each in the format:</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M[i] user_list[i]</span><br></pre></td></tr></tbody></table></figure>
 <p>where <code>M[i]</code> (≤100) is the total number of people that <code>user[i]</code> follows; and <code>user_list[i]</code> is a list of the <code>M[i]</code> users that followed by <code>user[i]</code>. It is guaranteed that no one can follow oneself. All the numbers are separated by a space.</p>
@@ -589,7 +624,7 @@
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">5</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="浅析"><a href="#浅析" class="headerlink" title="浅析"></a>浅析</h2><p>Q：在给定深度下，一个节点所能到达的其他节点数</p>
 <p>一开始想用层数做为全局变量，但是 BFS 不知道何时到上一层的尾结点因此行不通。后改层数为每个节点各自的属性，源节点为 0，在遍历其邻接点时实现递增</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><cstdio></cstdio></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><vector></vector></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><queue></queue></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> L;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>{</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> level;</span><br><span class="line">    Node(<span class="keyword">int</span> _id,<span class="keyword">int</span> _level):id(_id),level(_level){}</span><br><span class="line">};</span><br><span class="line"><span class="built_in">vector</span><node> G[maxn];</node></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(<span class="keyword">int</span> s)</span></span>{</span><br><span class="line">    <span class="keyword">bool</span> inq[maxn] = {<span class="literal">false</span>};</span><br><span class="line">    <span class="keyword">int</span> num_share = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">queue</span><node> q;</node></span><br><span class="line">    Node start = Node(s, <span class="number">0</span>);</span><br><span class="line">    q.push(start);</span><br><span class="line">    inq[start.id] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()){</span><br><span class="line">        Node temp = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < G[temp.id].size();i++){</span><br><span class="line">            Node next = G[temp.id][i];</span><br><span class="line">            next.level = temp.level + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(inq[next.id]==<span class="literal">false</span>&&next.level<=l){< span><br><span class="line">                q.push(next);</span><br><span class="line">                inq[next.id] = <span class="literal">true</span>;</span><br><span class="line">                num_share++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> num_share;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &n, &L);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < n;i++){</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &m);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j < m;j++){</span><br><span class="line">            <span class="keyword">int</span> u;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &u);</span><br><span class="line">            G[u<span class="number">-1</span>].push_back(Node(i, <span class="number">0</span>));   <span class="comment">//巨坑！！题目的编号是从1开始的，因此要用u-1</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> n_out;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &n_out);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < n_out;i++){</span><br><span class="line">        <span class="keyword">int</span> s;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &s);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, BFS(s<span class="number">-1</span>));      <span class="comment">//s-1同上</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><!--=l){<--></span></pre></td></tr></tbody></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> L;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>{</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> level;</span><br><span class="line">    Node(<span class="keyword">int</span> _id,<span class="keyword">int</span> _level):id(_id),level(_level){}</span><br><span class="line">};</span><br><span class="line"><span class="built_in">vector</span>&lt;Node&gt; G[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(<span class="keyword">int</span> s)</span></span>{</span><br><span class="line">    <span class="keyword">bool</span> inq[maxn] = {<span class="literal">false</span>};</span><br><span class="line">    <span class="keyword">int</span> num_share = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">queue</span>&lt;Node&gt; q;</span><br><span class="line">    Node start = Node(s, <span class="number">0</span>);</span><br><span class="line">    q.push(start);</span><br><span class="line">    inq[start.id] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()){</span><br><span class="line">        Node temp = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[temp.id].size();i++){</span><br><span class="line">            Node next = G[temp.id][i];</span><br><span class="line">            next.level = temp.level + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(inq[next.id]==<span class="literal">false</span>&amp;&amp;next.level&lt;=L){</span><br><span class="line">                q.push(next);</span><br><span class="line">                inq[next.id] = <span class="literal">true</span>;</span><br><span class="line">                num_share++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> num_share;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;L);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n;i++){</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m;j++){</span><br><span class="line">            <span class="keyword">int</span> u;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;u);</span><br><span class="line">            G[u<span class="number">-1</span>].push_back(Node(i, <span class="number">0</span>));   <span class="comment">//巨坑！！题目的编号是从1开始的，因此要用u-1</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> n_out;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n_out);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n_out;i++){</span><br><span class="line">        <span class="keyword">int</span> s;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;s);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, BFS(s<span class="number">-1</span>));      <span class="comment">//s-1同上</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
       
     </div>
 
@@ -614,39 +649,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -786,7 +788,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -898,7 +900,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -909,7 +911,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -920,7 +922,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -931,7 +933,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1018,7 +1020,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1649,13 +1651,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>

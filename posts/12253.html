@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -133,7 +151,7 @@
 
 
   <meta name="description" content="At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you">
-<meta name="keywords" content="c/c++,algorithm,PAT">
+<meta name="keywords" content="c&#x2F;c++,algorithm,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1006 Sign In and Sign Out">
 <meta property="og:url" content="https://fengchexz.github.io/posts/12253.html">
@@ -249,7 +267,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -266,7 +284,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -283,7 +301,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -293,7 +311,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -317,7 +352,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -327,7 +362,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -545,7 +580,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">2 分钟</span>
               
@@ -567,7 +602,7 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><p>At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
+        <p>At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
 <h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer M, which is the total number of records, followed by M lines, each in the format:</p>
 <figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID_number Sign_in_time Sign_out_time</span><br></pre></td></tr></tbody></table></figure>
 <p>where times are given in the format HH:MM:SS, and ID_number is a string with no more than 15 characters.</p>
@@ -576,7 +611,7 @@
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">CS301111 15:30:28 17:00:10</span><br><span class="line">SC3021234 08:00:00 11:25:25</span><br><span class="line">CS301133 21:45:00 21:58:40</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SC3021234 CS301133</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="浅析"><a href="#浅析" class="headerlink" title="浅析"></a>浅析</h2><p>送分题</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><string></string></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><climits></climits></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> n,min=INT_MAX,max=INT_MIN;</span><br><span class="line">    <span class="built_in">string</span> in, out;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < n;i++){</span><br><span class="line">        <span class="built_in">string</span> a;</span><br><span class="line">        <span class="keyword">int</span> h1, m1, s1, h2, m2, s2;</span><br><span class="line">        <span class="built_in">cin</span> >> a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d:%d:%d %d:%d:%d"</span>,&h1,&m1,&s1,&h2,&m2,&s2);</span><br><span class="line">        <span class="keyword">int</span> sum1 = h1 * <span class="number">3600</span> + m1 * <span class="number">60</span> + s1;</span><br><span class="line">        <span class="keyword">int</span> sum2 = h2 * <span class="number">3600</span> + m2 * <span class="number">60</span> + s2;</span><br><span class="line">        <span class="keyword">if</span>(sum1<min){< span><br><span class="line">            min = sum1;</span><br><span class="line">            in = a;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(sum2>max){</span><br><span class="line">            max = sum2;</span><br><span class="line">            out = a;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s %s"</span>,in.c_str(),out.c_str());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></min){<></span></pre></td></tr></tbody></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> n,min=INT_MAX,max=INT_MIN;</span><br><span class="line">    <span class="built_in">string</span> in, out;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n;i++){</span><br><span class="line">        <span class="built_in">string</span> a;</span><br><span class="line">        <span class="keyword">int</span> h1, m1, s1, h2, m2, s2;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d:%d:%d %d:%d:%d"</span>,&amp;h1,&amp;m1,&amp;s1,&amp;h2,&amp;m2,&amp;s2);</span><br><span class="line">        <span class="keyword">int</span> sum1 = h1 * <span class="number">3600</span> + m1 * <span class="number">60</span> + s1;</span><br><span class="line">        <span class="keyword">int</span> sum2 = h2 * <span class="number">3600</span> + m2 * <span class="number">60</span> + s2;</span><br><span class="line">        <span class="keyword">if</span>(sum1&lt;min){</span><br><span class="line">            min = sum1;</span><br><span class="line">            in = a;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(sum2&gt;max){</span><br><span class="line">            max = sum2;</span><br><span class="line">            out = a;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s %s"</span>,in.c_str(),out.c_str());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
       
     </div>
@@ -602,39 +637,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -774,7 +776,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -886,7 +888,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -897,7 +899,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -908,7 +910,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -919,7 +921,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1006,7 +1008,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1637,13 +1639,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>

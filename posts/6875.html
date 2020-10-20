@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -256,7 +274,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -273,7 +291,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -290,7 +308,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -300,7 +318,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -324,7 +359,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -334,7 +369,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -557,7 +592,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">2 分钟</span>
               
@@ -579,7 +614,7 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
+        <meta name="referrer" content="no-referrer">
 
 <h2 id="自监督学习"><a href="#自监督学习" class="headerlink" title="自监督学习"></a>自监督学习</h2><p>首先简单的介绍一下自监督学习和对比学习。自监督学习在我看来更偏向于无监督学习，因为他处理的对象也是无标签的数据，但是不同于无监督学习，它希望用自己构造的一些标签，作为一个辅助任务来训练网络。比如我们看到下面，我可以对原图像做一个旋转让他去预测旋转的角度，或者对原图像挖掉一块让他去预测挖掉的这块图像，这个挖掉的图像就是人为创造的标签。<br><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1ghlicm2sedj30zk0k0kbs.jpg" alt="幻灯片1.PNG"></p>
 <p>自监督学习的目标是通过辅助任务，来得到一个比输入更加低维的向量。这个低维向量应用于下游任务的时候，能够得到比直接输入 x 更好的效果。举个例子的话就是自然语言处理中的 word2vec，这个算法大家应该都听过，就是用前 N 个单词来预测下一个可能的单词，这里的下一个单词，就是人为构造出来的一个辅助任务。我们可以用着个辅助任务去训练网络，然后提取出中间层的输出，就是我们常说的词向量。这个词向量比 one-hot 形式的向量更加适用于自然语言处理的各种任务。这就是一个自监督学习的例子。</p>
@@ -617,39 +652,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -791,7 +793,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -903,7 +905,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -914,7 +916,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -925,7 +927,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -936,7 +938,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1023,7 +1025,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1654,13 +1656,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>

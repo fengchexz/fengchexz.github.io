@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -133,7 +151,7 @@
 
 
   <meta name="description" content="The magic shop in Mars is offering some magic coupons. Each coupon has an integer N printed on it, meaning that when you use this coupon with a product, you may get N times the value of that product b">
-<meta name="keywords" content="c/c++,algorithm,PAT">
+<meta name="keywords" content="c&#x2F;c++,algorithm,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1037 Magic Coupon">
 <meta property="og:url" content="https://fengchexz.github.io/posts/57351.html">
@@ -249,7 +267,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -266,7 +284,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -283,7 +301,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -293,7 +311,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -317,7 +352,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -327,7 +362,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -545,7 +580,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">2 分钟</span>
               
@@ -567,7 +602,7 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><p>The magic shop in Mars is offering some magic coupons. Each coupon has an integer <em>N</em> printed on it, meaning that when you use this coupon with a product, you may get <em>N</em> times the value of that product back! What is more, the shop also offers some bonus product for free. However, if you apply a coupon with a positive <em>N</em> to this bonus product, you will have to pay the shop <em>N</em> times the value of the bonus product… but hey, magically, they have some coupons with negative <em>N</em>‘s!</p>
+        <p>The magic shop in Mars is offering some magic coupons. Each coupon has an integer <em>N</em> printed on it, meaning that when you use this coupon with a product, you may get <em>N</em> times the value of that product back! What is more, the shop also offers some bonus product for free. However, if you apply a coupon with a positive <em>N</em> to this bonus product, you will have to pay the shop <em>N</em> times the value of the bonus product… but hey, magically, they have some coupons with negative <em>N</em>‘s!</p>
 <p>For example, given a set of coupons { 1 2 4 −1 }, and a set of product values { 7 6 −2 −3 } (in Mars dollars <code>M$</code>) where a negative value corresponds to a bonus product. You can apply coupon 3 (with N being 4) to product 1 (with value <code>M$7</code>) to get <code>M$28</code> back; coupon 2 to product 2 to get <code>M$12</code> back; and coupon 4 to product 4 to get <code>M$3</code> back. On the other hand, if you apply coupon 3 to product 4, you will have to pay <code>M$12</code> to the shop.</p>
 <p>Each coupon and each product may be selected at most once. Your task is to get as much money back as possible.</p>
 <h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. For each case, the first line contains the number of coupons <em>N~C~</em>, followed by a line with <em>N~C~</em> coupon integers. Then the next line contains the number of products <em>N~P~</em>, followed by a line with <em>N~P~</em> product values. Here 1≤<em>N~C~</em>,<em>N~P~</em>≤10^5^, and it is guaranteed that all the numbers will not exceed 2^30^.</p>
@@ -575,7 +610,7 @@
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 2 4 -1</span><br><span class="line">4</span><br><span class="line">7 6 -2 -3</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">43</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="浅析"><a href="#浅析" class="headerlink" title="浅析"></a>浅析</h2><p>送分题</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><vector></vector></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><algorithm></algorithm></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> m, n, ans = <span class="number">0</span>, p = <span class="number">0</span>, q = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &m);</span><br><span class="line">    <span class="keyword">int</span> a1[m];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < m; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &a1[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &n);</span><br><span class="line">    <span class="keyword">int</span> a2[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &a2[i]);</span><br><span class="line">    sort(a1,a1+m);</span><br><span class="line">    sort(a2,a2+n);</span><br><span class="line">    <span class="keyword">while</span>(p < m && q < n && a1[p] < <span class="number">0</span> && a2[q] < <span class="number">0</span>) {</span><br><span class="line">        ans += a1[p] * a2[q];</span><br><span class="line">        p++; q++;</span><br><span class="line">    }</span><br><span class="line">    p = m - <span class="number">1</span>, q = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p >= <span class="number">0</span> && q >= <span class="number">0</span> && a1[p] > <span class="number">0</span> && a2[q] > <span class="number">0</span>) {</span><br><span class="line">        ans += a1[p] * a2[q];</span><br><span class="line">        p--; q--;</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> m, n, ans = <span class="number">0</span>, p = <span class="number">0</span>, q = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">    <span class="keyword">int</span> a1[m];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a1[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">int</span> a2[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a2[i]);</span><br><span class="line">    sort(a1,a1+m);</span><br><span class="line">    sort(a2,a2+n);</span><br><span class="line">    <span class="keyword">while</span>(p &lt; m &amp;&amp; q &lt; n &amp;&amp; a1[p] &lt; <span class="number">0</span> &amp;&amp; a2[q] &lt; <span class="number">0</span>) {</span><br><span class="line">        ans += a1[p] * a2[q];</span><br><span class="line">        p++; q++;</span><br><span class="line">    }</span><br><span class="line">    p = m - <span class="number">1</span>, q = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p &gt;= <span class="number">0</span> &amp;&amp; q &gt;= <span class="number">0</span> &amp;&amp; a1[p] &gt; <span class="number">0</span> &amp;&amp; a2[q] &gt; <span class="number">0</span>) {</span><br><span class="line">        ans += a1[p] * a2[q];</span><br><span class="line">        p--; q--;</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
       
     </div>
 
@@ -600,39 +635,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -772,7 +774,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -884,7 +886,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -895,7 +897,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -906,7 +908,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -917,7 +919,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1004,7 +1006,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1635,13 +1637,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>

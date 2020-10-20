@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fengchexz.github.io/links/index.html</loc>
+    
+    <lastmod>2020-10-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fengchexz.github.io/posts/46698.html</loc>
     
     <lastmod>2020-10-20</lastmod>
@@ -135,28 +142,14 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/12312.html</loc>
-    
-    <lastmod>2020-01-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fengchexz.github.io/posts/8248.html</loc>
-    
-    <lastmod>2020-01-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fengchexz.github.io/posts/39931.html</loc>
-    
-    <lastmod>2020-01-30</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fengchexz.github.io/posts/31924.html</loc>
+    
+    <lastmod>2020-01-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fengchexz.github.io/posts/12312.html</loc>
     
     <lastmod>2020-01-30</lastmod>
     
@@ -170,6 +163,13 @@
   </url>
   
   <url>
+    <loc>https://fengchexz.github.io/posts/39931.html</loc>
+    
+    <lastmod>2020-01-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fengchexz.github.io/posts/64131.html</loc>
     
     <lastmod>2020-01-30</lastmod>
@@ -177,7 +177,14 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/63733.html</loc>
+    <loc>https://fengchexz.github.io/posts/8248.html</loc>
+    
+    <lastmod>2020-01-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fengchexz.github.io/posts/22100.html</loc>
     
     <lastmod>2020-01-29</lastmod>
     
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/54912.html</loc>
+    <loc>https://fengchexz.github.io/posts/63733.html</loc>
     
     <lastmod>2020-01-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/22100.html</loc>
+    <loc>https://fengchexz.github.io/posts/54912.html</loc>
     
     <lastmod>2020-01-29</lastmod>
     
@@ -212,14 +219,14 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/56964.html</loc>
+    <loc>https://fengchexz.github.io/posts/57351.html</loc>
     
     <lastmod>2020-01-22</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/57351.html</loc>
+    <loc>https://fengchexz.github.io/posts/56964.html</loc>
     
     <lastmod>2020-01-22</lastmod>
     
@@ -254,13 +261,6 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/16314.html</loc>
-    
-    <lastmod>2020-01-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fengchexz.github.io/posts/20719.html</loc>
     
     <lastmod>2020-01-20</lastmod>
@@ -275,14 +275,21 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/12253.html</loc>
+    <loc>https://fengchexz.github.io/posts/16314.html</loc>
+    
+    <lastmod>2020-01-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fengchexz.github.io/posts/61020.html</loc>
     
     <lastmod>2020-01-19</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/posts/61020.html</loc>
+    <loc>https://fengchexz.github.io/posts/12253.html</loc>
     
     <lastmod>2020-01-19</lastmod>
     
@@ -494,13 +501,6 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/tags/GAN/</loc>
-    <lastmod>2020-10-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
@@ -509,6 +509,13 @@
   
   <url>
     <loc>https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/</loc>
+    <lastmod>2020-10-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fengchexz.github.io/tags/GAN/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -601,14 +608,14 @@
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/categories/%E6%8E%A8%E8%8D%90/</loc>
+    <loc>https://fengchexz.github.io/categories/uncategorized/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fengchexz.github.io/categories/uncategorized/</loc>
+    <loc>https://fengchexz.github.io/categories/%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2020-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -140,14 +158,10 @@
 <meta property="og:site_name" content="风车小站">
 <meta property="og:description" content="在做工作总结的时候，老师问我们看了这么多联邦学习和蒸馏的论文，有没有什么自己的想法呢？具体的比如怎么将蒸馏应用到联邦学习中呢？确实，在之前的工作中大部分都是带任务性的 “被动” 的阅读，以致没有注意到这样基础的问题，这一点以后需要多加注意。这一篇文章就是将蒸馏与联邦学习相结合的一种方法，思路也非常的简单。让我们一起来看一下。 FedAvg首先回顾一下 FedAvg 算法的流程：  在每一轮更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://fengchexz.github.io/posts/”%3Ca">
-<meta property="og:image" content="https://fengchexz.github.io/posts/”%3Ca">
-<meta property="og:image" content="https://fengchexz.github.io/posts/”%3Ca">
 <meta property="og:updated_time" content="2020-09-29T09:48:06.351Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FedMD：Heterogenous Federated Learning via Model Distillation">
 <meta name="twitter:description" content="在做工作总结的时候，老师问我们看了这么多联邦学习和蒸馏的论文，有没有什么自己的想法呢？具体的比如怎么将蒸馏应用到联邦学习中呢？确实，在之前的工作中大部分都是带任务性的 “被动” 的阅读，以致没有注意到这样基础的问题，这一点以后需要多加注意。这一篇文章就是将蒸馏与联邦学习相结合的一种方法，思路也非常的简单。让我们一起来看一下。 FedAvg首先回顾一下 FedAvg 算法的流程：  在每一轮更新">
-<meta name="twitter:image" content="https://fengchexz.github.io/posts/”%3Ca">
 
 
 
@@ -253,7 +267,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -270,7 +284,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -287,7 +301,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -297,7 +311,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -321,7 +352,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -331,7 +362,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -561,7 +592,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">2 分钟</span>
               
@@ -583,7 +614,7 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
+        <meta name="referrer" content="no-referrer">
 
 <p>在做工作总结的时候，老师问我们看了这么多联邦学习和蒸馏的论文，有没有什么自己的想法呢？具体的比如怎么将蒸馏应用到联邦学习中呢？确实，在之前的工作中大部分都是带任务性的 “被动” 的阅读，以致没有注意到这样基础的问题，这一点以后需要多加注意。这一篇文章就是将蒸馏与联邦学习相结合的一种方法，思路也非常的简单。让我们一起来看一下。</p>
 <h2 id="FedAvg"><a href="#FedAvg" class="headerlink" title="FedAvg"></a>FedAvg</h2><p>首先回顾一下 FedAvg 算法的流程：</p>
@@ -595,14 +626,14 @@
 <li>重复步骤 1-4</li>
 </ol>
 <p>我们注意到在 FedAvg 算法中，服务端和客户端之间传递是整个模型的参数，这样，当我的模型很大的时候，需要传递的参数也非常多，需要很大的通信成本。同时这种简单的取参数平均的方法，必须要求服务端以及各个客户端的模型是完全一样的。这在实际的操作中是非常困难的。</p>
-<h2 id="使用蒸馏-amp-迁移学习"><a href="#使用蒸馏-amp-迁移学习" class="headerlink" title="使用蒸馏&迁移学习"></a>使用蒸馏 & 迁移学习</h2><p>在学习了蒸馏相关的知识之后，我们很自然的会想到：对于客户端所学习到的东西，我们可不可以不在局限于模型的参数，而是之前所学习过的软标签、中间层输出 Hint 或者是层与层之间的关系 FSP 矩阵呢？这里我们以软标签为例，对应到联邦学习的话就是，服务端得到了各个客户端的软标签，然后计算了一个加权平均值，并把这个值告诉客户端让他们自己去更新。这个过程的其实存在有一个很大的问题，我们知道在蒸馏当中，为了去拟合学生的输出，有一个必要的前提就是，我的教师和学生所用的数据集必须是一样的。而在联邦学习中，每个客户端的数据集通常是 non-IID 的，也就是说我如果想用软标签来更新，就必须有一个公共的数据集，这个数据集是各个客户端数据集的集合，这样的话，就和联邦学习的初衷相违背了，那么怎么解决这个问题呢？既然我需要一个公共的数据集，这个数据集又不能和本地的数据集一样，那我是不是可以使用一些公开的数据集，比如，ImageNet。这个数据集和我客户端需要处理的图像是完全不一样的。所以，要使用这个数据集，就必须用到迁移学习的方法。知道了这些，我们就可以理解他的整个算法了。</p>
-<div align="center"><img src="”<a" href="http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhesftysj30zt0jyq5d.jpg" ;">" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhesftysj30zt0jyq5d.jpg";"></div>
+<h2 id="使用蒸馏-amp-迁移学习"><a href="#使用蒸馏-amp-迁移学习" class="headerlink" title="使用蒸馏&amp;迁移学习"></a>使用蒸馏 &amp; 迁移学习</h2><p>在学习了蒸馏相关的知识之后，我们很自然的会想到：对于客户端所学习到的东西，我们可不可以不在局限于模型的参数，而是之前所学习过的软标签、中间层输出 Hint 或者是层与层之间的关系 FSP 矩阵呢？这里我们以软标签为例，对应到联邦学习的话就是，服务端得到了各个客户端的软标签，然后计算了一个加权平均值，并把这个值告诉客户端让他们自己去更新。这个过程的其实存在有一个很大的问题，我们知道在蒸馏当中，为了去拟合学生的输出，有一个必要的前提就是，我的教师和学生所用的数据集必须是一样的。而在联邦学习中，每个客户端的数据集通常是 non-IID 的，也就是说我如果想用软标签来更新，就必须有一个公共的数据集，这个数据集是各个客户端数据集的集合，这样的话，就和联邦学习的初衷相违背了，那么怎么解决这个问题呢？既然我需要一个公共的数据集，这个数据集又不能和本地的数据集一样，那我是不是可以使用一些公开的数据集，比如，ImageNet。这个数据集和我客户端需要处理的图像是完全不一样的。所以，要使用这个数据集，就必须用到迁移学习的方法。知道了这些，我们就可以理解他的整个算法了。</p>
+<div align="center">&lt;img src=”<a href="http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhesftysj30zt0jyq5d.jpg&quot;;&quot;>" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhesftysj30zt0jyq5d.jpg";"&gt;</a></div>
 
 <h2 id="FedMD"><a href="#FedMD" class="headerlink" title="FedMD"></a>FedMD</h2><p>下面我们看一下他的整个算法流程。这里客户端我画了不同的形状表示他们可以使用不同的模型。首先需要对客户端做一个初始化，每一个客户端都需要在公共数据集上进行充分的训练到达收敛的状态，然后用迁移学习的方法在自己的私有数据集上进行训练。初始化之后就可以开始联邦学习了，每个客户端需要给出公共数据集属于各个类别的概率，就是软标签，这里为了减少通信量可以选取部分公共数据集。然后服务端对这些软标签做一个平均传回客户端，将这个平均值作为客户端需要学习的知识。客户端需要在公共数据集上去拟合这个平均。然后继续在自己的私有数据集上训练几个 epoch。这样一个过程作为一轮，重复这个过程直到各个客户端的模型达到收敛状态。</p>
-<div align="center"><img src="”<a" href="http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhi0iat3j30z70jw0xs.jpg" ;">" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhi0iat3j30z70jw0xs.jpg";"></div>
+<div align="center">&lt;img src=”<a href="http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhi0iat3j30z70jw0xs.jpg&quot;;&quot;>" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhi0iat3j30z70jw0xs.jpg";"&gt;</a></div>
 
 <h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>最后是实验部分，作者在两种数据集上做了实验，结果差不多，这里以其中一种为例。公共数据集是手写数字 MNIST，客户端私有的数据集是 FEMNIST，这个和手写数字差不多，是手写的字母。每个客户端采用的是 2-4 层的 CNN，他们使用不同的通道数以及 dropout。图中的折线表示的就是用了 FedMD 之后每个客户端达到的测试准确率。左下方的虚线是指不使用联邦学习，客户端只在自己的私有数据以及公有数据集上训练的结果，这也是 baseline。右上角的虚线表示其他的客户端将数据发送给当前客户端，也就是每个客户端拥有全部的数据所能达到的实验结果，这也是我们需要取接近或者超越的目标。可以看到 FedMD 算法达到了比 baseline 更好的性能但是和拥有全部数据集的情况还是有差距。</p>
-<div align="center"><img src="”<a" href="http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhj69rx1j30yu0jntck.jpg" ;">" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhj69rx1j30yu0jntck.jpg";"></div>
+<div align="center">&lt;img src=”<a href="http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhj69rx1j30yu0jntck.jpg&quot;;&quot;>" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/005Sr5tQly1ggvhj69rx1j30yu0jntck.jpg";"&gt;</a></div>
 
 
       
@@ -629,39 +660,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -803,7 +801,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -915,7 +913,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -926,7 +924,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -937,7 +935,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -948,7 +946,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1007,7 +1005,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FedAvg"><span class="nav-number">1.</span> <span class="nav-text">FedAvg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用蒸馏-amp-迁移学习"><span class="nav-number">2.</span> <span class="nav-text">使用蒸馏 & 迁移学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FedMD"><span class="nav-number">3.</span> <span class="nav-text">FedMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">4.</span> <span class="nav-text">实验结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FedAvg"><span class="nav-number">1.</span> <span class="nav-text">FedAvg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用蒸馏-amp-迁移学习"><span class="nav-number">2.</span> <span class="nav-text">使用蒸馏 &amp; 迁移学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FedMD"><span class="nav-number">3.</span> <span class="nav-text">FedMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">4.</span> <span class="nav-text">实验结果</span></a></li></ol></div>
             
 
           </div>
@@ -1035,7 +1033,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1666,13 +1664,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>

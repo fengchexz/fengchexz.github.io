@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -142,7 +160,6 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdkv5et0vj311h080aaa.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdute4vvuj30qv09xgpo.jpg">
-<meta property="og:image" content="https://fengchexz.github.io/posts/”%3Ca">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdv9adgkmj30u50q57au.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdvzk8hacj311d0dj0w8.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-dde91dabff84db3086a4c8b761e46eb6_1440w.jpg">
@@ -259,7 +276,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -276,7 +293,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -293,7 +310,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -303,7 +320,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -327,7 +361,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -337,7 +371,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -567,7 +601,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">11 分钟</span>
               
@@ -589,7 +623,7 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
+        <meta name="referrer" content="no-referrer">
 
 <h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a><a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">GAN</a></h2><h3 id="GAN简介"><a href="#GAN简介" class="headerlink" title="GAN简介"></a>GAN 简介</h3><p>生成式对抗网络 (<a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">Generative adversarial networks,GANs</a>) 的核心思想源自于零和博弈，包括生成器和判别器两个部分。生成器接收随机变量并生成 “假” 样本，判别器则用于判断输入的样本是真实的还是合成的。两者通过相互对抗来获得彼此性能的提升。判别器所作的其实就是一个二分类任务，我们可以计算他的损失并进行反向传播求出梯度，从而进行参数更新。</p>
 <div align="center"><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdkv5et0vj311h080aaa.jpg" style="zoom:60%;"></div>
@@ -601,18 +635,18 @@
 
 <h3 id="用DCGAN生成图像"><a href="#用DCGAN生成图像" class="headerlink" title="用DCGAN生成图像"></a>用 DCGAN 生成图像</h3><p>为了更方便准确的说明 DCGAN 的关键环节，这里用一个简化版的模型实例来说明。代码基于 pytorch 深度学习框架，数据集采用 MNIST</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">from</span> torchvision.utils <span class="keyword">import</span> save_image</span><br><span class="line"><span class="keyword">import</span> os </span><br><span class="line"><span class="comment">#定义一些超参数</span></span><br><span class="line">nc = <span class="number">1</span>    				<span class="comment">#输入图像的通道数</span></span><br><span class="line">nz = <span class="number">100</span>   				<span class="comment">#输入噪声的维度</span></span><br><span class="line">num_epochs = <span class="number">200</span>		<span class="comment">#迭代次数</span></span><br><span class="line">batch_size = <span class="number">64</span>			<span class="comment">#批量大小</span></span><br><span class="line">sample_dir = <span class="string">'gan_samples'</span></span><br><span class="line"><span class="comment"># 结果的保存目录</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(sample_dir):</span><br><span class="line">    os.makedirs(sample_dir)</span><br><span class="line"><span class="comment"># 加载MNIST数据集</span></span><br><span class="line">trans = transforms.Compose([</span><br><span class="line">                transforms.ToTensor(),transforms.Normalize([<span class="number">0.5</span>], [<span class="number">0.5</span>])])</span><br><span class="line">mnist = torchvision.datasets.MNIST(root=<span class="string">r'G:\VsCode\ml\mnist'</span>,</span><br><span class="line">                                   train=<span class="literal">True</span>,</span><br><span class="line">                                   transform=trans,</span><br><span class="line">                                   download=<span class="literal">False</span>)</span><br><span class="line">data_loader = torch.utils.data.DataLoader(dataset=mnist,</span><br><span class="line">                                          batch_size=batch_size, </span><br><span class="line">                                          shuffle=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="判别器-amp-生成器"><a href="#判别器-amp-生成器" class="headerlink" title="判别器&生成器"></a>判别器 & 生成器</h4><p>判别器使用 LeakyReLU 作为激活函数，最后经过 Sigmoid 输出，用于真假二分类<br>生成器使用 ReLU 作为激活函数，最后经过 tanh 将输出映射在 $[-1,1]$ 之间</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建判别器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Discriminator</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_channel=<span class="number">1</span>, num_classes=<span class="number">1</span>)</span>:</span></span><br><span class="line">        super(Discriminator, self).__init__()</span><br><span class="line">        self.conv = nn.Sequential(</span><br><span class="line">            <span class="comment"># 28 -> 14</span></span><br><span class="line">            nn.Conv2d(nc, <span class="number">512</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">512</span>),</span><br><span class="line">            nn.LeakyReLU(<span class="number">0.2</span>),</span><br><span class="line">            <span class="comment"># 14 -> 7</span></span><br><span class="line">            nn.Conv2d(<span class="number">512</span>, <span class="number">256</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">256</span>),</span><br><span class="line">            nn.LeakyReLU(<span class="number">0.2</span>),</span><br><span class="line">            <span class="comment"># 7 -> 4</span></span><br><span class="line">            nn.Conv2d(<span class="number">256</span>, <span class="number">128</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">            nn.LeakyReLU(<span class="number">0.2</span>),</span><br><span class="line">            nn.AvgPool2d(<span class="number">4</span>),</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            <span class="comment"># reshape input, 128 -> 1</span></span><br><span class="line">            nn.Linear(<span class="number">128</span>, <span class="number">1</span>),</span><br><span class="line">            nn.Sigmoid(),</span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, label=None)</span>:</span></span><br><span class="line">        y_ = self.conv(x)</span><br><span class="line">        y_ = y_.view(y_.size(<span class="number">0</span>), <span class="number">-1</span>)</span><br><span class="line">        y_ = self.fc(y_)</span><br><span class="line">        <span class="keyword">return</span> y_</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建生成器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Generator</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(Generator, self).__init__()</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            nn.Linear(nz, <span class="number">4</span>*<span class="number">4</span>*<span class="number">512</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">        )</span><br><span class="line">        self.conv = nn.Sequential(</span><br><span class="line">            <span class="comment"># input: 4 by 4, output: 7 by 7</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">512</span>, <span class="number">256</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">256</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            <span class="comment"># input: 7 by 7, output: 14 by 14</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">256</span>, <span class="number">128</span>, <span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            <span class="comment"># input: 14 by 14, output: 28 by 28</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">128</span>, <span class="number">1</span>, <span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.Tanh(),</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, label=None)</span>:</span></span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), <span class="number">-1</span>)</span><br><span class="line">        y_ = self.fc(x)</span><br><span class="line">        y_ = y_.view(y_.size(<span class="number">0</span>), <span class="number">512</span>, <span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">        y_ = self.conv(y_)</span><br><span class="line">        <span class="keyword">return</span> y_</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="判别器-amp-生成器"><a href="#判别器-amp-生成器" class="headerlink" title="判别器&amp;生成器"></a>判别器 &amp; 生成器</h4><p>判别器使用 LeakyReLU 作为激活函数，最后经过 Sigmoid 输出，用于真假二分类<br>生成器使用 ReLU 作为激活函数，最后经过 tanh 将输出映射在 $[-1,1]$ 之间</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建判别器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Discriminator</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_channel=<span class="number">1</span>, num_classes=<span class="number">1</span>)</span>:</span></span><br><span class="line">        super(Discriminator, self).__init__()</span><br><span class="line">        self.conv = nn.Sequential(</span><br><span class="line">            <span class="comment"># 28 -&gt; 14</span></span><br><span class="line">            nn.Conv2d(nc, <span class="number">512</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">512</span>),</span><br><span class="line">            nn.LeakyReLU(<span class="number">0.2</span>),</span><br><span class="line">            <span class="comment"># 14 -&gt; 7</span></span><br><span class="line">            nn.Conv2d(<span class="number">512</span>, <span class="number">256</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">256</span>),</span><br><span class="line">            nn.LeakyReLU(<span class="number">0.2</span>),</span><br><span class="line">            <span class="comment"># 7 -&gt; 4</span></span><br><span class="line">            nn.Conv2d(<span class="number">256</span>, <span class="number">128</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">            nn.LeakyReLU(<span class="number">0.2</span>),</span><br><span class="line">            nn.AvgPool2d(<span class="number">4</span>),</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            <span class="comment"># reshape input, 128 -&gt; 1</span></span><br><span class="line">            nn.Linear(<span class="number">128</span>, <span class="number">1</span>),</span><br><span class="line">            nn.Sigmoid(),</span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, label=None)</span>:</span></span><br><span class="line">        y_ = self.conv(x)</span><br><span class="line">        y_ = y_.view(y_.size(<span class="number">0</span>), <span class="number">-1</span>)</span><br><span class="line">        y_ = self.fc(y_)</span><br><span class="line">        <span class="keyword">return</span> y_</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建生成器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Generator</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(Generator, self).__init__()</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            nn.Linear(nz, <span class="number">4</span>*<span class="number">4</span>*<span class="number">512</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">        )</span><br><span class="line">        self.conv = nn.Sequential(</span><br><span class="line">            <span class="comment"># input: 4 by 4, output: 7 by 7</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">512</span>, <span class="number">256</span>, <span class="number">3</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">256</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            <span class="comment"># input: 7 by 7, output: 14 by 14</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">256</span>, <span class="number">128</span>, <span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            <span class="comment"># input: 14 by 14, output: 28 by 28</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">128</span>, <span class="number">1</span>, <span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.Tanh(),</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, label=None)</span>:</span></span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), <span class="number">-1</span>)</span><br><span class="line">        y_ = self.fc(x)</span><br><span class="line">        y_ = y_.view(y_.size(<span class="number">0</span>), <span class="number">512</span>, <span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">        y_ = self.conv(y_)</span><br><span class="line">        <span class="keyword">return</span> y_</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用GPU</span></span><br><span class="line">device = torch.device(<span class="string">'cuda'</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">'cpu'</span>)</span><br><span class="line">D = Discriminator().to(device)</span><br><span class="line">G = Generator().to(device)</span><br><span class="line"><span class="comment"># 损失函数及优化器</span></span><br><span class="line">criterion = nn.BCELoss()</span><br><span class="line">D_opt = torch.optim.Adam(D.parameters(), lr=<span class="number">0.001</span>, betas=(<span class="number">0.5</span>, <span class="number">0.999</span>))</span><br><span class="line">G_opt = torch.optim.Adam(G.parameters(), lr=<span class="number">0.001</span>, betas=(<span class="number">0.5</span>, <span class="number">0.999</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">denorm</span><span class="params">(x)</span>:</span></span><br><span class="line">    out = (x + <span class="number">1</span>) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> out.clamp(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reset_grad</span><span class="params">()</span>:</span></span><br><span class="line">    d_optimizer.zero_grad()</span><br><span class="line">    g_optimizer.zero_grad()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(num_epochs):</span><br><span class="line">    <span class="keyword">for</span> i, (images, labels) <span class="keyword">in</span> enumerate(data_loader):</span><br><span class="line">        images = images.to(device)</span><br><span class="line">        real_labels = torch.ones(batch_size, <span class="number">1</span>).to(device)</span><br><span class="line">        fake_labels = torch.zeros(batch_size, <span class="number">1</span>).to(device)</span><br><span class="line">        <span class="comment">#————————————————————训练判别器——————————————————————</span></span><br><span class="line">        <span class="comment">#鉴别真实样本</span></span><br><span class="line">        outputs = D(images)</span><br><span class="line">        d_loss_real = criterion(outputs, real_labels)</span><br><span class="line">        real_score = outputs</span><br><span class="line">        <span class="comment">#鉴别生成样本</span></span><br><span class="line">        z = torch.randn(batch_size, nz).to(device)</span><br><span class="line">        fake_images = G(z)</span><br><span class="line">        outputs = D(fake_images)</span><br><span class="line">        d_loss_fake = criterion(outputs, fake_labels)</span><br><span class="line">        fake_score = outputs        </span><br><span class="line">     	<span class="comment">#计算梯度及更新</span></span><br><span class="line">        d_loss = d_loss_real + d_loss_fake      </span><br><span class="line">        reset_grad()</span><br><span class="line">        d_loss.backward()</span><br><span class="line">        d_optimizer.step()</span><br><span class="line"></span><br><span class="line">        <span class="comment">#————————————————————训练生成器——————————————————————</span></span><br><span class="line">        z = torch.randn(batch_size, nz).to(device)</span><br><span class="line">        fake_images = G(z)</span><br><span class="line">        outputs = D(fake_images)</span><br><span class="line">        g_loss = criterion(outputs, real_labels)</span><br><span class="line">        <span class="comment">#计算梯度及更新</span></span><br><span class="line">        reset_grad()</span><br><span class="line">        g_loss.backward()</span><br><span class="line">        g_optimizer.step()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (i+<span class="number">1</span>) % <span class="number">200</span> == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">'Epoch [{}/{}], Step [{}/{}], d_loss: {:.4f}, g_loss: {:.4f}, D(x): {:.2f}, D(G(z)): {:.2f}'</span> </span><br><span class="line">                  .format(epoch, num_epochs, i+<span class="number">1</span>, total_step, d_loss.item(), g_loss.item(), </span><br><span class="line">                          real_score.mean().item(), fake_score.mean().item()))</span><br><span class="line">    <span class="comment"># 保存生成图片</span></span><br><span class="line">    fake_images = fake_images.reshape(fake_images.size(<span class="number">0</span>), <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">    save_image(denorm(fake_images), os.path.join(sample_dir, <span class="string">'fake_images-{}.png'</span>.format(epoch+<span class="number">1</span>)))</span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">torch.save(G.state_dict(), <span class="string">'G.ckpt'</span>)</span><br><span class="line">torch.save(D.state_dict(), <span class="string">'D.ckpt'</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="可视化结果"><a href="#可视化结果" class="headerlink" title="可视化结果"></a>可视化结果</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reconsPath = <span class="string">'./gan_samples/fake_images-200.png'</span></span><br><span class="line">Image = mpimg.imread(reconsPath)</span><br><span class="line">plt.imshow(Image)</span><br><span class="line">plt.axis(<span class="string">'off'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<div align="center"><img src="”<a" href="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdsfb1ia5j304u07074m.jpg" " target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/006AP6c1ly1ggdsfb1ia5j304u07074m.jpg" ;”/></div>
+<div align="center">&lt;img src=”<a href="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdsfb1ia5j304u07074m.jpg&quot;" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/006AP6c1ly1ggdsfb1ia5j304u07074m.jpg"</a> ;”/&gt;</div>
 
 <h2 id="cGAN"><a href="#cGAN" class="headerlink" title="cGAN"></a><a href="https://arxiv.org/pdf/1411.1784.pdf," target="_blank" rel="noopener">cGAN</a></h2><p>在之前介绍的几种模型中，我们注意到生成器的输入都是一个随机的噪声。可以认为这个高维噪声向量提供了一些关键信息，而生成器根据自己的理解将这些信息进行补充，最终生成需要的图像。生成器生成图片的过程是完全随机的。例如上述的 MNIST 数据集，我们不能控制它生成的是哪一个数字。那么，有没有方法可以对其做一定的限制约束，来让生成器生成我们想要的结果呢？cGAN (<a href="https://arxiv.org/pdf/1411.1784.pdf," target="_blank" rel="noopener">Conditional Generative Adversarial Nets</a>) 通过增一个额外的向量 y 对生成器进行约束。以 MNIST 分类为例，限制信息 y 可以取 10 维的向量，对于类别进行 one-hot 编码，并与噪声进行拼接一起输入生成器。同样的，判别器也将原来的输入和 y 进行拼接。作者通过各种实验证明了这个简单的改进确实可以起到对生成器的约束作用。</p>
 <div align="center"><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdv9adgkmj30u50q57au.jpg" style="zoom:50%;"></div>
 
 
 
-<h3 id="判别器-amp-生成器-1"><a href="#判别器-amp-生成器-1" class="headerlink" title="判别器&生成器"></a>判别器 & 生成器</h3><p>只需要在前向传播的过程中加入限制变量 y，我们很容易就能得到 cGAN 的生成器和判别器模型</p>
+<h3 id="判别器-amp-生成器-1"><a href="#判别器-amp-生成器-1" class="headerlink" title="判别器&amp;生成器"></a>判别器 &amp; 生成器</h3><p>只需要在前向传播的过程中加入限制变量 y，我们很容易就能得到 cGAN 的生成器和判别器模型</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Discriminator</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, label)</span>:</span></span><br><span class="line">        label = label.unsqueeze(<span class="number">2</span>).unsqueeze(<span class="number">3</span>)</span><br><span class="line">        label = label.repeat(<span class="number">1</span>, <span class="number">1</span>, x.size(<span class="number">2</span>), x.size(<span class="number">3</span>))</span><br><span class="line">        x = torch.cat(tensors=(x, label), dim=<span class="number">1</span>)</span><br><span class="line">        y_ = self.conv(x)</span><br><span class="line">        ...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Generator</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, label)</span>:</span></span><br><span class="line">        x = x.unsqueeze(<span class="number">2</span>).unsqueeze(<span class="number">3</span>)</span><br><span class="line">        label = label.unsqueeze(<span class="number">2</span>).unsqueeze(<span class="number">3</span>)</span><br><span class="line">        x = torch.cat(tensors=(x, label), dim=<span class="number">1</span>)</span><br><span class="line">        y_ = self.fc(x)</span><br><span class="line">        ...</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Pix2Pix"><a href="#Pix2Pix" class="headerlink" title="Pix2Pix"></a><a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Isola_Image-To-Image_Translation_With_CVPR_2017_paper.pdf" target="_blank" rel="noopener">Pix2Pix</a></h2><p>在上面的 cGAN 例子中，我们的控制信息取的是想要图像的标签，如果这个控制信息更加的丰富，例如输入一整张图像，那么它能否完成一些更加高级的任务？Pix2Pix (<a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Isola_Image-To-Image_Translation_With_CVPR_2017_paper.pdf" target="_blank" rel="noopener">Image-to-Image Translation with Conditional Adversarial Networks</a>) 将这一类问题归纳为图像到图像的翻译，其使用改进后的 U-net 作为生成器，并设计了新颖的 Patch-D 判别器结构来输出高清的图像。Patch-D 是指，不管网络所使用的输入图像有多大，都将其切割成若干个固定大小的 Patch，判别器只需对这些 Patch 的真假进行判断。因为 L1 损失已经可以衡量生成图像和真实图像的全局差异，所以作者认为判别器只需要用 Patch-D 这样更关注于局部差异的结构即可。同时 Patch-D 的结构使得网络的输入变小，减少了计算量并且增大了框架的扩展性。</p>
 <div align="center"><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdvzk8hacj311d0dj0w8.jpg" style="zoom:50%;"></div>
@@ -623,12 +657,12 @@
 
 
 
-<p>CycleGAN 其实就是一个 X->Y 的单向 GAN 上再加一个 Y->X 的单向 GAN，构成一个 “循环”。网络的结构和单次训练过程如下（图片来自于量子位）：</p>
+<p>CycleGAN 其实就是一个 X-&gt;Y 的单向 GAN 上再加一个 Y-&gt;X 的单向 GAN，构成一个 “循环”。网络的结构和单次训练过程如下（图片来自于量子位）：</p>
 <div align="center"><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdxydkr65j30lz0arwgr.jpg" style="zoom:67%;"></div>
 
 <div align="center"><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1ggdxz453mqj30lx0b2q5a.jpg" style="zoom:67%;"></div>
 
-<p>除了经典的基础 GAN 损失之外，CycleGAN 还引入了 Consistency loss 的概念。循环一致损失使得 X->Y 转变的过程中必须保留有 X 的部分特性。循环损失的公式如下：<br>$$<br>L_{cyc}(G,F)=\mathbb E_{x\sim p_{data}(x)}[|F(G(x))-x|<em>1]+\mathbb E</em>{y\sim p_{data}(y)}[|G(F(x))-y| <em>1]<br>$$<br>两个判别器的损失表示如下：<br>$$<br>\textit{L}</em>{GAN}(G,D_Y,X,Y)=\mathbb E_{y\sim p_{data}(y)}[logD_Y(y)]+\mathbb E_{x\sim p_{data}(x)}[log(1-D_Y(G(x)))]<br>$$</p>
+<p>除了经典的基础 GAN 损失之外，CycleGAN 还引入了 Consistency loss 的概念。循环一致损失使得 X-&gt;Y 转变的过程中必须保留有 X 的部分特性。循环损失的公式如下：<br>$$<br>L_{cyc}(G,F)=\mathbb E_{x\sim p_{data}(x)}[|F(G(x))-x|<em>1]+\mathbb E</em>{y\sim p_{data}(y)}[|G(F(x))-y| <em>1]<br>$$<br>两个判别器的损失表示如下：<br>$$<br>\textit{L}</em>{GAN}(G,D_Y,X,Y)=\mathbb E_{y\sim p_{data}(y)}[logD_Y(y)]+\mathbb E_{x\sim p_{data}(x)}[log(1-D_Y(G(x)))]<br>$$</p>
 <p>$$<br>\textit{L}_{GAN}(F,D_X,Y,X)=\mathbb E_{x\sim p_{data}(x)}[logD_X(x)]+\mathbb E_{y\sim p_{data}(y)}[log(1-D_X(F(y)))]<br>$$</p>
 <p>最后网络的优化目标可以表示为<br>$$<br>\min _{G_{X\rightarrow Y},G_{Y\rightarrow X}}\max_{D_X,D_Y} L(G,F,D_x,D_y)=L_{GAN}(G,D_Y,X,Y)+L_{GAN}(F,D_X,Y,X)+\lambda L_{cyc}(G,F)<br>$$</p>
 <p>Pix2Pix 以及 CycleGAN 的官方复现入口：<a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix" target="_blank" rel="noopener">https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix</a></p>
@@ -735,39 +769,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -907,7 +908,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -1019,7 +1020,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1030,7 +1031,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1041,7 +1042,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1052,7 +1053,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1111,7 +1112,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN"><span class="nav-number">1.</span> <span class="nav-text">GAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN简介"><span class="nav-number">1.1.</span> <span class="nav-text">GAN 简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WGAN"><span class="nav-number">2.</span> <span class="nav-text">WGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCGAN"><span class="nav-number">3.</span> <span class="nav-text">DCGAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用DCGAN生成图像"><span class="nav-number">3.1.</span> <span class="nav-text">用 DCGAN 生成图像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判别器-amp-生成器"><span class="nav-number">3.1.1.</span> <span class="nav-text">判别器 & 生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#训练模型"><span class="nav-number">3.1.2.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可视化结果"><span class="nav-number">3.1.3.</span> <span class="nav-text">可视化结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cGAN"><span class="nav-number">4.</span> <span class="nav-text">cGAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判别器-amp-生成器-1"><span class="nav-number">4.1.</span> <span class="nav-text">判别器 & 生成器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pix2Pix"><span class="nav-number">5.</span> <span class="nav-text">Pix2Pix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CycleGAN"><span class="nav-number">6.</span> <span class="nav-text">CycleGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StarGAN"><span class="nav-number">7.</span> <span class="nav-text">StarGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">9.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN"><span class="nav-number">1.</span> <span class="nav-text">GAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN简介"><span class="nav-number">1.1.</span> <span class="nav-text">GAN 简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WGAN"><span class="nav-number">2.</span> <span class="nav-text">WGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCGAN"><span class="nav-number">3.</span> <span class="nav-text">DCGAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用DCGAN生成图像"><span class="nav-number">3.1.</span> <span class="nav-text">用 DCGAN 生成图像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判别器-amp-生成器"><span class="nav-number">3.1.1.</span> <span class="nav-text">判别器 &amp; 生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#训练模型"><span class="nav-number">3.1.2.</span> <span class="nav-text">训练模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可视化结果"><span class="nav-number">3.1.3.</span> <span class="nav-text">可视化结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cGAN"><span class="nav-number">4.</span> <span class="nav-text">cGAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判别器-amp-生成器-1"><span class="nav-number">4.1.</span> <span class="nav-text">判别器 &amp; 生成器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pix2Pix"><span class="nav-number">5.</span> <span class="nav-text">Pix2Pix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CycleGAN"><span class="nav-number">6.</span> <span class="nav-text">CycleGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StarGAN"><span class="nav-number">7.</span> <span class="nav-text">StarGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">9.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -1139,7 +1140,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1770,13 +1771,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>

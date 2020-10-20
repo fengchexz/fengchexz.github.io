@@ -1,4 +1,22 @@
-<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0">
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -133,7 +151,7 @@
 
 
   <meta name="description" content="Given a non-empty tree with root R, and with weight W~i~ assigned to each tree node T~i~. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from">
-<meta name="keywords" content="c/c++,algorithm,PAT">
+<meta name="keywords" content="c&#x2F;c++,algorithm,PAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1053 Path of Equal Weight">
 <meta property="og:url" content="https://fengchexz.github.io/posts/56693.html">
@@ -251,7 +269,7 @@
         
         
           
-          <li class="menu-item menu-item-home">
+          <li class="menu-item menu-item-首页">
 
     
     
@@ -268,7 +286,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-分类">
 
     
     
@@ -285,7 +303,7 @@
         
         
           
-          <li class="menu-item menu-item-阅读">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -295,7 +313,24 @@
 
     
 
-    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>阅读</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间轴</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-书单">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/books/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>书单</a>
 
   </li>
         
@@ -319,7 +354,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-友链">
 
     
     
@@ -329,7 +364,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-link"></i> <br>友链</a>
 
   </li>
         
@@ -559,7 +594,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">3 分钟</span>
               
@@ -581,19 +616,19 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><p>Given a non-empty tree with root <em>R</em>, and with weight <em>W~i~</em> assigned to each tree node <em>T~i~</em>. <strong>The weight of a path from R to L</strong> is defined to be the sum of the weights of all the nodes along the path from <em>R</em> to any leaf node <em>L</em>.</p>
+        <p>Given a non-empty tree with root <em>R</em>, and with weight <em>W~i~</em> assigned to each tree node <em>T~i~</em>. <strong>The weight of a path from R to L</strong> is defined to be the sum of the weights of all the nodes along the path from <em>R</em> to any leaf node <em>L</em>.</p>
 <p>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.<br><img src="https://images.ptausercontent.com/212" alt></p>
-<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case starts with a line containing 0<<em>N</em>≤100, the number of nodes in a tree, <em>M</em> (<<em>N</em>), the number of non-leaf nodes, and 0<<em>S</em><2^30^, the given weight number. next line contains <em>N positive numbers where <em>W~i~</em> (<1000) corresponds to the tree node <em>T~i~. Then <em>M</em> lines follow, each in the format:<!--1000)--><!--2^30^,--></em></em></p><em><em>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case starts with a line containing 0&lt;<em>N</em>≤100, the number of nodes in a tree, <em>M</em> (&lt;<em>N</em>), the number of non-leaf nodes, and 0&lt;<em>S</em>&lt;2^30^, the given weight number. The next line contains <em>N</em> positive numbers where <em>W~i~</em> (&lt;1000) corresponds to the tree node <em>T~i~</em>. Then <em>M</em> lines follow, each in the format:</p>
 <figure class="highlight md"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID K ID[1] ID[2] ... ID[K]</span><br></pre></td></tr></tbody></table></figure>
 <p>where <code>ID</code> is a two-digit number representing a given non-leaf node, <code>K</code> is the number of its children, followed by a sequence of two-digit <code>ID</code>‘s of its children. For the sake of simplicity, let us fix the root ID to be <code>00</code>.</p>
 <h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print all the paths with weight S in <strong>non-increasing</strong> order. Each path occupies a line with printed weights from the root to the leaf in order. All the numbers must be separated by a space with no extra space at the end of the line.</p>
-<p>Note: sequence {<em>A~1~</em>,<em>A~2~</em>,⋯,<em>A~n~</em>} is said to be <strong>greater than</strong> sequence {<em>B~1~</em>,<em>B~2~</em>,⋯,<em>B~m~</em>} if there exists 1≤<em>k</em><<em>m<strong>i</strong>n</em>{<em>n</em>,<em>m</em>} such that <em>A~i~</em>=<em>B~i~</em> for <em>i</em>=1,⋯,<em>k</em>, and <em>A~k+1~</em>><em>B~k+1~</em>.</p>
+<p>Note: sequence {<em>A~1~</em>,<em>A~2~</em>,⋯,<em>A~n~</em>} is said to be <strong>greater than</strong> sequence {<em>B~1~</em>,<em>B~2~</em>,⋯,<em>B~m~</em>} if there exists 1≤<em>k</em>&lt;<em>m<strong>i</strong>n</em>{<em>n</em>,<em>m</em>} such that <em>A~i~</em>=<em>B~i~</em> for <em>i</em>=1,⋯,<em>k</em>, and <em>A~k+1~</em>&gt;<em>B~k+1~</em>.</p>
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">20 9 24</span><br><span class="line">10 2 4 3 5 10 2 18 9 7 2 2 1 3 12 1 8 6 2 2</span><br><span class="line">00 4 01 02 03 04</span><br><span class="line">02 1 05</span><br><span class="line">04 2 06 07</span><br><span class="line">03 3 11 12 13</span><br><span class="line">06 1 09</span><br><span class="line">07 2 08 10</span><br><span class="line">16 1 15</span><br><span class="line">13 3 14 16 17</span><br><span class="line">17 2 18 19</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><figure class="highlight tex"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10 5 2 7</span><br><span class="line">10 4 10</span><br><span class="line">10 3 3 6 2</span><br><span class="line">10 3 3 6 2</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="浅析"><a href="#浅析" class="headerlink" title="浅析"></a>浅析</h2><p>Q：找出从根节点到叶子结点权值和等于给定值的所有路径，并从大到小输出。</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><cstdio></cstdio></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><vector></vector></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><algorithm></algorithm></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">110</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>{</span></span><br><span class="line">    <span class="keyword">int</span> weight;</span><br><span class="line">    <span class="built_in">vector</span><<span class="keyword">int</span>> child;</span><br><span class="line">} TNode[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> TNode[a].weight > TNode[b].weight;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">int</span> n, m, weight;    <span class="comment">//起始输入的结点树，非叶子节点数，目标值</span></span><br><span class="line"><span class="keyword">int</span> path[maxn];</span><br><span class="line"><span class="comment">/*尝试用vector来构建path，但是个人能力局限，不能很好的进行</span></span><br><span class="line"><span class="comment">push_back操作，有想法的可以自己改着试试*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> index,<span class="keyword">int</span> num_node,<span class="keyword">int</span> sum)</span></span>{</span><br><span class="line">    <span class="keyword">if</span>(sum>weight)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(sum == weight){</span><br><span class="line">        <span class="keyword">if</span>(TNode[index].child.size()!=<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < num_node; i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,TNode[path[i]].weight);</span><br><span class="line">            <span class="keyword">if</span>(i<num_node<span class="number">-1</num_node<span></span>)<br><span class="line">                <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < TNode[index].child.size();i++){</span><br><span class="line">        <span class="keyword">int</span> child = TNode[index].child[i];</span><br><span class="line">        path[num_node] = child;</span><br><span class="line">        DFS(child, num_node+<span class="number">1</span>,sum + TNode[child].weight);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &n, &m, &weight);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < n;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &TNode[i].weight);</span><br><span class="line">    <span class="keyword">int</span> father,k, child;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < m;i++){</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&father,&k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j < k;j++){</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &child);</span><br><span class="line">            TNode[father].child.push_back(child);</span><br><span class="line">        }</span><br><span class="line">        sort(TNode[father].child.begin(), TNode[father].child.end(), cmp);</span><br><span class="line">    }</span><br><span class="line">    path[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    DFS(<span class="number">0</span>, <span class="number">1</span>, TNode[<span class="number">0</span>].weight);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">110</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>{</span></span><br><span class="line">    <span class="keyword">int</span> weight;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; child;</span><br><span class="line">} TNode[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> TNode[a].weight &gt; TNode[b].weight;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">int</span> n, m, weight;    <span class="comment">//起始输入的结点树，非叶子节点数，目标值</span></span><br><span class="line"><span class="keyword">int</span> path[maxn];</span><br><span class="line"><span class="comment">/*尝试用vector来构建path，但是个人能力局限，不能很好的进行</span></span><br><span class="line"><span class="comment">push_back操作，有想法的可以自己改着试试*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> index,<span class="keyword">int</span> num_node,<span class="keyword">int</span> sum)</span></span>{</span><br><span class="line">    <span class="keyword">if</span>(sum&gt;weight)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(sum == weight){</span><br><span class="line">        <span class="keyword">if</span>(TNode[index].child.size()!=<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num_node; i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,TNode[path[i]].weight);</span><br><span class="line">            <span class="keyword">if</span>(i&lt;num_node<span class="number">-1</span>)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; TNode[index].child.size();i++){</span><br><span class="line">        <span class="keyword">int</span> child = TNode[index].child[i];</span><br><span class="line">        path[num_node] = child;</span><br><span class="line">        DFS(child, num_node+<span class="number">1</span>,sum + TNode[child].weight);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;n, &amp;m, &amp;weight);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;TNode[i].weight);</span><br><span class="line">    <span class="keyword">int</span> father,k, child;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m;i++){</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;father,&amp;k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k;j++){</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;child);</span><br><span class="line">            TNode[father].child.push_back(child);</span><br><span class="line">        }</span><br><span class="line">        sort(TNode[father].child.begin(), TNode[father].child.end(), cmp);</span><br><span class="line">    }</span><br><span class="line">    path[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    DFS(<span class="number">0</span>, <span class="number">1</span>, TNode[<span class="number">0</span>].weight);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
       
-    </em></em></div><em><em>
+    </div>
 
     
       
@@ -616,39 +651,6 @@
     
       
     
-    
-      <div>
-        <div id="reward-container">
-  <div>Thank you for your accept. mua！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/wechatpay.png" alt="丨fengche丨 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-      
-      
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/reward/alipay.png" alt="丨fengche丨 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -728,24 +730,24 @@
       
       
     </footer>
-  </em></em></div><em><em>
+  </div>
   
   
   
-  </em></em></article><em><em>
+  </article>
 
 
-  </em></em></div><em><em>
+  </div>
 
 
-          </em></em></div><em><em>
+          </div>
           
 
   
 
 
 
-        </em></em></div><em><em>
+        </div>
         
           
   
@@ -788,7 +790,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
@@ -900,7 +902,7 @@
                   
                     
                   
-                  <a href="https://github.com/fengchexz" title="GitHub → https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/fengchexz" title="GitHub &rarr; https://github.com/fengchexz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -911,7 +913,7 @@
                   
                     
                   
-                  <a href="mailto:1070531125@qq.com" title="E-Mail → mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:1070531125@qq.com" title="E-Mail &rarr; mailto:1070531125@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -922,7 +924,7 @@
                   
                     
                   
-                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ → http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  <a href="http://tool.gljlw.com/qq/?qq=1070531125" title="QQ &rarr; http://tool.gljlw.com/qq/?qq=1070531125" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -933,7 +935,7 @@
                   
                     
                   
-                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN → https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+                  <a href="https://me.csdn.net/weixin_41152041" title="CSDN &rarr; https://me.csdn.net/weixin_41152041" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
                 </span>
               
             </div>
@@ -1015,12 +1017,12 @@
 
 
         
-      </em></em></div><em><em>
-    </em></em></main><em><em>
+      </div>
+    </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" style=" text-align:center;">© 2019 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright" style=" text-align:center;">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1109,7 +1111,7 @@
     
 
     
-  </em></em></div><em><em>
+  </div>
 
   
 
@@ -1651,13 +1653,13 @@
 <!-- 看板娘 -->
 <script src="/live2d/autoload.js"></script>
 
-
-
-
+</body>
+</html>
+<!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/fireworks.js"></script>
 <!-- 页面点击烟花 -->
 <script type="text/javascript" src="/js/src/clicklove.js"></script>
 <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
 <!--彩色星星跟随-->
-<script src="/js/src/cursor.js"></script></em></em><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html><!-- 页面点击烟花 -->
+<script src="/js/src/cursor.js"></script>
