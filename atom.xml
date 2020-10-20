@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fengchexz.github.io/"/>
-  <updated>2020-10-01T07:25:20.985Z</updated>
+  <updated>2020-10-20T06:52:28.382Z</updated>
   <id>https://fengchexz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://fengchexz.github.io/posts/34070.html"/>
     <id>https://fengchexz.github.io/posts/34070.html</id>
     <published>2020-09-29T05:47:00.000Z</published>
-    <updated>2020-10-01T07:25:20.985Z</updated>
+    <updated>2020-10-20T06:52:28.382Z</updated>
     
     <summary type="html">
     
@@ -37,7 +37,9 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%92%B8%E9%A6%8F/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
@@ -81,7 +83,7 @@
     <link href="https://fengchexz.github.io/posts/10868.html"/>
     <id>https://fengchexz.github.io/posts/10868.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-09-29T09:45:30.277Z</updated>
+    <updated>2020-10-20T06:53:17.876Z</updated>
     
     <summary type="html">
     
@@ -97,7 +99,7 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
@@ -111,7 +113,7 @@
     <link href="https://fengchexz.github.io/posts/8586.html"/>
     <id>https://fengchexz.github.io/posts/8586.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-09-29T09:45:23.351Z</updated>
+    <updated>2020-10-20T06:53:10.943Z</updated>
     
     <summary type="html">
     
@@ -127,7 +129,7 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
@@ -141,7 +143,7 @@
     <link href="https://fengchexz.github.io/posts/22725.html"/>
     <id>https://fengchexz.github.io/posts/22725.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-09-29T09:45:16.824Z</updated>
+    <updated>2020-10-20T06:53:24.405Z</updated>
     
     <summary type="html">
     
@@ -157,7 +159,7 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
@@ -171,7 +173,7 @@
     <link href="https://fengchexz.github.io/posts/50926.html"/>
     <id>https://fengchexz.github.io/posts/50926.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-09-29T09:45:10.473Z</updated>
+    <updated>2020-10-20T06:52:13.027Z</updated>
     
     <summary type="html">
     
@@ -187,7 +189,7 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
@@ -233,7 +235,7 @@
     <link href="https://fengchexz.github.io/posts/6875.html"/>
     <id>https://fengchexz.github.io/posts/6875.html</id>
     <published>2020-07-31T12:25:00.000Z</published>
-    <updated>2020-09-29T09:47:52.839Z</updated>
+    <updated>2020-10-20T06:54:46.005Z</updated>
     
     <summary type="html">
     
@@ -249,7 +251,7 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
@@ -267,7 +269,7 @@
     <link href="https://fengchexz.github.io/posts/30669.html"/>
     <id>https://fengchexz.github.io/posts/30669.html</id>
     <published>2020-07-22T08:27:00.000Z</published>
-    <updated>2020-09-29T09:47:59.503Z</updated>
+    <updated>2020-10-20T06:52:42.298Z</updated>
     
     <summary type="html">
     
@@ -283,7 +285,9 @@
     
     </summary>
     
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%92%B8%E9%A6%8F/"/>
     
     
       <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
