@@ -962,36 +962,6 @@
 
 
   
-  
-
-<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
-
-
-
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-<script>
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail';
-  guest = guest.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'Rfpr9aX9NFH9iEH80ewYCf1f-gzGzoHsz# your leancloud application appid',
-    appKey: 'jlFtaRKh72gntsOCc8WwOHvs# your leancloud application appkey',
-    placeholder: 'ヾﾉ≧∀≦)o 来呀！快活呀！~',
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: '' || 'zh-cn'
-  });
-</script>
-
-
 
 
 
