@@ -44,9 +44,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
-    
       <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
     
   </entry>
   
@@ -107,6 +107,36 @@
   </entry>
   
   <entry>
+    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
+    <link href="https://fengchexz.github.io/posts/22725.html"/>
+    <id>https://fengchexz.github.io/posts/22725.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-09-29T09:45:16.824Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
     <link href="https://fengchexz.github.io/posts/10868.html"/>
     <id>https://fengchexz.github.io/posts/10868.html</id>
@@ -152,36 +182,6 @@
           &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
 &lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="uncategorized" scheme="https://fengchexz.github.io/categories/uncategorized/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
-    <link href="https://fengchexz.github.io/posts/22725.html"/>
-    <id>https://fengchexz.github.io/posts/22725.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-09-29T09:45:16.824Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
         
       
     
@@ -290,9 +290,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
-    
       <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
     
   </entry>
   
@@ -355,9 +355,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
       <category term="联邦学习" scheme="https://fengchexz.github.io/tags/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
@@ -392,9 +392,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
-    
       <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
     
   </entry>
   
@@ -460,9 +460,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
-    
       <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
     
   </entry>
   
@@ -496,9 +496,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
-    
       <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
     
   </entry>
   
@@ -532,9 +532,9 @@
     
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
-    
       <category term="论文" scheme="https://fengchexz.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+      <category term="蒸馏" scheme="https://fengchexz.github.io/tags/%E8%92%B8%E9%A6%8F/"/>
     
   </entry>
   
