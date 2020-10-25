@@ -79,11 +79,11 @@
   </entry>
   
   <entry>
-    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
-    <link href="https://fengchexz.github.io/posts/10868.html"/>
-    <id>https://fengchexz.github.io/posts/10868.html</id>
+    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
+    <link href="https://fengchexz.github.io/posts/22725.html"/>
+    <id>https://fengchexz.github.io/posts/22725.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-25T02:14:26.303Z</updated>
+    <updated>2020-10-20T06:53:24.405Z</updated>
     
     <summary type="html">
     
@@ -93,7 +93,7 @@
         
           &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
         
       
     
@@ -139,11 +139,11 @@
   </entry>
   
   <entry>
-    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
-    <link href="https://fengchexz.github.io/posts/22725.html"/>
-    <id>https://fengchexz.github.io/posts/22725.html</id>
+    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
+    <link href="https://fengchexz.github.io/posts/10868.html"/>
+    <id>https://fengchexz.github.io/posts/10868.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:53:24.405Z</updated>
+    <updated>2020-10-25T02:14:26.303Z</updated>
     
     <summary type="html">
     
@@ -153,7 +153,7 @@
         
           &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
         
       
     
