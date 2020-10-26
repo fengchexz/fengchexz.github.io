@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fengchexz.github.io/"/>
-  <updated>2020-10-25T02:14:41.901Z</updated>
+  <updated>2020-10-26T13:55:03.992Z</updated>
   <id>https://fengchexz.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 5 - 词向量</title>
+    <link href="https://fengchexz.github.io/posts/28779.html"/>
+    <id>https://fengchexz.github.io/posts/28779.html</id>
+    <published>2020-10-26T13:53:00.000Z</published>
+    <updated>2020-10-26T13:55:03.992Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？&lt;/p&gt;
+&lt;p&gt;一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>MO 论文分享：Data-free Learning of Student Networks</title>
@@ -79,11 +108,11 @@
   </entry>
   
   <entry>
-    <title>李宏毅深度学习笔记 4-Unsupervised Learning</title>
-    <link href="https://fengchexz.github.io/posts/50926.html"/>
-    <id>https://fengchexz.github.io/posts/50926.html</id>
+    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
+    <link href="https://fengchexz.github.io/posts/10868.html"/>
+    <id>https://fengchexz.github.io/posts/10868.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:52:13.027Z</updated>
+    <updated>2020-10-26T11:29:21.883Z</updated>
     
     <summary type="html">
     
@@ -93,37 +122,7 @@
         
           &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
-    <link href="https://fengchexz.github.io/posts/22725.html"/>
-    <id>https://fengchexz.github.io/posts/22725.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:53:24.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
         
       
     
@@ -169,11 +168,11 @@
   </entry>
   
   <entry>
-    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
-    <link href="https://fengchexz.github.io/posts/10868.html"/>
-    <id>https://fengchexz.github.io/posts/10868.html</id>
+    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
+    <link href="https://fengchexz.github.io/posts/22725.html"/>
+    <id>https://fengchexz.github.io/posts/22725.html</id>
     <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-25T02:14:26.303Z</updated>
+    <updated>2020-10-20T06:53:24.405Z</updated>
     
     <summary type="html">
     
@@ -183,7 +182,37 @@
         
           &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 4-Unsupervised Learning</title>
+    <link href="https://fengchexz.github.io/posts/50926.html"/>
+    <id>https://fengchexz.github.io/posts/50926.html</id>
+    <published>2020-09-20T08:11:00.000Z</published>
+    <updated>2020-10-20T06:52:13.027Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
         
       
     
@@ -619,38 +648,6 @@
         
         
           &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color
-        
-      
-    
-    </summary>
-    
-      <category term="algorithm" scheme="https://fengchexz.github.io/categories/algorithm/"/>
-    
-      <category term="PAT" scheme="https://fengchexz.github.io/categories/algorithm/PAT/"/>
-    
-    
-      <category term="c/c++" scheme="https://fengchexz.github.io/tags/c-c/"/>
-    
-      <category term="algorithm" scheme="https://fengchexz.github.io/tags/algorithm/"/>
-    
-      <category term="PAT" scheme="https://fengchexz.github.io/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1019 General Palindromic Number</title>
-    <link href="https://fengchexz.github.io/posts/12312.html"/>
-    <id>https://fengchexz.github.io/posts/12312.html</id>
-    <published>2020-01-30T07:31:00.000Z</published>
-    <updated>2020-01-30T07:47:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;A number that will be the same when it is written forwards or backwards is known as a &lt;strong&gt;Palindromic
         
       
     

@@ -133,16 +133,22 @@
 
 
 
-  <meta name="description" content="风过轻轻，侧耳倾听。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="风车小站">
-<meta property="og:url" content="https://fengchexz.github.io/archives/2020/page/4/index.html">
+  <meta name="description" content="我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？ 一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2 表示宝马。这种序号表示会隐含的加入一些模糊的信息，比如 2-1=1 是否就代表宝马 - 奔驰 = 奔驰呢？或者 2&gt;1 是否表示宝马比奔驰要好呢？显然，我们希望这两者是一个并列的关系，而表示两者不相关的一个很好的方">
+<meta name="keywords" content="机器学习,深度学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李宏毅深度学习笔记 5 - 词向量">
+<meta property="og:url" content="https://fengchexz.github.io/posts/28779.html">
 <meta property="og:site_name" content="风车小站">
-<meta property="og:description" content="风过轻轻，侧耳倾听。">
+<meta property="og:description" content="我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？ 一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2 表示宝马。这种序号表示会隐含的加入一些模糊的信息，比如 2-1=1 是否就代表宝马 - 奔驰 = 奔驰呢？或者 2&gt;1 是否表示宝马比奔驰要好呢？显然，我们希望这两者是一个并列的关系，而表示两者不相关的一个很好的方">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/26/BKloX4.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/26/BKY6nU.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/26/BKY1pt.jpg">
+<meta property="og:updated_time" content="2020-10-26T13:55:03.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风车小站">
-<meta name="twitter:description" content="风过轻轻，侧耳倾听。">
+<meta name="twitter:title" content="李宏毅深度学习笔记 5 - 词向量">
+<meta name="twitter:description" content="我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？ 一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2 表示宝马。这种序号表示会隐含的加入一些模糊的信息，比如 2-1=1 是否就代表宝马 - 奔驰 = 奔驰呢？或者 2&gt;1 是否表示宝马比奔驰要好呢？显然，我们希望这两者是一个并列的关系，而表示两者不相关的一个很好的方">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/10/26/BKloX4.jpg">
 
 
 
@@ -152,7 +158,7 @@
 
   
   
-  <link rel="canonical" href="https://fengchexz.github.io/archives/2020/page/4/">
+  <link rel="canonical" href="https://fengchexz.github.io/posts/28779">
 
 
 
@@ -162,7 +168,7 @@
   };
 </script>
 
-  <title>归档 | 风车小站</title>
+  <title>李宏毅深度学习笔记 5 - 词向量 | 风车小站</title>
   
 
 
@@ -210,7 +216,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,7 +288,7 @@
         
         
           
-          <li class="menu-item menu-item-时间轴 menu-item-active">
+          <li class="menu-item menu-item-时间轴">
 
     
     
@@ -380,34 +386,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -453,326 +431,309 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fengchexz.github.io/posts/28779.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨fengche丨">
+      <meta itemprop="description" content="风过轻轻，侧耳倾听。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风车小站">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 5 - 词向量
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-26 21:53:00 / 修改时间：21:55:03" itemprop="dateCreated datePublished" datetime="2020-10-26T21:53:00+08:00">2020-10-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        不错! 目前共计 62 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/8248.html" itemprop="url">
+          
             
-              <span itemprop="name">1042 Shuffling Machine</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-30T14:21:00+08:00" content="2020-01-30">
-          01-30
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
+            <div class="post-symbolscount">
+              
 
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/22100.html" itemprop="url">
-            
-              <span itemprop="name">1142 Maximal Clique</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-29T17:21:00+08:00" content="2020-01-29">
-          01-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/2806.html" itemprop="url">
-            
-              <span itemprop="name">1144 The Missing Number</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-29T13:48:00+08:00" content="2020-01-29">
-          01-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <meta name="generator" content="Hexo 3.9.0"><p>我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？</p>
+<p>一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2 表示宝马。这种序号表示会隐含的加入一些模糊的信息，比如 2-1=1 是否就代表宝马 - 奔驰 = 奔驰呢？或者 2>1 是否表示宝马比奔驰要好呢？显然，我们希望这两者是一个并列的关系，而表示两者不相关的一个很好的方法就是使用正交向量，这就是 one-hot 形式。两个单词的 one-hot 形式表示如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">词语</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">奔驰</td>
+<td style="text-align:center"> 0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"> 宝马</td>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>使用 one-hot 形式的向量就已经可以提取出一些文本特征，比如简单的相加就可以获得每个单词出现的次数。<br>直接把 one-hot 形式的词表示输入神经网络是否可行呢？答案是否定的。one-hot 的正交形式走向了另一个极端，某些词之间确实是存在有某种联系的。例如 “喜欢” 和 “爱” 虽然是两个不同层面的词，但确实都表达了某种正向的情感，我们希望他们的向量表示可以和类似于” 讨厌 “一类的词尽可能的远一点。这种单词间的远近，我们可以使用两个向量点积的形式来表示 ——a^T^b，而在 one-hot 形势下，我们很容易的得到任意两个单词间的距离都为 0。此外，这样的表示方法需要我们预先知道所有需要表示的单词总数，光是新华词典的单字已经够多了，他们所能组合成的词更是另一个量级，这样就会导致每一个词都需要用一个很长很长的向量来表示，这样不仅带来了庞大的计算量，也不利于越来越多新词的出现。</p>
+<p>于是，word2vec（word to vector) 的方法就应运而生了！这种方法的思路也很简单：既然原来的 one-hot 太大了，我们就用一个更低维度的向量来表示这个单词；既然 one-hot 正交的过于绝对了，我们就改变每个维度的值来更好的表示这个词。当然，降维也不是说降就降的，我们需要给模型提供更多的信息。大家应该都做过英语的完形填空，给定背景和上下文，即使中间挖掉了一个词，我们也可以推理出这个词或者其他相近的词，这也是我们需要额外给模型提供的信息 —— 上下文。怎么表示上下文呢？我们可以用当前单词的前几个词或者后几个词来作为他的上下文信息，这里的” 几个 “就是滑动窗口的大小。有了上下文后，我们只要把他丢入一个简单的，只有一层隐藏层的神经网络，以上下文为输入，预测的单词为输出，不断的去训练，最后取出中间的隐藏层，就可以得到单词的词向量啦！<br><a href="https://imgchr.com/i/BKloX4" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/26/BKloX4.jpg" alt="BKloX4.jpg"></a></p>
+<p> 让我们来拆解一下这个训练过程。首先我们拥有的数据是各个不同单词的 one-hot 的向量，我们希望网络可以输出一个更低维度的向量来表示某个单词。我们所选取的网络，是一个只拥有一个中间层的全连接网络，这个中间层神经元的个数，就代表了我想要的词向量的维度。为了利用上下文的信息，在输入层会有 n 个单词，怎么输入网络呢？有一种方法是把这些向量拼成一个长长的列向量，但实际上，我们会把这些词向量相同位置所对应的中间层相同的位置所用的权重是一样的。可以设想一下如果每一个位置的权重都不一样，那么同一个词放到不同的位置，他得到的结果就是不同的（这里我们不需要考虑序列先后的问题），而且，采用权重相同的方法可以大大的降低参数量（类似于卷积操作）。在这种情况下，每个单词的 W 相同，所以中间层的输出 z 可以通过 $W (x_{i-2}+x_{i-1}+・・・x_0)$ 得到。</p>
+<blockquote>
+<p>拓展知识 1：上下文的其他表示</p>
+<p>在上面的例子中，其实只用了当前词的前面几个词来预测。除此之外，我们还可以使用前后的几个词来预测当前此（CBOW）或者是用当前词来预测前后的其他词（Skip-gram）</p>
+<p><a href="https://imgchr.com/i/BKY6nU" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/26/BKY6nU.jpg" alt="BKY6nU.jpg"></a></p>
+</blockquote>
+<blockquote>
+<p>拓展知识 2：如何控制两个 weight 在训练过程中一样？</p>
+<p>上述的方法因为对输入的所有权重值都是一样的，所以问题得到了简化。但在实际操作中，可能会存在希望两个输入的某几个 weight 相同的情况。方法其实很简单，只需要将他们的初始值设为一样，并在权重更新的时候同时减去两者计算得到的梯度。</p>
+<p><a href="https://imgchr.com/i/BKY1pt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/26/BKY1pt.jpg" alt="BKY1pt.jpg"></a></p>
+</blockquote>
+<p>当然还有很多有意思的事情可以做，关于多语言嵌入、多域嵌入、文档嵌入等内容的更多介绍请参照李宏毅老师的课程 <a href="https://www.bilibili.com/video/BV1JE411g7XF?p=22" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1JE411g7XF?p=22</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/63733.html" itemprop="url">
-            
-              <span itemprop="name">1146 Topological Order</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-29T13:34:00+08:00" content="2020-01-29">
-          01-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/54912.html" itemprop="url">
-            
-              <span itemprop="name">1147 Heaps</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-29T12:27:00+08:00" content="2020-01-29">
-          01-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/57351.html" itemprop="url">
-            
-              <span itemprop="name">1037 Magic Coupon</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-22T22:08:00+08:00" content="2020-01-22">
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/40635.html" itemprop="url">
-            
-              <span itemprop="name">1041 Be Unique</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-22T21:38:00+08:00" content="2020-01-22">
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/56964.html" itemprop="url">
-            
-              <span itemprop="name">1015 Reversible Primes</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-22T21:26:00+08:00" content="2020-01-22">
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/images/wechat.png" alt="丨fengche丨 wechat" style="width: 200px; max-width: 100%;">
+  <div>来找我聊天吧~</div>
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>fengche</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://fengchexz.github.io/posts/28779.html" title="李宏毅深度学习笔记 5 - 词向量">https://fengchexz.github.io/posts/28779.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/34070.html" rel="next" title="MO 论文分享：Data-free Learning of Student Networks">
+                <i class="fa fa-chevron-left"></i> MO 论文分享：Data-free Learning of Student Networks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2020/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2020/">1</a><span class="space">…</span><a class="page-number" href="/archives/2020/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2020/page/5/">5</a><span class="space">…</span><a class="page-number" href="/archives/2020/page/8/">8</a><a class="extend next" rel="next" href="/archives/2020/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1195,6 +1156,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -1213,31 +1178,14 @@
   
 
   
-    
-      
-    
   
-  
-  
-    <script src="/lib/quicklink/quicklink.umd.js"></script>
-    <script>
-      
-        window.addEventListener('load', () => {
-      
-        quicklink({
-          timeout: 3000,
-          priority: true,
-          ignores: [uri => uri.includes('#'),uri => uri == 'https://fengchexz.github.io/archives/2020/page/4/',]
-        });
-      
-        });
-      
-    </script>
   
 
 
   
 
+
+  
 
 
   
@@ -1648,7 +1596,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 
