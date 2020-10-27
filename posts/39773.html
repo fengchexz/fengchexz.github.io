@@ -133,22 +133,27 @@
 
 
 
-  <meta name="description" content="ClusteringK 均值聚类 (K-means)随机的选取 k 个点作为 cluster 的 center，计算其他点与各个 center 的距离，将其归类为最近的一个 cluster 层次聚类 (Hierarchical Agglomerative Clusteing、HAC) 类似于归并。首先我们需要将现有的数据构造一个树结构。这个树的构造过程如下：  数据点间两两组成一个 pair">
+  <meta name="description" content="为什么需要 RNN？RNN 处理的对象是时序的数据，这些时序的数据前后之间是存在有某种联系的（例如我们可以根据前后文推断挖掉的某个词）。每一个单词可以使用一个向量来表示，传统的神经网络将这些词一个个的输入网络，是不能得到这种 “前后文” 关系的，所以我们需要一种有记忆的神经网络 - Recurrent Neural network (RNN) RNNElman network我们只需要对原先的神经">
 <meta name="keywords" content="机器学习,深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="李宏毅深度学习笔记 4-Unsupervised Learning">
-<meta property="og:url" content="https://fengchexz.github.io/posts/50926.html">
+<meta property="og:title" content="李宏毅深度学习笔记 3 - 循环神经网络">
+<meta property="og:url" content="https://fengchexz.github.io/posts/39773.html">
 <meta property="og:site_name" content="风车小站">
-<meta property="og:description" content="ClusteringK 均值聚类 (K-means)随机的选取 k 个点作为 cluster 的 center，计算其他点与各个 center 的距离，将其归类为最近的一个 cluster 层次聚类 (Hierarchical Agglomerative Clusteing、HAC) 类似于归并。首先我们需要将现有的数据构造一个树结构。这个树的构造过程如下：  数据点间两两组成一个 pair">
+<meta property="og:description" content="为什么需要 RNN？RNN 处理的对象是时序的数据，这些时序的数据前后之间是存在有某种联系的（例如我们可以根据前后文推断挖掉的某个词）。每一个单词可以使用一个向量来表示，传统的神经网络将这些词一个个的输入网络，是不能得到这种 “前后文” 关系的，所以我们需要一种有记忆的神经网络 - Recurrent Neural network (RNN) RNNElman network我们只需要对原先的神经">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://attachbak.dataguru.cn/attachments/portal/201308/30/101335h3te1bxmbk86zeqe.jpg">
-<meta property="og:image" content="https://datawhalechina.github.io/leeml-notes/chapter24/res/chapter24-3.png">
-<meta property="og:image" content="https://datawhalechina.github.io/leeml-notes/chapter24/res/chapter24-8.png">
-<meta property="og:updated_time" content="2020-10-20T06:52:13.027Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BQtQUg.png">
+<meta property="og:image" content="c:/Users/FengChe/AppData/Roaming/Typora/typora-user-images/image-20201027161917508.png">
+<meta property="og:image" content="https://datawhalechina.github.io/leeml-notes/chapter36/res/chapter36-14.png">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3yyzisidj30vc0lldjd.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3yzeswrzj30uj0mewid.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3zo96ix5j30vd0mbaen.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3zr3zkz4j30t50jn0wa.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk407a16ntj30qs0imn5l.jpg">
+<meta property="og:updated_time" content="2020-10-27T09:30:50.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李宏毅深度学习笔记 4-Unsupervised Learning">
-<meta name="twitter:description" content="ClusteringK 均值聚类 (K-means)随机的选取 k 个点作为 cluster 的 center，计算其他点与各个 center 的距离，将其归类为最近的一个 cluster 层次聚类 (Hierarchical Agglomerative Clusteing、HAC) 类似于归并。首先我们需要将现有的数据构造一个树结构。这个树的构造过程如下：  数据点间两两组成一个 pair">
-<meta name="twitter:image" content="http://attachbak.dataguru.cn/attachments/portal/201308/30/101335h3te1bxmbk86zeqe.jpg">
+<meta name="twitter:title" content="李宏毅深度学习笔记 3 - 循环神经网络">
+<meta name="twitter:description" content="为什么需要 RNN？RNN 处理的对象是时序的数据，这些时序的数据前后之间是存在有某种联系的（例如我们可以根据前后文推断挖掉的某个词）。每一个单词可以使用一个向量来表示，传统的神经网络将这些词一个个的输入网络，是不能得到这种 “前后文” 关系的，所以我们需要一种有记忆的神经网络 - Recurrent Neural network (RNN) RNNElman network我们只需要对原先的神经">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/10/27/BQtQUg.png">
 
 
 
@@ -158,7 +163,7 @@
 
   
   
-  <link rel="canonical" href="https://fengchexz.github.io/posts/50926">
+  <link rel="canonical" href="https://fengchexz.github.io/posts/39773">
 
 
 
@@ -168,7 +173,7 @@
   };
 </script>
 
-  <title>李宏毅深度学习笔记 4-Unsupervised Learning | 风车小站</title>
+  <title>李宏毅深度学习笔记 3 - 循环神经网络 | 风车小站</title>
   
 
 
@@ -447,7 +452,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fengchexz.github.io/posts/50926.html">
+    <link itemprop="mainEntityOfPage" href="https://fengchexz.github.io/posts/39773.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="丨fengche丨">
@@ -464,7 +469,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 4-Unsupervised Learning
+          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 3 - 循环神经网络
 
               
             
@@ -491,24 +496,12 @@
                 
               
 
-              <time title="创建时间：2020-09-20 16:11:00" itemprop="dateCreated datePublished" datetime="2020-09-20T16:11:00+08:00">2020-09-20</time>
+              <time title="创建时间：2020-10-27 17:26:00 / 修改时间：17:30:50" itemprop="dateCreated datePublished" datetime="2020-10-27T17:26:00+08:00">2020-10-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-10-20 14:52:13" itemprop="dateModified" datetime="2020-10-20T14:52:13+08:00">2020-10-20</time>
               
             
           </span>
@@ -561,7 +554,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.6k</span>
+                <span title="本文字数">2.6k</span>
               
 
               
@@ -575,7 +568,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 ≈</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -595,27 +588,36 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
+        <meta name="generator" content="Hexo 3.9.0"><h2 id="为什么需要RNN？"><a href="#为什么需要RNN？" class="headerlink" title="为什么需要RNN？"></a>为什么需要 RNN？</h2><p>RNN 处理的对象是时序的数据，这些时序的数据前后之间是存在有某种联系的（例如我们可以根据前后文推断挖掉的某个词）。每一个单词可以使用一个向量来表示，传统的神经网络将这些词一个个的输入网络，是不能得到这种 “前后文” 关系的，所以我们需要一种有记忆的神经网络 - Recurrent Neural network (RNN)</p>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h3 id="Elman-network"><a href="#Elman-network" class="headerlink" title="Elman network"></a>Elman network</h3><p>我们只需要对原先的神经网络做一点小小的改动就可以让他拥有 “记忆”。具体来说，我们用一个 memory 区域来保存网络中间层的结果，然后每一次输入数据的时候，网络不仅需要考虑前面的层传过来的参数，还有同时的考虑 memory 区域中的值。比如，我们可以设置每一次中间层的神经元都要将计算得到的结果加上 memory 中的值，这样这一层的神经元就拥有了历史数据的信息。当然，简单的相加是会有很多问题的，这里只是举一个例子。</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BQtQUg.png" alt="BQtQUg.png"></p>
+<h3 id="Jordan-network"><a href="#Jordan-network" class="headerlink" title="Jordan network"></a>Jordan network</h3><p>注意前面说的 Elman network 其实是没有 target 的，我们很难知道把什么东西放到 memory 里面才是比较好的。而 Jordan network 就是把当前的输出存到 memory 里面，然后再下一个节点的时候在读出来，这样我们很就很清楚自己需要放到 memory 里面的是什么东西，从而去优化他。</p>
+<p><img src="C:\Users\FengChe\AppData\Roaming\Typora\typora-user-images\image-20201027161917508.png" alt="image-20201027161917508"></p>
+<h3 id="Bidirectional-RNN"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</h3><p>前面说的两个网络的 memory，是存储了当前词之前的词的信息，我们很自然的会想到，除了 “前文”，“后文” 的内容也可以充分的利用起来，这就是 Bidirectional RNN</p>
+<p><img src="https://datawhalechina.github.io/leeml-notes/chapter36/res/chapter36-14.png" alt="img"></p>
+<h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><h3 id="LSTM是什么？"><a href="#LSTM是什么？" class="headerlink" title="LSTM是什么？"></a>LSTM 是什么？</h3><p>前面的三个 RNN 的网络，存储于 memory 中的值都是设计好的，再一次输入数据的时候都会进行更新。但是在实际操作中我们会有更多的需求，因此我们对需要设立几个 “门” 来控制 memory 中的值以及他什么时候去输出。具体来说，有一个 input gate 控制是否需要将数据输入近 memory，有一个 forget gate 用于控制是否擦除 memory 中的内容，有一个 output gate 用于控制是否输出 memory 中的内容。这里我们可以把控制” 门” 的信号也看做是输入，加上输入的数据 x，LSTM 实际上就是一个输入 4 个 input 产生 1 个 output 的块。</p>
+<blockquote>
+<p>拓展知识 1：Long Short-term Memory 中 - 的正确位置</p>
+<p>这个 “-” 应该在 short-term 中间，是长时间的短期记忆。想想我们之前看的 Recurrent Neural Network，它的 memory 在每一个时间点都会被洗掉，只要有新的 input 进来，每一个时间点都会把 memory 洗掉，所以的 short-term 是非常 short 的，但如果是 Long Short-term Memory，它记得会比较久一点 (只要 forget Gate 不要决定要忘记，它的值就会被存起来)。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3yyzisidj30vc0lldjd.jpg" alt></p>
+<h3 id="LSTM是如何运作的？"><a href="#LSTM是如何运作的？" class="headerlink" title="LSTM是如何运作的？"></a>LSTM 是如何运作的？</h3><p>假设输入的数据是 z，三个 gate 分别由信号 z~i~,z~f~,z~o~ 控制，首先输入数据会先经过一层激活函数得到 g (z)，input gate 的信号在经过一层变换后会得到 f (z~i~)，两者相乘就得到了我们想要存入 memory 的数据 $g (z)<em>f (z_i)$(可以认为 f (z~i~) 等于 0 或 1，代表是否存入 memory)。而 forget gate 就决定了是否需要记住 memory 中上一次的数据 c，所以最终存入 memory 的值为 $c’=g (z) f (z_i)+cf (z_f)$，同样的 outout gate 决定了我们是否需要输出 memory 中的值，所以整个 LSTM 最后的输出就可以表示为 $a=h (c’)</em>f(z_o)$。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3yzeswrzj30uj0mewid.jpg" alt></p>
+<h3 id="LSTM-meet-RNN"><a href="#LSTM-meet-RNN" class="headerlink" title="LSTM meet RNN"></a>LSTM meet RNN</h3><p>这个其实很简单啦，上面整个过程唯一还没有说明的就是，控制三个门的信号是怎么来的？实际上，这三个信号都是由输入经过现象变换得到的</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3zo96ix5j30vd0mbaen.jpg" alt></p>
+<p>事实上，除了 memory 中的值会让我们获得当前此之前的内容信息之外，LSTM 还会额外的把上一个节点中 LSTM 的一些中间输出取出来，和当前节点的输入 x 拼在一起，然后在用这个拼接的值得到当前节点 LSTM 的四个输入。所以，LSTM 网路的完整结构图应该是介个样子的：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk3zr3zkz4j30t50jn0wa.jpg" alt></p>
+<h3 id="传统RNN存在的问题"><a href="#传统RNN存在的问题" class="headerlink" title="传统RNN存在的问题"></a>传统 RNN 存在的问题</h3><p>传统 RNN 的训练其实并没有那么的容易，因为他的 error surface 通常是下面这样的</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk407a16ntj30qs0imn5l.jpg" alt></p>
+<p>可以看到，RNN 的 error surface 是非常的崎岖的（一些地方很平坦，突然变的很陡峭）。所以，如果当前位置是在右边的缓坡上，这样因为梯度很小，我们会把学习率设置成一个较大的值，而随着我们在坡面上不断的下行，很有可能我们会一脚踩在这个悬崖上，这样悬崖处的梯度是很大的，这时候的学习率也很大，我们下一次的落脚的位置，就会非在十万八千里外了。这一点也很好解决，我们可以设置一个阈值，超过了这个阈值梯度都设置为同意的值，这样即使踩在了悬崖上，也不会飞的很远，这就是 Clipping 技术。</p>
+<blockquote>
+<p>拓展阅读 2：如何得到梯度的大小？</p>
+<p>可以用 “对于输入变化，输出变化的剧烈程度” 来表示梯度的大小</p>
+</blockquote>
+<h3 id="RNN-VS-LSTM"><a href="#RNN-VS-LSTM" class="headerlink" title="RNN VS LSTM"></a>RNN VS LSTM</h3><p>RNN 的 error surface 为什么会这么崎岖呢？在 RNN 当中，每一个数据都可以影响 memory 中的值。所以在每一个节点数据输入的时候，memory 中的值会被完全的覆盖掉。但是在 LSTM 中，对于一个新的 input，我们会把原来的 memory 乘上一个值再加上 input。这样做首先保证了如果一个节点对 memory 产生了影响，这种影响会一直存在于 memory 中；此外，memory 和 input 是相加的，不像 RNN 在输入新的 input 后会强制刷新 memory。</p>
+<h3 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h3><p>相比于 lstm，Gates Recurrent Unit (GRU) 只有两个 Gate。其实这两个 Gate 也并不是那么神秘，只不过他对 input gate 和 forget gate 做了一个联动，即当 input gate 打开的时候，forget gate 会自动的关闭；当 forget gate 没有要刷新 memory 中的值，input gate 就会关起来。也就是说要把 memory 里面的值清楚掉，才放新的值进来</p>
+<p>后面的内容都是关于 RNN 的实际应用的，还蛮好玩的，感兴趣的可以看视频做进一步的了解 <a href="https://www.bilibili.com/video/BV1JE411g7XF?p=21" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1JE411g7XF?p=21</a></p>
 
-<h2 id="Clustering"><a href="#Clustering" class="headerlink" title="Clustering"></a>Clustering</h2><h3 id="K均值聚类-K-means"><a href="#K均值聚类-K-means" class="headerlink" title="K均值聚类(K-means)"></a>K 均值聚类 (K-means)</h3><p>随机的选取 k 个点作为 cluster 的 center，计算其他点与各个 center 的距离，将其归类为最近的一个 cluster</p>
-<h3 id="层次聚类-Hierarchical-Agglomerative-Clusteing、HAC"><a href="#层次聚类-Hierarchical-Agglomerative-Clusteing、HAC" class="headerlink" title="层次聚类(Hierarchical Agglomerative Clusteing、HAC)"></a>层次聚类 (Hierarchical Agglomerative Clusteing、HAC)</h3><p><img src="http://attachbak.dataguru.cn/attachments/portal/201308/30/101335h3te1bxmbk86zeqe.jpg" alt="img" style="zoom:80%;"></p>
-<p>类似于归并。首先我们需要将现有的数据构造一个树结构。这个树的构造过程如下：</p>
-<ol>
-<li>数据点间两两组成一个 pair 计算距离，找到最近的一个 pair，将这个 pair 中的两个数据点取出合并成一个 cluster，并将这两个点的平均作为新的 vector 加入原来的数据集中。</li>
-<li>重复步骤 1 直到整个数据集归并成一个 cluster</li>
-</ol>
-<p>在得到了树结构之后，怎么将数据分为不同的 cluster 呢？之时候需要你决定一个分割的位置。例如切在下图中的红线位置，那么就变成了两个 cluster（3、2），如果切在蓝线的位置，那么就变成了三个 cluster（2、1、2）。</p>
-<p><img src="https://datawhalechina.github.io/leeml-notes/chapter24/res/chapter24-3.png" alt="img" style="zoom:80%;"></p>
-<h2 id="distributed-representation"><a href="#distributed-representation" class="headerlink" title="distributed representation"></a>distributed representation</h2><p>cluster 有一个特点就是，每个 x 必将被确定的分类于一个类别。这就类似于一个 one hot 的向量，但是我们知道网络在做预测的时候，其实是会给每一个类别一个概率的。例如数字 2 可能会写的像 3 或者 7，那么网络虽然最终将其分类为 2，但是在 3 或者 7 上仍会给出一定的概率。distributed representation 做的就是这样一件事情，他用一个 vector 来表示 x。如果这个 vector 相对于 x 来说是一个更低维的空间，那么这就叫做 dimension reduction，两者做的是同一件事，知识称呼不同而已。</p>
-<h2 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h2><h3 id="降维的可行性"><a href="#降维的可行性" class="headerlink" title="降维的可行性"></a>降维的可行性</h3><p>以 MNIST 为例，每一个数字 3 在其中表示为 28*28 的矩阵，但实际上表示这一堆数字 3 只需要一个维度。有些数字三左转了 10 度，有些右转了 20 度，我们只需要确定这个角度，就能唯一确定一个数字三。我们可以用更小的维度来确定原来复杂的数据，这就是降维。</p>
-<p>那么怎么做降维呢？我们需要做的就是找到一个 function，这个 function 可以将输入空间中的 x 映射到一个更低维的空间。</p>
-<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>这是降维中最简单的方法，只需要将原数据中不需要的维度拿掉。例如一个 excel 表格中每一列表示一个特征，其中有一列序号对于最终的预测并无影响，因此我们将这一列删掉。但是实际操作中，通常每个特征都是不可或缺的。</p>
-<h3 id="主成分分析-Principe-component-abalysis、PCA"><a href="#主成分分析-Principe-component-abalysis、PCA" class="headerlink" title="主成分分析(Principe component abalysis、PCA)"></a>主成分分析 (Principe component abalysis、PCA)</h3><h3 id="矩阵分解"><a href="#矩阵分解" class="headerlink" title="矩阵分解"></a>矩阵分解</h3><p><img src="https://datawhalechina.github.io/leeml-notes/chapter24/res/chapter24-8.png" alt="img" style="zoom:80%;"></p>
-<p>PCA 所选取的 function，就是很简单的 linear function。如图中所示，我们可以将原先二维的数据点映射在红色或者黄色的线上，这条线所选取的原则就是：经过 projection 之后，得到的不同数据点的分布越大越好。这也就是说，我们不希望映射之后这些数据点聚在一起，不同的数据点在映射之后必须是仍然可以” 看 “出来的。</p>
-<h2 id="实例-词嵌入"><a href="#实例-词嵌入" class="headerlink" title="实例-词嵌入"></a>实例 - 词嵌入</h2><h3 id="为什么需要词嵌入"><a href="#为什么需要词嵌入" class="headerlink" title="为什么需要词嵌入"></a>为什么需要词嵌入</h3><p>在自然语言处理中，词与词之间通常是会存在一定联系的。如果使用传统的 one hot 形式，例如猫为 [1,0,0]，狗为 [0,1,0]，这样两者在输入网络的时候是完全没有任何关系的，但其实他们都为动物，且在句子中的成分也十分相似，所以我们需要一种更加合适的方法来表示这两个词。怎么做呢？这就是我们在做阅读时长提到的概念：上下文。</p>
-<h3 id="基于计数的词嵌入"><a href="#基于计数的词嵌入" class="headerlink" title="基于计数的词嵌入"></a>基于计数的词嵌入</h3><p>如果有两个词 $w_i$ 和 $w_j$，他们经常出现在同一篇文章中，那么我们希望表示这两个词的 vector 尽可能的接近。这个方法有一个代表性的例子叫做 Glove vector</p>
-<h3 id="基于预测的词嵌入"><a href="#基于预测的词嵌入" class="headerlink" title="基于预测的词嵌入"></a>基于预测的词嵌入</h3><p>这种方法通过预测当前单词下一个可能的单次来得到他的词向量。假设世界上有 10W 个单词，那么我们的网络就输出一个 10W 维的 vector，每一维的值就是预测的这个单词的概率 (这里的输入是 one hot 形式)。通过将输入这个单词时，将网络隐藏层取出来构成一个新的向量，就是当前单词的 vector。</p>
-<h3 id="多语言嵌入"><a href="#多语言嵌入" class="headerlink" title="多语言嵌入"></a>多语言嵌入</h3><h3 id="多域嵌入"><a href="#多域嵌入" class="headerlink" title="多域嵌入"></a>多域嵌入</h3><h3 id="文档嵌入"><a href="#文档嵌入" class="headerlink" title="文档嵌入"></a>文档嵌入</h3>
       
     </div>
 
@@ -659,7 +661,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://fengchexz.github.io/posts/50926.html" title="李宏毅深度学习笔记 4-Unsupervised Learning">https://fengchexz.github.io/posts/50926.html</a>
+    <a href="https://fengchexz.github.io/posts/39773.html" title="李宏毅深度学习笔记 3 - 循环神经网络">https://fengchexz.github.io/posts/39773.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -696,8 +698,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/8974.html" rel="next" title="Federated Learning for Vision-and-Language Grounding Problems">
-                <i class="fa fa-chevron-left"></i> Federated Learning for Vision-and-Language Grounding Problems
+              <a href="/posts/22725.html" rel="next" title="李宏毅深度学习笔记 6 - 半监督学习">
+                <i class="fa fa-chevron-left"></i> 李宏毅深度学习笔记 6 - 半监督学习
               </a>
             
           </div>
@@ -705,10 +707,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/22725.html" rel="prev" title="李宏毅深度学习笔记 3-Semi-supervised Learning">
-                李宏毅深度学习笔记 3-Semi-supervised Learning <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -977,7 +975,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Clustering"><span class="nav-number">1.</span> <span class="nav-text">Clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#K均值聚类-K-means"><span class="nav-number">1.1.</span> <span class="nav-text">K 均值聚类 (K-means)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次聚类-Hierarchical-Agglomerative-Clusteing、HAC"><span class="nav-number">1.2.</span> <span class="nav-text">层次聚类 (Hierarchical Agglomerative Clusteing、HAC)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distributed-representation"><span class="nav-number">2.</span> <span class="nav-text">distributed representation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#降维"><span class="nav-number">3.</span> <span class="nav-text">降维</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#降维的可行性"><span class="nav-number">3.1.</span> <span class="nav-text">降维的可行性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征选择"><span class="nav-number">3.2.</span> <span class="nav-text">特征选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主成分分析-Principe-component-abalysis、PCA"><span class="nav-number">3.3.</span> <span class="nav-text">主成分分析 (Principe component abalysis、PCA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵分解"><span class="nav-number">3.4.</span> <span class="nav-text">矩阵分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例-词嵌入"><span class="nav-number">4.</span> <span class="nav-text">实例 - 词嵌入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要词嵌入"><span class="nav-number">4.1.</span> <span class="nav-text">为什么需要词嵌入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于计数的词嵌入"><span class="nav-number">4.2.</span> <span class="nav-text">基于计数的词嵌入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于预测的词嵌入"><span class="nav-number">4.3.</span> <span class="nav-text">基于预测的词嵌入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多语言嵌入"><span class="nav-number">4.4.</span> <span class="nav-text">多语言嵌入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多域嵌入"><span class="nav-number">4.5.</span> <span class="nav-text">多域嵌入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档嵌入"><span class="nav-number">4.6.</span> <span class="nav-text">文档嵌入</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要RNN？"><span class="nav-number">1.</span> <span class="nav-text">为什么需要 RNN？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">2.</span> <span class="nav-text">RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Elman-network"><span class="nav-number">2.1.</span> <span class="nav-text">Elman network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jordan-network"><span class="nav-number">2.2.</span> <span class="nav-text">Jordan network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bidirectional-RNN"><span class="nav-number">2.3.</span> <span class="nav-text">Bidirectional RNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM"><span class="nav-number">3.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM是什么？"><span class="nav-number">3.1.</span> <span class="nav-text">LSTM 是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM是如何运作的？"><span class="nav-number">3.2.</span> <span class="nav-text">LSTM 是如何运作的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-meet-RNN"><span class="nav-number">3.3.</span> <span class="nav-text">LSTM meet RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传统RNN存在的问题"><span class="nav-number">3.4.</span> <span class="nav-text">传统 RNN 存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RNN-VS-LSTM"><span class="nav-number">3.5.</span> <span class="nav-text">RNN VS LSTM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GRU"><span class="nav-number">3.6.</span> <span class="nav-text">GRU</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1017,7 +1015,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">231k</span>
+    <span title="站点总字数">233k</span>
   
   
 </div>

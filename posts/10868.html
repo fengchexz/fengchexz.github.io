@@ -133,13 +133,13 @@
 
 
 
-  <meta name="description" content="Good Results on Training Data?New activation functionsigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxo">
+  <meta name="description" content="如何在训练数据上得到更好的结果？改变激活函数sigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxout 让每一个神经元自动去学习他的激活函数  如图所示，Max">
 <meta name="keywords" content="机器学习,深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="李宏毅深度学习笔记 1-Tips for Deep Learning">
+<meta property="og:title" content="李宏毅深度学习笔记 1 - 深度学习的一些技巧">
 <meta property="og:url" content="https://fengchexz.github.io/posts/10868.html">
 <meta property="og:site_name" content="风车小站">
-<meta property="og:description" content="Good Results on Training Data?New activation functionsigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxo">
+<meta property="og:description" content="如何在训练数据上得到更好的结果？改变激活函数sigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxout 让每一个神经元自动去学习他的激活函数  如图所示，Max">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gg4o5z4ed9j30zy0ru768.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gg4oa3j4toj30zy0ne0u4.jpg">
@@ -150,10 +150,10 @@
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/momentum1.png">
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/adam.png">
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/dropout1.png">
-<meta property="og:updated_time" content="2020-10-26T11:29:21.883Z">
+<meta property="og:updated_time" content="2020-10-27T06:26:54.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李宏毅深度学习笔记 1-Tips for Deep Learning">
-<meta name="twitter:description" content="Good Results on Training Data?New activation functionsigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxo">
+<meta name="twitter:title" content="李宏毅深度学习笔记 1 - 深度学习的一些技巧">
+<meta name="twitter:description" content="如何在训练数据上得到更好的结果？改变激活函数sigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxout 让每一个神经元自动去学习他的激活函数  如图所示，Max">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006AP6c1ly1gg4o5z4ed9j30zy0ru768.jpg">
 
 
@@ -174,7 +174,7 @@
   };
 </script>
 
-  <title>李宏毅深度学习笔记 1-Tips for Deep Learning | 风车小站</title>
+  <title>李宏毅深度学习笔记 1 - 深度学习的一些技巧 | 风车小站</title>
   
 
 
@@ -470,7 +470,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 1-Tips for Deep Learning
+          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 1 - 深度学习的一些技巧
 
               
             
@@ -497,24 +497,12 @@
                 
               
 
-              <time title="创建时间：2020-09-20 16:11:00" itemprop="dateCreated datePublished" datetime="2020-09-20T16:11:00+08:00">2020-09-20</time>
+              <time title="创建时间：2020-10-27 14:26:00 / 修改时间：14:26:54" itemprop="dateCreated datePublished" datetime="2020-10-27T14:26:00+08:00">2020-10-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-10-26 19:29:21" itemprop="dateModified" datetime="2020-10-26T19:29:21+08:00">2020-10-26</time>
               
             
           </span>
@@ -603,7 +591,7 @@
       
         <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
 
-<h2 id="Good-Results-on-Training-Data"><a href="#Good-Results-on-Training-Data" class="headerlink" title="Good Results on Training Data?"></a>Good Results on Training Data?</h2><h3 id="New-activation-function"><a href="#New-activation-function" class="headerlink" title="New activation function"></a>New activation function</h3><p>sigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象</p>
+<h2 id="如何在训练数据上得到更好的结果？"><a href="#如何在训练数据上得到更好的结果？" class="headerlink" title="如何在训练数据上得到更好的结果？"></a>如何在训练数据上得到更好的结果？</h2><h3 id="改变激活函数"><a href="#改变激活函数" class="headerlink" title="改变激活函数"></a>改变激活函数</h3><p>sigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象</p>
 <h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4><p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gg4o5z4ed9j30zy0ru768.jpg" alt="ReLU1.png" style="zoom:40%;"></p>
 <p>Q:ReLU 会导致神经网络变为线性的吗？<br>A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化</p>
 <h4 id="ReLU-variant"><a href="#ReLU-variant" class="headerlink" title="ReLU-variant"></a>ReLU-variant</h4><p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gg4oa3j4toj30zy0ne0u4.jpg" alt="relu-variant.png" style="zoom:40%;"></p>
@@ -612,19 +600,19 @@
 <p>如图所示，Maxout 将固定数量 (需要自己调整) 的神经元分为一组，并取组中最大的值作为输出。通过这样的方法，Maxout 可以拟合出 ReLU 以及其他任意的分段线性凸激活函数</p>
 <p><img src="http://ww1.sinaimg.cn/large/006AP6c1ly1gg4oi0axa8j312u0rzad1.jpg" alt="maxout2.png" style="zoom:40%;"></p>
 <p>Q:Maxout 是否会导致未被选择的神经元不能训练？<br>A: 对于不同的输入数据，Maxout 所选择激活的神经元在训练的过程中不断地进行变化，因此理论上每一个 weight 都会被训练到</p>
-<h3 id="Adapive-learning-rate"><a href="#Adapive-learning-rate" class="headerlink" title="Adapive learning rate"></a>Adapive learning rate</h3><h4 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h4><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/review-adagrad.png" alt="img" style="zoom:40%;"></p>
+<h3 id="调整学习率"><a href="#调整学习率" class="headerlink" title="调整学习率"></a>调整学习率</h3><h4 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h4><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/review-adagrad.png" alt="img" style="zoom:40%;"></p>
 <p>AdaGrad 会使用到历史梯度的信息，对于当前当前需要更新的 w，如果其平常的 gradient 都比较大，那么当前所处位置应该比较 “陡峭”，所以选取比较小的 learning rate；反之，如果平常 gradient 都比较小，那么当前所处位置应该比较 “平坦”，所以选取比较大的 learning rate</p>
 <h4 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h4><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/rmsprop2.png" alt="img" style="zoom:40%;"></p>
 <p>RMSProp 与 AdaGrad 的不同之处在于，AdaGrad 使用历史所有的梯度平均来对当前的学习率进行限制，而对于某一个方向，有可能会出现一会陡峭一会平坦的情况。所以 RMSProp 通过 α 来对历史梯度的比重进行限制，将 α 设置的更小，模型就会更加注重新的梯度对当前学习率的影响。</p>
 <h4 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h4><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/momentum1.png" alt="img" style="zoom:40%;"></p>
 <h4 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h4><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/adam.png" alt="img" style="zoom:40%;"></p>
-<h2 id="Good-Results-on-Testing-Data"><a href="#Good-Results-on-Testing-Data" class="headerlink" title="Good Results on Testing Data?"></a>Good Results on Testing Data?</h2><h3 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h3><h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><h4 id="L1-and-L2"><a href="#L1-and-L2" class="headerlink" title="L1 and L2"></a>L1 and L2</h4><p>L1 和 L2 都会使得参数减小</p>
+<h2 id="如何在测试数据上得到更好的结果"><a href="#如何在测试数据上得到更好的结果" class="headerlink" title="如何在测试数据上得到更好的结果?"></a>如何在测试数据上得到更好的结果？</h2><h3 id="早停-Early-Stopping"><a href="#早停-Early-Stopping" class="headerlink" title="早停(Early Stopping)"></a>早停 (Early Stopping)</h3><h3 id="正则化-Regularization"><a href="#正则化-Regularization" class="headerlink" title="正则化(Regularization)"></a>正则化 (Regularization)</h3><h4 id="L1-and-L2"><a href="#L1-and-L2" class="headerlink" title="L1 and L2"></a>L1 and L2</h4><p>L1 和 L2 都会使得参数减小</p>
 <ul>
 <li>L1 在每次更新的时候减去一个固定值</li>
 <li> L2 在每次更新时乘上一个小于 1 的固定值</li>
 </ul>
 <p>L1 会使得有很多参数都接近 0，但是会存在很大的值；L2 会使得参数的平均都是比较小</p>
-<h4 id="Weight-Decay"><a href="#Weight-Decay" class="headerlink" title="Weight Decay"></a>Weight Decay</h4><h4 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h4><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/dropout1.png" alt="img" style="zoom:40%;"></p>
+<h3 id="梯度衰减（Weight-Decay）"><a href="#梯度衰减（Weight-Decay）" class="headerlink" title="梯度衰减（Weight Decay）"></a>梯度衰减（Weight Decay）</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/dropout1.png" alt="img" style="zoom:40%;"></p>
 <p>Dropout 是指在训练时以概率 p 随机的丢弃一些神经元</p>
 <ul>
 <li>在 testing 的时候不做 dropout</li>
@@ -675,7 +663,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://fengchexz.github.io/posts/10868.html" title="李宏毅深度学习笔记 1-Tips for Deep Learning">https://fengchexz.github.io/posts/10868.html</a>
+    <a href="https://fengchexz.github.io/posts/10868.html" title="李宏毅深度学习笔记 1 - 深度学习的一些技巧">https://fengchexz.github.io/posts/10868.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -712,8 +700,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/8586.html" rel="next" title="李宏毅深度学习笔记 2-Convolutional Neural network">
-                <i class="fa fa-chevron-left"></i> 李宏毅深度学习笔记 2-Convolutional Neural network
+              <a href="/posts/28779.html" rel="next" title="李宏毅深度学习笔记 4 - 词向量">
+                <i class="fa fa-chevron-left"></i> 李宏毅深度学习笔记 4 - 词向量
               </a>
             
           </div>
@@ -722,8 +710,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/46698.html" rel="prev" title="软件推荐（一）">
-                软件推荐（一） <i class="fa fa-chevron-right"></i>
+              <a href="/posts/8586.html" rel="prev" title="李宏毅深度学习笔记 2 - 卷积神经网络 CNN">
+                李宏毅深度学习笔记 2 - 卷积神经网络 CNN <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -993,7 +981,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Good-Results-on-Training-Data"><span class="nav-number">1.</span> <span class="nav-text">Good Results on Training Data?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#New-activation-function"><span class="nav-number">1.1.</span> <span class="nav-text">New activation function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU"><span class="nav-number">1.1.1.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU-variant"><span class="nav-number">1.1.2.</span> <span class="nav-text">ReLU-variant</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maxout"><span class="nav-number">1.1.3.</span> <span class="nav-text">Maxout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adapive-learning-rate"><span class="nav-number">1.2.</span> <span class="nav-text">Adapive learning rate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AdaGrad"><span class="nav-number">1.2.1.</span> <span class="nav-text">AdaGrad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RMSProp"><span class="nav-number">1.2.2.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Momentum"><span class="nav-number">1.2.3.</span> <span class="nav-text">Momentum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adam"><span class="nav-number">1.2.4.</span> <span class="nav-text">Adam</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Good-Results-on-Testing-Data"><span class="nav-number">2.</span> <span class="nav-text">Good Results on Testing Data?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Early-Stopping"><span class="nav-number">2.1.</span> <span class="nav-text">Early Stopping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regularization"><span class="nav-number">2.2.</span> <span class="nav-text">Regularization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#L1-and-L2"><span class="nav-number">2.2.1.</span> <span class="nav-text">L1 and L2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Weight-Decay"><span class="nav-number">2.2.2.</span> <span class="nav-text">Weight Decay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dropout"><span class="nav-number">2.2.3.</span> <span class="nav-text">Dropout</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在训练数据上得到更好的结果？"><span class="nav-number">1.</span> <span class="nav-text">如何在训练数据上得到更好的结果？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改变激活函数"><span class="nav-number">1.1.</span> <span class="nav-text">改变激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU"><span class="nav-number">1.1.1.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU-variant"><span class="nav-number">1.1.2.</span> <span class="nav-text">ReLU-variant</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maxout"><span class="nav-number">1.1.3.</span> <span class="nav-text">Maxout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整学习率"><span class="nav-number">1.2.</span> <span class="nav-text">调整学习率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AdaGrad"><span class="nav-number">1.2.1.</span> <span class="nav-text">AdaGrad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RMSProp"><span class="nav-number">1.2.2.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Momentum"><span class="nav-number">1.2.3.</span> <span class="nav-text">Momentum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adam"><span class="nav-number">1.2.4.</span> <span class="nav-text">Adam</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在测试数据上得到更好的结果"><span class="nav-number">2.</span> <span class="nav-text">如何在测试数据上得到更好的结果？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#早停-Early-Stopping"><span class="nav-number">2.1.</span> <span class="nav-text">早停 (Early Stopping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化-Regularization"><span class="nav-number">2.2.</span> <span class="nav-text">正则化 (Regularization)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#L1-and-L2"><span class="nav-number">2.2.1.</span> <span class="nav-text">L1 and L2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度衰减（Weight-Decay）"><span class="nav-number">2.3.</span> <span class="nav-text">梯度衰减（Weight Decay）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dropout"><span class="nav-number">2.4.</span> <span class="nav-text">Dropout</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1033,7 +1021,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">231k</span>
+    <span title="站点总字数">233k</span>
   
   
 </div>

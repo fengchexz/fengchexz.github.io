@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fengchexz.github.io/"/>
-  <updated>2020-10-26T13:55:03.992Z</updated>
+  <updated>2020-10-27T09:30:50.065Z</updated>
   <id>https://fengchexz.github.io/</id>
   
   <author>
@@ -17,11 +17,129 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>李宏毅深度学习笔记 5 - 词向量</title>
+    <title>李宏毅深度学习笔记 3 - 循环神经网络</title>
+    <link href="https://fengchexz.github.io/posts/39773.html"/>
+    <id>https://fengchexz.github.io/posts/39773.html</id>
+    <published>2020-10-27T09:26:00.000Z</published>
+    <updated>2020-10-27T09:30:50.065Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;为什么需要RNN？&quot;&gt;&lt;a href=&quot;#为什么需要RNN？&quot; class=&quot;headerlink&quot; title=&quot;为什么需要RNN？&quot;&gt;&lt;/a&gt;为什么需要 RNN？&lt;/h2&gt;&lt;p&gt;RNN
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 6 - 半监督学习</title>
+    <link href="https://fengchexz.github.io/posts/22725.html"/>
+    <id>https://fengchexz.github.io/posts/22725.html</id>
+    <published>2020-10-27T06:26:00.000Z</published>
+    <updated>2020-10-27T07:50:34.871Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;什么是半监督学习&quot;&gt;&lt;a href=&quot;#什么是半监督学习&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 2 - 卷积神经网络 CNN</title>
+    <link href="https://fengchexz.github.io/posts/8586.html"/>
+    <id>https://fengchexz.github.io/posts/8586.html</id>
+    <published>2020-10-27T06:26:00.000Z</published>
+    <updated>2020-10-27T06:27:02.627Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;为什么适用CNN&quot;&gt;&lt;a href=&quot;#为什么适用CNN&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 1 - 深度学习的一些技巧</title>
+    <link href="https://fengchexz.github.io/posts/10868.html"/>
+    <id>https://fengchexz.github.io/posts/10868.html</id>
+    <published>2020-10-27T06:26:00.000Z</published>
+    <updated>2020-10-27T06:26:54.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;如何在训练数据上得到更好的结果？&quot;&gt;&lt;a href=&quot;#如何在训练数据上得到更好的结果？&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 4 - 词向量</title>
     <link href="https://fengchexz.github.io/posts/28779.html"/>
     <id>https://fengchexz.github.io/posts/28779.html</id>
     <published>2020-10-26T13:53:00.000Z</published>
-    <updated>2020-10-26T13:55:03.992Z</updated>
+    <updated>2020-10-27T04:26:10.021Z</updated>
     
     <summary type="html">
     
@@ -104,126 +222,6 @@
     
     
       <category term="推荐" scheme="https://fengchexz.github.io/tags/%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 1-Tips for Deep Learning</title>
-    <link href="https://fengchexz.github.io/posts/10868.html"/>
-    <id>https://fengchexz.github.io/posts/10868.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-26T11:29:21.883Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Good-Results-on-Training-Data&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 2-Convolutional Neural network</title>
-    <link href="https://fengchexz.github.io/posts/8586.html"/>
-    <id>https://fengchexz.github.io/posts/8586.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:53:10.943Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Why-CNN-for-Image？&quot;&gt;&lt;a href=&quot;#Why-CNN-for-Image？&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 3-Semi-supervised Learning</title>
-    <link href="https://fengchexz.github.io/posts/22725.html"/>
-    <id>https://fengchexz.github.io/posts/22725.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:53:24.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>李宏毅深度学习笔记 4-Unsupervised Learning</title>
-    <link href="https://fengchexz.github.io/posts/50926.html"/>
-    <id>https://fengchexz.github.io/posts/50926.html</id>
-    <published>2020-09-20T08:11:00.000Z</published>
-    <updated>2020-10-20T06:52:13.027Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-
-&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Clustering&quot;&gt;&lt;a href=&quot;#Clustering&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

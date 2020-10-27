@@ -133,22 +133,28 @@
 
 
 
-  <meta name="description" content="IntroductionSupervised Learning：$(x^r,y^r)^R_{r=1}$  每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应  Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{">
+  <meta name="description" content="什么是半监督学习Supervised Learning：$(x^r,y^r)^R_{r=1}$  每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应  Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{Bmat">
 <meta name="keywords" content="机器学习,深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="李宏毅深度学习笔记 3-Semi-supervised Learning">
+<meta property="og:title" content="李宏毅深度学习笔记 6 - 半监督学习">
 <meta property="og:url" content="https://fengchexz.github.io/posts/22725.html">
 <meta property="og:site_name" content="风车小站">
-<meta property="og:description" content="IntroductionSupervised Learning：$(x^r,y^r)^R_{r=1}$  每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应  Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{">
+<meta property="og:description" content="什么是半监督学习Supervised Learning：$(x^r,y^r)^R_{r=1}$  每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应  Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{Bmat">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/semi-help1.png">
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/semi-help2.png">
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/two-class.png">
 <meta property="og:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/self-training.png">
-<meta property="og:updated_time" content="2020-10-20T06:53:24.405Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BQEAUO.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BQZr34.jpg">
+<meta property="og:image" content="https://imgchr.com/i/BQmYT0">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BQmUYT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BQ1cKU.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/10/27/BQ8Qpt.jpg">
+<meta property="og:updated_time" content="2020-10-27T07:50:34.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李宏毅深度学习笔记 3-Semi-supervised Learning">
-<meta name="twitter:description" content="IntroductionSupervised Learning：$(x^r,y^r)^R_{r=1}$  每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应  Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{">
+<meta name="twitter:title" content="李宏毅深度学习笔记 6 - 半监督学习">
+<meta name="twitter:description" content="什么是半监督学习Supervised Learning：$(x^r,y^r)^R_{r=1}$  每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应  Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{Bmat">
 <meta name="twitter:image" content="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/semi-help1.png">
 
 
@@ -169,7 +175,7 @@
   };
 </script>
 
-  <title>李宏毅深度学习笔记 3-Semi-supervised Learning | 风车小站</title>
+  <title>李宏毅深度学习笔记 6 - 半监督学习 | 风车小站</title>
   
 
 
@@ -465,7 +471,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 3-Semi-supervised Learning
+          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 6 - 半监督学习
 
               
             
@@ -492,24 +498,12 @@
                 
               
 
-              <time title="创建时间：2020-09-20 16:11:00" itemprop="dateCreated datePublished" datetime="2020-09-20T16:11:00+08:00">2020-09-20</time>
+              <time title="创建时间：2020-10-27 14:26:00 / 修改时间：15:50:34" itemprop="dateCreated datePublished" datetime="2020-10-27T14:26:00+08:00">2020-10-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-10-20 14:53:24" itemprop="dateModified" datetime="2020-10-20T14:53:24+08:00">2020-10-20</time>
               
             
           </span>
@@ -562,7 +556,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.6k</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -576,7 +570,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 ≈</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -598,7 +592,7 @@
       
         <meta name="generator" content="Hexo 3.9.0"><meta name="referrer" content="no-referrer">
 
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Supervised Learning：$(x^r,y^r)^R_{r=1}$</p>
+<h2 id="什么是半监督学习"><a href="#什么是半监督学习" class="headerlink" title="什么是半监督学习"></a>什么是半监督学习</h2><p>Supervised Learning：$(x^r,y^r)^R_{r=1}$</p>
 <ul>
 <li>每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应</li>
 </ul>
@@ -607,9 +601,9 @@
 <li>部分 data 没有与 input $x^u$ 相对应的标签</li>
 <li>实际上 data 很容易搜集，只是缺少有 label 的 data，所以 $U\ll R$</li>
 </ul>
-<h2 id="Why-semi-supervised-learning-help"><a href="#Why-semi-supervised-learning-help" class="headerlink" title="Why semi-supervised learning help"></a>Why semi-supervised learning help</h2><p>没有标签的数据虽然只有 input，但是他们的分布，可以告诉模型进行分界线的调整。半监督学习的使用往往会伴随着假设，假设的合理与否，决定了最终结果的好坏。</p>
+<h2 id="半监督学习是怎么工作的"><a href="#半监督学习是怎么工作的" class="headerlink" title="半监督学习是怎么工作的"></a>半监督学习是怎么工作的</h2><p>没有标签的数据虽然只有 input，但是他们的分布，可以告诉模型进行分界线的调整。半监督学习的使用往往会伴随着假设，假设的合理与否，决定了最终结果的好坏。</p>
 <p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/semi-help1.png" alt="img" style="zoom:50%;">————————————————<img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/semi-help2.png" alt="img" style="zoom:50%;"></p>
-<h2 id="Semi-supervised-Generative-Model"><a href="#Semi-supervised-Generative-Model" class="headerlink" title="Semi-supervised Generative Model"></a>Semi-supervised Generative Model</h2><p>在有监督学习的概率生成模型中，以二分类为例，我们很容易就能得到 $P (C_1)$ 和 $P (C_2)$，通过对已知样本计算极大似然估计就能求得每个类别的均值和方差，从而可以得到 $P (x|C_1)$ 和 $P (x|C_2)$。最后根据概率公式就能计算出新的样本属于每个类别的概率。</p>
+<h2 id="半监督生成模型"><a href="#半监督生成模型" class="headerlink" title="半监督生成模型"></a>半监督生成模型</h2><p>在有监督学习的概率生成模型中，以二分类为例，我们很容易就能得到 $P (C_1)$ 和 $P (C_2)$，通过对已知样本计算极大似然估计就能求得每个类别的均值和方差，从而可以得到 $P (x|C_1)$ 和 $P (x|C_2)$。最后根据概率公式就能计算出新的样本属于每个类别的概率。</p>
 <p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/two-class.png" alt="img" style="zoom:30%;"></p>
 <p>在半监督生成模型中，计算的公式会有相应的变化，其具体步骤如下：</p>
 <ol>
@@ -626,7 +620,7 @@
 </li>
 </ol>
 <p>流程中的步骤 2 和步骤 3 即是 EM algorithm 中的 E 和 M</p>
-<h2 id="Low-density-Separation-Assumption"><a href="#Low-density-Separation-Assumption" class="headerlink" title="Low-density Separation Assumption"></a>Low-density Separation Assumption</h2><p>Low-density separation 方法的基础假设是：这个世界是非黑即白的，在两个类别的交界处数据的密度是很低的，因此两类数据之间会有明显的鸿沟</p>
+<h2 id="Low-density-Separation"><a href="#Low-density-Separation" class="headerlink" title="Low-density Separation"></a>Low-density Separation</h2><p>Low-density separation 方法的基础假设是：这个世界是非黑即白的，在两个类别的交界处数据的密度是很低的，因此两类数据之间会有明显的鸿沟</p>
 <h3 id="Self-Training"><a href="#Self-Training" class="headerlink" title="Self Training"></a>Self Training</h3><ol>
 <li>先用 labeled data 训练一个模型 $f^*$, 可以使用任意的方法</li>
 <li>然后用训练好的 $f^*$ 给 unlabeled data 打上标签</li>
@@ -635,10 +629,26 @@
 </ol>
 <p>与 Generative Model 的区别：</p>
 <ul>
-<li>Self Training 每一次选取的 unlabeled data 会强制给其打上标签，又称为 hard label。而 Generative Model 会在每一次得到新模型的时候更新 unlabeled data 的 label 概率值，又称为 soft label。</li>
+<li>Self Training 每一次选取的 unlabeled data 会强制给其打上标签，又称为 hard label。而生成模型会在每一次得到新模型的时候更新 unlabeled data 的 label 概率值，又称为 soft label。在生成模型中，是可以使用 soft label 的，这代表了这个样本对均值和方差的重要度影响；但是在神经网络的环境下，我们应该使用 hard label，因为这个 soft label 就是机器产生的，如果仍然以此作为目标 y，那么机器就学不到任何有用的信息了。</li>
 </ul>
 <p><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/self-training.png" alt="img" style="zoom:30%;"></p>
-<h3 id="Entropy-based-Regularization"><a href="#Entropy-based-Regularization" class="headerlink" title="Entropy-based Regularization"></a>Entropy-based Regularization</h3><h3 id="Semi-supervised-SVM"><a href="#Semi-supervised-SVM" class="headerlink" title="Semi-supervised SVM"></a>Semi-supervised SVM</h3><h2 id="Smoothness-Assumption"><a href="#Smoothness-Assumption" class="headerlink" title="Smoothness Assumption"></a>Smoothness Assumption</h2><h3 id="concepts"><a href="#concepts" class="headerlink" title="concepts"></a>concepts</h3><h3 id="digits-detection"><a href="#digits-detection" class="headerlink" title="digits detection"></a>digits detection</h3><h3 id="file-classfication"><a href="#file-classfication" class="headerlink" title="file classfication"></a>file classfication</h3><h3 id="cluster-and-then-label"><a href="#cluster-and-then-label" class="headerlink" title="cluster and then label"></a>cluster and then label</h3><h3 id="Graph-based-Approach"><a href="#Graph-based-Approach" class="headerlink" title="Graph-based Approach"></a>Graph-based Approach</h3>
+<blockquote>
+<p>拓展知识 1：self-training 在回归任务上是否适用？</p>
+<p>不适用。regression 并不像分类任务一样有一个 “决策边界”，所以当我们加入 unlabel data 的时候，拟合的函数 f * 并不会受到任何的影响。</p>
+</blockquote>
+<h3 id="基于熵的正则化（Entropy-based-Regularization）"><a href="#基于熵的正则化（Entropy-based-Regularization）" class="headerlink" title="基于熵的正则化（Entropy-based Regularization）"></a>基于熵的正则化（Entropy-based Regularization）</h3><p>因为我们的假设是这是一个非黑即白的世界，所以如果丢进来一个样本，我们希望可以和明确的给出他属于哪个类别（类似于 one-hot 的形式），而不是模糊的认为所有类别都是有可能的（每个类别取到平均概率）。而 “属于某个类别的概率很大，其他类别的概率很小” 这个概念可以使用信息熵来衡量，当每个类别的概率是均衡的时候，信息熵会取到最大值。而对于那些有标签的数据，我们还是使用传统的交叉熵损失，所以基于熵的方法更像是给原来的网络加入了一项正则项。</p>
+<p><a href="https://imgchr.com/i/BQEAUO" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/27/BQEAUO.jpg" alt></a></p>
+<h3 id="半监督SVM（Semi-supervised-SVM）"><a href="#半监督SVM（Semi-supervised-SVM）" class="headerlink" title="半监督SVM（Semi-supervised SVM）"></a>半监督 SVM（Semi-supervised SVM）</h3><p>半监督 SVM 的想法是非常简单的，就是对于所有没有标签的样本，我们穷举所有的可能，对每一种可能使用 SVM 的方法，然后选取 margin 最大 loss 最小的那种可能。当然，穷举样本所有的可能是非常非常慢的，老师说原论文有给出解决方案，这一点以后用到的时候再去详细了解。</p>
+<p><a href="https://imgchr.com/i/BQZr34" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/27/BQZr34.jpg" alt></a></p>
+<h2 id="Smoothness-Assumption"><a href="#Smoothness-Assumption" class="headerlink" title="Smoothness Assumption"></a>Smoothness Assumption</h2><p>Smoothness Assumption 方法的基础假设是：近朱者赤，近墨者黑，即输入的两个 x 相似的时候，他们的输出也应该是相似的。所以这个问题的关键就在于，怎么衡量输入 x 的相似程度呢？</p>
+<h3 id="聚类和标记"><a href="#聚类和标记" class="headerlink" title="聚类和标记"></a>聚类和标记</h3><p>最简单的方法就是套用聚类算法了，把聚类得到的一个类别中的所有的样本都看作是相似。<br><img src="https://imgchr.com/i/BQmYT0" alt="](https://s1.ax1x.com/2020/10/27/BQmYT0.png)"></p>
+<p>但是这个方法不一定有用，以图片为例子，单纯的使用 pixel 来判断样本的相似程度是不对的。</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BQmUYT.png" alt></p>
+<h3 id="基于图的方法"><a href="#基于图的方法" class="headerlink" title="基于图的方法"></a>基于图的方法</h3><p>首先也是类似的需要定义一个距离函数来计算两个样本之间的距离（相似度），然后可以用 K-nearest neighbor 或者 e-Beighborhood 的方法来加入边（这些边是可以加入 weight 属性的）。有了图之后，可以从有标签的样本出发对全局进行扩散从而对没有标签的样本进行分类。这种方法需要样本数量足够的大，否则同类样本之间会存在断层。</p>
+<p><a href="https://imgchr.com/i/BQ1cKU" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/27/BQ1cKU.jpg" alt></a></p>
+<p>后面老师说的定量的描述在我看来也和正则化非常的相似，这里的正则化项是整个图的 smooth 程度，我们只需要设计一个函数去表示这一项就行了，具体内容请看视频 <a href="https://www.bilibili.com/video/BV1JE411g7XF?p=24" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1JE411g7XF?p=24</a></p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BQ8Qpt.jpg" alt></p>
+
       
     </div>
 
@@ -682,7 +692,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://fengchexz.github.io/posts/22725.html" title="李宏毅深度学习笔记 3-Semi-supervised Learning">https://fengchexz.github.io/posts/22725.html</a>
+    <a href="https://fengchexz.github.io/posts/22725.html" title="李宏毅深度学习笔记 6 - 半监督学习">https://fengchexz.github.io/posts/22725.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -719,8 +729,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/50926.html" rel="next" title="李宏毅深度学习笔记 4-Unsupervised Learning">
-                <i class="fa fa-chevron-left"></i> 李宏毅深度学习笔记 4-Unsupervised Learning
+              <a href="/posts/8586.html" rel="next" title="李宏毅深度学习笔记 2 - 卷积神经网络 CNN">
+                <i class="fa fa-chevron-left"></i> 李宏毅深度学习笔记 2 - 卷积神经网络 CNN
               </a>
             
           </div>
@@ -729,8 +739,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/8586.html" rel="prev" title="李宏毅深度学习笔记 2-Convolutional Neural network">
-                李宏毅深度学习笔记 2-Convolutional Neural network <i class="fa fa-chevron-right"></i>
+              <a href="/posts/39773.html" rel="prev" title="李宏毅深度学习笔记 3 - 循环神经网络">
+                李宏毅深度学习笔记 3 - 循环神经网络 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1000,7 +1010,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-semi-supervised-learning-help"><span class="nav-number">2.</span> <span class="nav-text">Why semi-supervised learning help</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Semi-supervised-Generative-Model"><span class="nav-number">3.</span> <span class="nav-text">Semi-supervised Generative Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-density-Separation-Assumption"><span class="nav-number">4.</span> <span class="nav-text">Low-density Separation Assumption</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-Training"><span class="nav-number">4.1.</span> <span class="nav-text">Self Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Entropy-based-Regularization"><span class="nav-number">4.2.</span> <span class="nav-text">Entropy-based Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-supervised-SVM"><span class="nav-number">4.3.</span> <span class="nav-text">Semi-supervised SVM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smoothness-Assumption"><span class="nav-number">5.</span> <span class="nav-text">Smoothness Assumption</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concepts"><span class="nav-number">5.1.</span> <span class="nav-text">concepts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#digits-detection"><span class="nav-number">5.2.</span> <span class="nav-text">digits detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file-classfication"><span class="nav-number">5.3.</span> <span class="nav-text">file classfication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cluster-and-then-label"><span class="nav-number">5.4.</span> <span class="nav-text">cluster and then label</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-based-Approach"><span class="nav-number">5.5.</span> <span class="nav-text">Graph-based Approach</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是半监督学习"><span class="nav-number">1.</span> <span class="nav-text">什么是半监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半监督学习是怎么工作的"><span class="nav-number">2.</span> <span class="nav-text">半监督学习是怎么工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半监督生成模型"><span class="nav-number">3.</span> <span class="nav-text">半监督生成模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-density-Separation"><span class="nav-number">4.</span> <span class="nav-text">Low-density Separation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-Training"><span class="nav-number">4.1.</span> <span class="nav-text">Self Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于熵的正则化（Entropy-based-Regularization）"><span class="nav-number">4.2.</span> <span class="nav-text">基于熵的正则化（Entropy-based Regularization）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半监督SVM（Semi-supervised-SVM）"><span class="nav-number">4.3.</span> <span class="nav-text">半监督 SVM（Semi-supervised SVM）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smoothness-Assumption"><span class="nav-number">5.</span> <span class="nav-text">Smoothness Assumption</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类和标记"><span class="nav-number">5.1.</span> <span class="nav-text">聚类和标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于图的方法"><span class="nav-number">5.2.</span> <span class="nav-text">基于图的方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1040,7 +1050,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">231k</span>
+    <span title="站点总字数">233k</span>
   
   
 </div>

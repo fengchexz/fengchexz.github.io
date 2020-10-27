@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[李宏毅深度学习笔记 5 - 词向量]]></title>
+    <title><![CDATA[李宏毅深度学习笔记 3 - 循环神经网络]]></title>
+    <url>%2Fposts%2F39773.html</url>
+    <content type="text"><![CDATA[为什么需要 RNN？RNN 处理的对象是时序的数据，这些时序的数据前后之间是存在有某种联系的（例如我们可以根据前后文推断挖掉的某个词）。每一个单词可以使用一个向量来表示，传统的神经网络将这些词一个个的输入网络，是不能得到这种 “前后文” 关系的，所以我们需要一种有记忆的神经网络 - Recurrent Neural network (RNN) RNNElman network我们只需要对原先的神经网络做一点小小的改动就可以让他拥有 “记忆”。具体来说，我们用一个 memory 区域来保存网络中间层的结果，然后每一次输入数据的时候，网络不仅需要考虑前面的层传过来的参数，还有同时的考虑 memory 区域中的值。比如，我们可以设置每一次中间层的神经元都要将计算得到的结果加上 memory 中的值，这样这一层的神经元就拥有了历史数据的信息。当然，简单的相加是会有很多问题的，这里只是举一个例子。 Jordan network注意前面说的 Elman network 其实是没有 target 的，我们很难知道把什么东西放到 memory 里面才是比较好的。而 Jordan network 就是把当前的输出存到 memory 里面，然后再下一个节点的时候在读出来，这样我们很就很清楚自己需要放到 memory 里面的是什么东西，从而去优化他。 Bidirectional RNN前面说的两个网络的 memory，是存储了当前词之前的词的信息，我们很自然的会想到，除了 “前文”，“后文” 的内容也可以充分的利用起来，这就是 Bidirectional RNN LSTMLSTM 是什么？前面的三个 RNN 的网络，存储于 memory 中的值都是设计好的，再一次输入数据的时候都会进行更新。但是在实际操作中我们会有更多的需求，因此我们对需要设立几个 “门” 来控制 memory 中的值以及他什么时候去输出。具体来说，有一个 input gate 控制是否需要将数据输入近 memory，有一个 forget gate 用于控制是否擦除 memory 中的内容，有一个 output gate 用于控制是否输出 memory 中的内容。这里我们可以把控制” 门” 的信号也看做是输入，加上输入的数据 x，LSTM 实际上就是一个输入 4 个 input 产生 1 个 output 的块。 拓展知识 1：Long Short-term Memory 中 - 的正确位置 这个 “-” 应该在 short-term 中间，是长时间的短期记忆。想想我们之前看的 Recurrent Neural Network，它的 memory 在每一个时间点都会被洗掉，只要有新的 input 进来，每一个时间点都会把 memory 洗掉，所以的 short-term 是非常 short 的，但如果是 Long Short-term Memory，它记得会比较久一点 (只要 forget Gate 不要决定要忘记，它的值就会被存起来)。 LSTM 是如何运作的？假设输入的数据是 z，三个 gate 分别由信号 z~i~,z~f~,z~o~ 控制，首先输入数据会先经过一层激活函数得到 g (z)，input gate 的信号在经过一层变换后会得到 f (z~i~)，两者相乘就得到了我们想要存入 memory 的数据 $g (z)f (z_i)$(可以认为 f (z~i~) 等于 0 或 1，代表是否存入 memory)。而 forget gate 就决定了是否需要记住 memory 中上一次的数据 c，所以最终存入 memory 的值为 $c’=g (z) f (z_i)+cf (z_f)$，同样的 outout gate 决定了我们是否需要输出 memory 中的值，所以整个 LSTM 最后的输出就可以表示为 $a=h (c’)f(z_o)$。 LSTM meet RNN这个其实很简单啦，上面整个过程唯一还没有说明的就是，控制三个门的信号是怎么来的？实际上，这三个信号都是由输入经过现象变换得到的 事实上，除了 memory 中的值会让我们获得当前此之前的内容信息之外，LSTM 还会额外的把上一个节点中 LSTM 的一些中间输出取出来，和当前节点的输入 x 拼在一起，然后在用这个拼接的值得到当前节点 LSTM 的四个输入。所以，LSTM 网路的完整结构图应该是介个样子的： 传统 RNN 存在的问题传统 RNN 的训练其实并没有那么的容易，因为他的 error surface 通常是下面这样的 可以看到，RNN 的 error surface 是非常的崎岖的（一些地方很平坦，突然变的很陡峭）。所以，如果当前位置是在右边的缓坡上，这样因为梯度很小，我们会把学习率设置成一个较大的值，而随着我们在坡面上不断的下行，很有可能我们会一脚踩在这个悬崖上，这样悬崖处的梯度是很大的，这时候的学习率也很大，我们下一次的落脚的位置，就会非在十万八千里外了。这一点也很好解决，我们可以设置一个阈值，超过了这个阈值梯度都设置为同意的值，这样即使踩在了悬崖上，也不会飞的很远，这就是 Clipping 技术。 拓展阅读 2：如何得到梯度的大小？ 可以用 “对于输入变化，输出变化的剧烈程度” 来表示梯度的大小 RNN VS LSTMRNN 的 error surface 为什么会这么崎岖呢？在 RNN 当中，每一个数据都可以影响 memory 中的值。所以在每一个节点数据输入的时候，memory 中的值会被完全的覆盖掉。但是在 LSTM 中，对于一个新的 input，我们会把原来的 memory 乘上一个值再加上 input。这样做首先保证了如果一个节点对 memory 产生了影响，这种影响会一直存在于 memory 中；此外，memory 和 input 是相加的，不像 RNN 在输入新的 input 后会强制刷新 memory。 GRU相比于 lstm，Gates Recurrent Unit (GRU) 只有两个 Gate。其实这两个 Gate 也并不是那么神秘，只不过他对 input gate 和 forget gate 做了一个联动，即当 input gate 打开的时候，forget gate 会自动的关闭；当 forget gate 没有要刷新 memory 中的值，input gate 就会关起来。也就是说要把 memory 里面的值清楚掉，才放新的值进来 后面的内容都是关于 RNN 的实际应用的，还蛮好玩的，感兴趣的可以看视频做进一步的了解 https://www.bilibili.com/video/BV1JE411g7XF?p=21]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[李宏毅深度学习笔记 6 - 半监督学习]]></title>
+    <url>%2Fposts%2F22725.html</url>
+    <content type="text"><![CDATA[什么是半监督学习Supervised Learning：$(x^r,y^r)^R_{r=1}$ 每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应 Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{Bmatrix}^{R+U}_{u=R}$ 部分 data 没有与 input $x^u$ 相对应的标签 实际上 data 很容易搜集，只是缺少有 label 的 data，所以 $U\ll R$ 半监督学习是怎么工作的没有标签的数据虽然只有 input，但是他们的分布，可以告诉模型进行分界线的调整。半监督学习的使用往往会伴随着假设，假设的合理与否，决定了最终结果的好坏。 ———————————————— 半监督生成模型在有监督学习的概率生成模型中，以二分类为例，我们很容易就能得到 $P (C_1)$ 和 $P (C_2)$，通过对已知样本计算极大似然估计就能求得每个类别的均值和方差，从而可以得到 $P (x|C_1)$ 和 $P (x|C_2)$。最后根据概率公式就能计算出新的样本属于每个类别的概率。 在半监督生成模型中，计算的公式会有相应的变化，其具体步骤如下： 随机初始化一组参数：$\theta=\begin {Bmatrix} P (C_1),P (C_2),u^1,u^2,\sum\end {Bmatrix}$ 利用 model 计算每一笔 unlabeled data $x^u$ 属于 class1 的概率 $P_\theta (C_1|x^u)$ 更新参数： 计算每个类别的概率：$P (C_1)=\frac {N_1+\sum _{x^u} P (C_1|x^u)}{N}$ 计算每个类别的均值：$u_1=\frac {1}{N_1}\displaystyle\sum_{x^r\in C_1} x^r+\frac {1}{\sum_{x^u} P (C_1|x^u)}\displaystyle \sum_{x^u} P (C_1|x^u) x^u$ 其他参数也可以用类似的方法得到 重复 2、3 步骤直至模型收敛 流程中的步骤 2 和步骤 3 即是 EM algorithm 中的 E 和 M Low-density SeparationLow-density separation 方法的基础假设是：这个世界是非黑即白的，在两个类别的交界处数据的密度是很低的，因此两类数据之间会有明显的鸿沟 Self Training 先用 labeled data 训练一个模型 $f^*$, 可以使用任意的方法 然后用训练好的 $f^*$ 给 unlabeled data 打上标签 从 unlabeled data 中拿出一些 data 放入到 labeled data 中，选取的方法需要自定义 重复 1-3 的步骤 与 Generative Model 的区别： Self Training 每一次选取的 unlabeled data 会强制给其打上标签，又称为 hard label。而生成模型会在每一次得到新模型的时候更新 unlabeled data 的 label 概率值，又称为 soft label。在生成模型中，是可以使用 soft label 的，这代表了这个样本对均值和方差的重要度影响；但是在神经网络的环境下，我们应该使用 hard label，因为这个 soft label 就是机器产生的，如果仍然以此作为目标 y，那么机器就学不到任何有用的信息了。 拓展知识 1：self-training 在回归任务上是否适用？ 不适用。regression 并不像分类任务一样有一个 “决策边界”，所以当我们加入 unlabel data 的时候，拟合的函数 f * 并不会受到任何的影响。 基于熵的正则化（Entropy-based Regularization）因为我们的假设是这是一个非黑即白的世界，所以如果丢进来一个样本，我们希望可以和明确的给出他属于哪个类别（类似于 one-hot 的形式），而不是模糊的认为所有类别都是有可能的（每个类别取到平均概率）。而 “属于某个类别的概率很大，其他类别的概率很小” 这个概念可以使用信息熵来衡量，当每个类别的概率是均衡的时候，信息熵会取到最大值。而对于那些有标签的数据，我们还是使用传统的交叉熵损失，所以基于熵的方法更像是给原来的网络加入了一项正则项。 半监督 SVM（Semi-supervised SVM）半监督 SVM 的想法是非常简单的，就是对于所有没有标签的样本，我们穷举所有的可能，对每一种可能使用 SVM 的方法，然后选取 margin 最大 loss 最小的那种可能。当然，穷举样本所有的可能是非常非常慢的，老师说原论文有给出解决方案，这一点以后用到的时候再去详细了解。 Smoothness AssumptionSmoothness Assumption 方法的基础假设是：近朱者赤，近墨者黑，即输入的两个 x 相似的时候，他们的输出也应该是相似的。所以这个问题的关键就在于，怎么衡量输入 x 的相似程度呢？ 聚类和标记最简单的方法就是套用聚类算法了，把聚类得到的一个类别中的所有的样本都看作是相似。 但是这个方法不一定有用，以图片为例子，单纯的使用 pixel 来判断样本的相似程度是不对的。 基于图的方法首先也是类似的需要定义一个距离函数来计算两个样本之间的距离（相似度），然后可以用 K-nearest neighbor 或者 e-Beighborhood 的方法来加入边（这些边是可以加入 weight 属性的）。有了图之后，可以从有标签的样本出发对全局进行扩散从而对没有标签的样本进行分类。这种方法需要样本数量足够的大，否则同类样本之间会存在断层。 后面老师说的定量的描述在我看来也和正则化非常的相似，这里的正则化项是整个图的 smooth 程度，我们只需要设计一个函数去表示这一项就行了，具体内容请看视频 https://www.bilibili.com/video/BV1JE411g7XF?p=24]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[李宏毅深度学习笔记 2 - 卷积神经网络 CNN]]></title>
+    <url>%2Fposts%2F8586.html</url>
+    <content type="text"><![CDATA[为什么适用 CNN相较于 DNN，CNN 使用局部连接和权值共享大大降低了参数量，为什么这种方法可行呢？ 某一张图片的 pattern 通常只是一小部分，因此对于某一个神经元来说，并不需要看整张图像 (局部连接) 对于某一个局部特征，当他出现在图像的不同位置时，完全可以只使用一个 detector (权值共享) 对一张图像进行 subsampling，例如把奇数行、偶数列的 pixel 拿掉，并不会影响人们对这张图象的理解。而这却可以大大的降低计算量 (池化) 杂记李宏毅老师的 PPT 真的讲的很仔细，把之前自学的一些疑惑点以及搞了很久才弄懂的东西很通俗易懂的讲出来了，这里简单记录一下。 彩色图像彩色图像有 RGB 三个通道，但是其输出层的神经元个数仍然与卷积核的个数相等，每一个卷积核都与 iamge 的三层做内积。 CNN vs 全连接 局部连接和权值共享在这个图中已经显示的很清楚了局部连接：全连接网络的后一个神经元与前一层所有神经元相连。而卷积操作中某一个神经元只连接了前一层的部分神经元，这一部分也成为感受野权值共享：对于同一个卷积核得到不同的神经元，虽然他们连接了前一层中不同的神经元，但是所用到的权值都是一样的。 最大池化池化操作看起来是不能微分的，一种比较直观的想法是把求得的梯度复制到池化窗口的每一个区域，这种操作会造成 loss 的总和是原来的 n 倍，极易产生梯度爆炸的现象。因此，正确的操作是把当前的梯度复制到池化窗口的某一个位置，而其他位置的梯度，就是 0。 Flattenflatten 就是把 feature map 拉直，拉直之后就可以丢到全连接网络中（所以 CNN 中的全连接就像是集合了所有提取到的特征做分类），然后就结束了。 CNN 是如何工作的？what does filter do我们用 $a_{ij}^{k}$ 表示第 k 个卷积核下标 ij 分别表示第 i 行第 j 列，可以定义第 k 个卷积核的激活度可以表示为:$$a^k=\sum_{i=1}^{11}\sum_{j=1}^{11}a_{ij}^{k}$$ 在训练阶段，我们通过计算梯度来调整卷积核的参数使得损失尽量小。类似的，我们通过梯度上升来找到一张 image 使得这个卷积核的激活程度达到最大值，优化的目标表示如下：$$x^*=\arg\max_x a^k$$ 最终得到的结果如上图所示。以第三张 image 为例，上面布满了小小的斜条纹，可以认为其就是检测原图像中某个小部分的斜条纹这一特征。其他的卷积核也类似的检测输入图像的一些纹理特征。 what does neuron do与上述方法类似的，我们也可以定义出最后的 flatten 操作中每个神经元的优化目标：$$x^*=\arg\max a^j$$ 最终得到的结果如上图所示。可以看到和 filter 得到的结果有很大的区别，因为在 flatten 之后，每个神经元所关注的不再是类似于 fliter 的某个部分，而是整张图片，所以图中所示就是可以使得他激活成都最大的 image。 what about output类似的，我们以可以得到输出层神经元所最希望 “看到的” image。以手写数字识别为例，很自然的想法是如果以数字 1 所代表的输出去进行梯度上升，得到的图像应该是一个数字 1 的图形，但是最终的结果并不是这个样子的。神经网络所学到的东西跟我们一般人类的想象认知并不是完全一样的。当然，我们可以通过对网络添加一些限制来使得这个结果更加的趋近于数字。 应用Deep Dream把某一层的 filter 中的正值调大，负值调小，这样相当于 “夸大 CNN 所看到的信息” Deep Style Playing GoSpeech Text]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[李宏毅深度学习笔记 1 - 深度学习的一些技巧]]></title>
+    <url>%2Fposts%2F10868.html</url>
+    <content type="text"><![CDATA[如何在训练数据上得到更好的结果？改变激活函数sigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxout 让每一个神经元自动去学习他的激活函数 如图所示，Maxout 将固定数量 (需要自己调整) 的神经元分为一组，并取组中最大的值作为输出。通过这样的方法，Maxout 可以拟合出 ReLU 以及其他任意的分段线性凸激活函数 Q:Maxout 是否会导致未被选择的神经元不能训练？A: 对于不同的输入数据，Maxout 所选择激活的神经元在训练的过程中不断地进行变化，因此理论上每一个 weight 都会被训练到 调整学习率AdaGrad AdaGrad 会使用到历史梯度的信息，对于当前当前需要更新的 w，如果其平常的 gradient 都比较大，那么当前所处位置应该比较 “陡峭”，所以选取比较小的 learning rate；反之，如果平常 gradient 都比较小，那么当前所处位置应该比较 “平坦”，所以选取比较大的 learning rate RMSProp RMSProp 与 AdaGrad 的不同之处在于，AdaGrad 使用历史所有的梯度平均来对当前的学习率进行限制，而对于某一个方向，有可能会出现一会陡峭一会平坦的情况。所以 RMSProp 通过 α 来对历史梯度的比重进行限制，将 α 设置的更小，模型就会更加注重新的梯度对当前学习率的影响。 Momentum Adam 如何在测试数据上得到更好的结果？早停 (Early Stopping)正则化 (Regularization)L1 and L2L1 和 L2 都会使得参数减小 L1 在每次更新的时候减去一个固定值 L2 在每次更新时乘上一个小于 1 的固定值 L1 会使得有很多参数都接近 0，但是会存在很大的值；L2 会使得参数的平均都是比较小 梯度衰减（Weight Decay）Dropout Dropout 是指在训练时以概率 p 随机的丢弃一些神经元 在 testing 的时候不做 dropout 在 training 时，假设 Dropout 的概率为 p，则 training data 中训练出的所有 weight 需要乘上 (1-p) 才能被当作 testing 的 weight 使用 如果网络很接近于线性模型，Dropout 所得到的结果会比较好，因此采用 ReLU 和 Maxout 的网络通常会和 Dropout 配合使用]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[李宏毅深度学习笔记 4 - 词向量]]></title>
     <url>%2Fposts%2F28779.html</url>
     <content type="text"><![CDATA[我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？ 一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2 表示宝马。这种序号表示会隐含的加入一些模糊的信息，比如 2-1=1 是否就代表宝马 - 奔驰 = 奔驰呢？或者 2>1 是否表示宝马比奔驰要好呢？显然，我们希望这两者是一个并列的关系，而表示两者不相关的一个很好的方法就是使用正交向量，这就是 one-hot 形式。两个单词的 one-hot 形式表示如下： 词语 奔驰 0 1 宝马 1 0 使用 one-hot 形式的向量就已经可以提取出一些文本特征，比如简单的相加就可以获得每个单词出现的次数。直接把 one-hot 形式的词表示输入神经网络是否可行呢？答案是否定的。one-hot 的正交形式走向了另一个极端，某些词之间确实是存在有某种联系的。例如 “喜欢” 和 “爱” 虽然是两个不同层面的词，但确实都表达了某种正向的情感，我们希望他们的向量表示可以和类似于” 讨厌 “一类的词尽可能的远一点。这种单词间的远近，我们可以使用两个向量点积的形式来表示 ——a^T^b，而在 one-hot 形势下，我们很容易的得到任意两个单词间的距离都为 0。此外，这样的表示方法需要我们预先知道所有需要表示的单词总数，光是新华词典的单字已经够多了，他们所能组合成的词更是另一个量级，这样就会导致每一个词都需要用一个很长很长的向量来表示，这样不仅带来了庞大的计算量，也不利于越来越多新词的出现。 于是，word2vec（word to vector) 的方法就应运而生了！这种方法的思路也很简单：既然原来的 one-hot 太大了，我们就用一个更低维度的向量来表示这个单词；既然 one-hot 正交的过于绝对了，我们就改变每个维度的值来更好的表示这个词。当然，降维也不是说降就降的，我们需要给模型提供更多的信息。大家应该都做过英语的完形填空，给定背景和上下文，即使中间挖掉了一个词，我们也可以推理出这个词或者其他相近的词，这也是我们需要额外给模型提供的信息 —— 上下文。怎么表示上下文呢？我们可以用当前单词的前几个词或者后几个词来作为他的上下文信息，这里的” 几个 “就是滑动窗口的大小。有了上下文后，我们只要把他丢入一个简单的，只有一层隐藏层的神经网络，以上下文为输入，预测的单词为输出，不断的去训练，最后取出中间的隐藏层，就可以得到单词的词向量啦！ 让我们来拆解一下这个训练过程。首先我们拥有的数据是各个不同单词的 one-hot 的向量，我们希望网络可以输出一个更低维度的向量来表示某个单词。我们所选取的网络，是一个只拥有一个中间层的全连接网络，这个中间层神经元的个数，就代表了我想要的词向量的维度。为了利用上下文的信息，在输入层会有 n 个单词，怎么输入网络呢？有一种方法是把这些向量拼成一个长长的列向量，但实际上，我们会把这些词向量相同位置所对应的中间层相同的位置所用的权重是一样的。可以设想一下如果每一个位置的权重都不一样，那么同一个词放到不同的位置，他得到的结果就是不同的（这里我们不需要考虑序列先后的问题），而且，采用权重相同的方法可以大大的降低参数量（类似于卷积操作）。在这种情况下，每个单词的 W 相同，所以中间层的输出 z 可以通过 $W (x_{i-2}+x_{i-1}+・・・x_0)$ 得到。 拓展知识 1：上下文的其他表示 在上面的例子中，其实只用了当前词的前面几个词来预测。除此之外，我们还可以使用前后的几个词来预测当前此（CBOW）或者是用当前词来预测前后的其他词（Skip-gram） 拓展知识 2：如何控制两个 weight 在训练过程中一样？ 上述的方法因为对输入的所有权重值都是一样的，所以问题得到了简化。但在实际操作中，可能会存在希望两个输入的某几个 weight 相同的情况。方法其实很简单，只需要将他们的初始值设为一样，并在权重更新的时候同时减去两者计算得到的梯度。 当然还有很多有意思的事情可以做，关于多语言嵌入、多域嵌入、文档嵌入等内容的更多介绍请参照李宏毅老师的课程 https://www.bilibili.com/video/BV1JE411g7XF?p=22]]></content>
       <categories>
@@ -36,54 +84,6 @@
       </categories>
       <tags>
         <tag>推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[李宏毅深度学习笔记 1-Tips for Deep Learning]]></title>
-    <url>%2Fposts%2F10868.html</url>
-    <content type="text"><![CDATA[Good Results on Training Data?New activation functionsigmoid 会把输入的大变化压缩成较小的输出变化，因此在网络加深时会导致梯度消失现象 ReLU Q:ReLU 会导致神经网络变为线性的吗？A: 对于使用 ReLU 的网络，整体还是非线性的，当输入做较大改变的时候，激活的神经元就会发生变化 ReLU-variant MaxoutMaxout 让每一个神经元自动去学习他的激活函数 如图所示，Maxout 将固定数量 (需要自己调整) 的神经元分为一组，并取组中最大的值作为输出。通过这样的方法，Maxout 可以拟合出 ReLU 以及其他任意的分段线性凸激活函数 Q:Maxout 是否会导致未被选择的神经元不能训练？A: 对于不同的输入数据，Maxout 所选择激活的神经元在训练的过程中不断地进行变化，因此理论上每一个 weight 都会被训练到 Adapive learning rateAdaGrad AdaGrad 会使用到历史梯度的信息，对于当前当前需要更新的 w，如果其平常的 gradient 都比较大，那么当前所处位置应该比较 “陡峭”，所以选取比较小的 learning rate；反之，如果平常 gradient 都比较小，那么当前所处位置应该比较 “平坦”，所以选取比较大的 learning rate RMSProp RMSProp 与 AdaGrad 的不同之处在于，AdaGrad 使用历史所有的梯度平均来对当前的学习率进行限制，而对于某一个方向，有可能会出现一会陡峭一会平坦的情况。所以 RMSProp 通过 α 来对历史梯度的比重进行限制，将 α 设置的更小，模型就会更加注重新的梯度对当前学习率的影响。 Momentum Adam Good Results on Testing Data?Early StoppingRegularizationL1 and L2L1 和 L2 都会使得参数减小 L1 在每次更新的时候减去一个固定值 L2 在每次更新时乘上一个小于 1 的固定值 L1 会使得有很多参数都接近 0，但是会存在很大的值；L2 会使得参数的平均都是比较小 Weight DecayDropout Dropout 是指在训练时以概率 p 随机的丢弃一些神经元 在 testing 的时候不做 dropout 在 training 时，假设 Dropout 的概率为 p，则 training data 中训练出的所有 weight 需要乘上 (1-p) 才能被当作 testing 的 weight 使用 如果网络很接近于线性模型，Dropout 所得到的结果会比较好，因此采用 ReLU 和 Maxout 的网络通常会和 Dropout 配合使用]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>深度学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[李宏毅深度学习笔记 2-Convolutional Neural network]]></title>
-    <url>%2Fposts%2F8586.html</url>
-    <content type="text"><![CDATA[Why CNN for Image？相较于 DNN，CNN 使用局部连接和权值共享大大降低了参数量，为什么这种方法可行呢？ 某一张图片的 pattern 通常只是一小部分，因此对于某一个神经元来说，并不需要看整张图像 (局部连接) 对于某一个局部特征，当他出现在图像的不同位置时，完全可以只使用一个 detector (权值共享) 对一张图像进行 subsampling，例如把奇数行、偶数列的 pixel 拿掉，并不会影响人们对这张图象的理解。而这却可以大大的降低计算量 (池化) Some Notes李宏毅老师的 PPT 真的讲的很仔细，把之前自学的一些疑惑点以及搞了很久才弄懂的东西很通俗易懂的讲出来了，这里简单记录一下。 Colorful Image彩色图像有 RGB 三个通道，但是其输出层的神经元个数仍然与卷积核的个数相等，每一个卷积核都与 iamge 的三层做内积。 Convolution V.s. Fully connected 局部连接和权值共享在这个图中已经显示的很清楚了局部连接：全连接网络的后一个神经元与前一层所有神经元相连。而卷积操作中某一个神经元只连接了前一层的部分神经元，这一部分也成为感受野权值共享：对于同一个卷积核得到不同的神经元，虽然他们连接了前一层中不同的神经元，但是所用到的权值都是一样的。 Max PoolingFlattenWhat does CNN learn？what does filter do我们用 $a_{ij}^{k}$ 表示第 k 个卷积核下标 ij 分别表示第 i 行第 j 列，可以定义第 k 个卷积核的激活度可以表示为:$$a^k=\sum_{i=1}^{11}\sum_{j=1}^{11}a_{ij}^{k}$$ 在训练阶段，我们通过计算梯度来调整卷积核的参数使得损失尽量小。类似的，我们通过梯度上升来找到一张 image 使得这个卷积核的激活程度达到最大值，优化的目标表示如下：$$x^*=\arg\max_x a^k$$ 最终得到的结果如上图所示。以第三张 image 为例，上面布满了小小的斜条纹，可以认为其就是检测原图像中某个小部分的斜条纹这一特征。其他的卷积核也类似的检测输入图像的一些纹理特征。 what does neuron do与上述方法类似的，我们也可以定义出最后的 flatten 操作中每个神经元的优化目标：$$x^*=\arg\max a^j$$ 最终得到的结果如上图所示。可以看到和 filter 得到的结果有很大的区别，因为在 flatten 之后，每个神经元所关注的不再是类似于 fliter 的某个部分，而是整张图片，所以图中所示就是可以使得他激活成都最大的 image。 what about output类似的，我们以可以得到输出层神经元所最希望 “看到的” image。以手写数字识别为例，很自然的想法是如果以数字 1 所代表的输出去进行梯度上升，得到的图像应该是一个数字 1 的图形，但是最终的结果并不是这个样子的。神经网络所学到的东西跟我们一般人类的想象认知并不是完全一样的。当然，我们可以通过对网络添加一些限制来使得这个结果更加的趋近于数字。 APPlicationDeep Dream把某一层的 filter 中的正值调大，负值调小，这样相当于 “夸大 CNN 所看到的信息” Deep Style Playing GoSpeech Text]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>深度学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[李宏毅深度学习笔记 3-Semi-supervised Learning]]></title>
-    <url>%2Fposts%2F22725.html</url>
-    <content type="text"><![CDATA[IntroductionSupervised Learning：$(x^r,y^r)^R_{r=1}$ 每一组 data 都有 input $x^r$ 和 output $y^r$ 相对应 Semi-supervised Learning：$\begin{Bmatrix}(x^r,\hat{y}^r)\end{Bmatrix}^R_{r=1}+\begin{Bmatrix}x^u\end{Bmatrix}^{R+U}_{u=R}$ 部分 data 没有与 input $x^u$ 相对应的标签 实际上 data 很容易搜集，只是缺少有 label 的 data，所以 $U\ll R$ Why semi-supervised learning help没有标签的数据虽然只有 input，但是他们的分布，可以告诉模型进行分界线的调整。半监督学习的使用往往会伴随着假设，假设的合理与否，决定了最终结果的好坏。 ———————————————— Semi-supervised Generative Model在有监督学习的概率生成模型中，以二分类为例，我们很容易就能得到 $P (C_1)$ 和 $P (C_2)$，通过对已知样本计算极大似然估计就能求得每个类别的均值和方差，从而可以得到 $P (x|C_1)$ 和 $P (x|C_2)$。最后根据概率公式就能计算出新的样本属于每个类别的概率。 在半监督生成模型中，计算的公式会有相应的变化，其具体步骤如下： 随机初始化一组参数：$\theta=\begin {Bmatrix} P (C_1),P (C_2),u^1,u^2,\sum\end {Bmatrix}$ 利用 model 计算每一笔 unlabeled data $x^u$ 属于 class1 的概率 $P_\theta (C_1|x^u)$ 更新参数： 计算每个类别的概率：$P (C_1)=\frac {N_1+\sum _{x^u} P (C_1|x^u)}{N}$ 计算每个类别的均值：$u_1=\frac {1}{N_1}\displaystyle\sum_{x^r\in C_1} x^r+\frac {1}{\sum_{x^u} P (C_1|x^u)}\displaystyle \sum_{x^u} P (C_1|x^u) x^u$ 其他参数也可以用类似的方法得到 重复 2、3 步骤直至模型收敛 流程中的步骤 2 和步骤 3 即是 EM algorithm 中的 E 和 M Low-density Separation AssumptionLow-density separation 方法的基础假设是：这个世界是非黑即白的，在两个类别的交界处数据的密度是很低的，因此两类数据之间会有明显的鸿沟 Self Training 先用 labeled data 训练一个模型 $f^*$, 可以使用任意的方法 然后用训练好的 $f^*$ 给 unlabeled data 打上标签 从 unlabeled data 中拿出一些 data 放入到 labeled data 中，选取的方法需要自定义 重复 1-3 的步骤 与 Generative Model 的区别： Self Training 每一次选取的 unlabeled data 会强制给其打上标签，又称为 hard label。而 Generative Model 会在每一次得到新模型的时候更新 unlabeled data 的 label 概率值，又称为 soft label。 Entropy-based RegularizationSemi-supervised SVMSmoothness Assumptionconceptsdigits detectionfile classficationcluster and then labelGraph-based Approach]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>深度学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[李宏毅深度学习笔记 4-Unsupervised Learning]]></title>
-    <url>%2Fposts%2F50926.html</url>
-    <content type="text"><![CDATA[ClusteringK 均值聚类 (K-means)随机的选取 k 个点作为 cluster 的 center，计算其他点与各个 center 的距离，将其归类为最近的一个 cluster 层次聚类 (Hierarchical Agglomerative Clusteing、HAC) 类似于归并。首先我们需要将现有的数据构造一个树结构。这个树的构造过程如下： 数据点间两两组成一个 pair 计算距离，找到最近的一个 pair，将这个 pair 中的两个数据点取出合并成一个 cluster，并将这两个点的平均作为新的 vector 加入原来的数据集中。 重复步骤 1 直到整个数据集归并成一个 cluster 在得到了树结构之后，怎么将数据分为不同的 cluster 呢？之时候需要你决定一个分割的位置。例如切在下图中的红线位置，那么就变成了两个 cluster（3、2），如果切在蓝线的位置，那么就变成了三个 cluster（2、1、2）。 distributed representationcluster 有一个特点就是，每个 x 必将被确定的分类于一个类别。这就类似于一个 one hot 的向量，但是我们知道网络在做预测的时候，其实是会给每一个类别一个概率的。例如数字 2 可能会写的像 3 或者 7，那么网络虽然最终将其分类为 2，但是在 3 或者 7 上仍会给出一定的概率。distributed representation 做的就是这样一件事情，他用一个 vector 来表示 x。如果这个 vector 相对于 x 来说是一个更低维的空间，那么这就叫做 dimension reduction，两者做的是同一件事，知识称呼不同而已。 降维降维的可行性以 MNIST 为例，每一个数字 3 在其中表示为 28*28 的矩阵，但实际上表示这一堆数字 3 只需要一个维度。有些数字三左转了 10 度，有些右转了 20 度，我们只需要确定这个角度，就能唯一确定一个数字三。我们可以用更小的维度来确定原来复杂的数据，这就是降维。 那么怎么做降维呢？我们需要做的就是找到一个 function，这个 function 可以将输入空间中的 x 映射到一个更低维的空间。 特征选择这是降维中最简单的方法，只需要将原数据中不需要的维度拿掉。例如一个 excel 表格中每一列表示一个特征，其中有一列序号对于最终的预测并无影响，因此我们将这一列删掉。但是实际操作中，通常每个特征都是不可或缺的。 主成分分析 (Principe component abalysis、PCA)矩阵分解 PCA 所选取的 function，就是很简单的 linear function。如图中所示，我们可以将原先二维的数据点映射在红色或者黄色的线上，这条线所选取的原则就是：经过 projection 之后，得到的不同数据点的分布越大越好。这也就是说，我们不希望映射之后这些数据点聚在一起，不同的数据点在映射之后必须是仍然可以” 看 “出来的。 实例 - 词嵌入为什么需要词嵌入在自然语言处理中，词与词之间通常是会存在一定联系的。如果使用传统的 one hot 形式，例如猫为 [1,0,0]，狗为 [0,1,0]，这样两者在输入网络的时候是完全没有任何关系的，但其实他们都为动物，且在句子中的成分也十分相似，所以我们需要一种更加合适的方法来表示这两个词。怎么做呢？这就是我们在做阅读时长提到的概念：上下文。 基于计数的词嵌入如果有两个词 $w_i$ 和 $w_j$，他们经常出现在同一篇文章中，那么我们希望表示这两个词的 vector 尽可能的接近。这个方法有一个代表性的例子叫做 Glove vector 基于预测的词嵌入这种方法通过预测当前单词下一个可能的单次来得到他的词向量。假设世界上有 10W 个单词，那么我们的网络就输出一个 10W 维的 vector，每一维的值就是预测的这个单词的概率 (这里的输入是 one hot 形式)。通过将输入这个单词时，将网络隐藏层取出来构成一个新的向量，就是当前单词的 vector。 多语言嵌入多域嵌入文档嵌入]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
