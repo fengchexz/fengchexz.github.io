@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fengchexz.github.io/"/>
-  <updated>2020-10-27T09:31:58.656Z</updated>
+  <updated>2020-10-29T00:38:35.214Z</updated>
   <id>https://fengchexz.github.io/</id>
   
   <author>
@@ -17,39 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>李宏毅深度学习笔记 3 - 循环神经网络</title>
-    <link href="https://fengchexz.github.io/posts/39773.html"/>
-    <id>https://fengchexz.github.io/posts/39773.html</id>
-    <published>2020-10-27T09:26:00.000Z</published>
-    <updated>2020-10-27T09:31:58.656Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;为什么需要RNN？&quot;&gt;&lt;a href=&quot;#为什么需要RNN？&quot; class=&quot;headerlink&quot; title=&quot;为什么需要RNN？&quot;&gt;&lt;/a&gt;为什么需要 RNN？&lt;/h2&gt;&lt;p&gt;RNN
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>李宏毅深度学习笔记 6 - 半监督学习</title>
     <link href="https://fengchexz.github.io/posts/22725.html"/>
     <id>https://fengchexz.github.io/posts/22725.html</id>
-    <published>2020-10-27T06:26:00.000Z</published>
-    <updated>2020-10-27T07:50:34.871Z</updated>
+    <published>2020-10-28T06:26:00.000Z</published>
+    <updated>2020-10-29T00:38:35.214Z</updated>
     
     <summary type="html">
     
@@ -75,11 +47,97 @@
   </entry>
   
   <entry>
+    <title>李宏毅深度学习笔记 5-Transformer</title>
+    <link href="https://fengchexz.github.io/posts/55921.html"/>
+    <id>https://fengchexz.github.io/posts/55921.html</id>
+    <published>2020-10-27T13:54:00.000Z</published>
+    <updated>2020-10-30T14:54:36.770Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;这一节的重点在于自注意力机制（Self-Attention）的引入&lt;/p&gt;
+&lt;h2 id=&quot;RNN和CNN的局限性&quot;&gt;&lt;a href=&quot;#RNN和CNN的局限性&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 4 - 词向量</title>
+    <link href="https://fengchexz.github.io/posts/28779.html"/>
+    <id>https://fengchexz.github.io/posts/28779.html</id>
+    <published>2020-10-27T13:53:00.000Z</published>
+    <updated>2020-10-29T00:38:22.316Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？&lt;/p&gt;
+&lt;p&gt;一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 3 - 循环神经网络</title>
+    <link href="https://fengchexz.github.io/posts/39773.html"/>
+    <id>https://fengchexz.github.io/posts/39773.html</id>
+    <published>2020-10-27T09:28:00.000Z</published>
+    <updated>2020-10-30T08:39:34.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;为什么需要RNN？&quot;&gt;&lt;a href=&quot;#为什么需要RNN？&quot; class=&quot;headerlink&quot; title=&quot;为什么需要RNN？&quot;&gt;&lt;/a&gt;为什么需要 RNN？&lt;/h2&gt;&lt;p&gt;RNN
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>李宏毅深度学习笔记 2 - 卷积神经网络 CNN</title>
     <link href="https://fengchexz.github.io/posts/8586.html"/>
     <id>https://fengchexz.github.io/posts/8586.html</id>
-    <published>2020-10-27T06:26:00.000Z</published>
-    <updated>2020-10-27T06:27:02.627Z</updated>
+    <published>2020-10-27T06:27:00.000Z</published>
+    <updated>2020-10-29T00:38:03.694Z</updated>
     
     <summary type="html">
     
@@ -135,40 +193,11 @@
   </entry>
   
   <entry>
-    <title>李宏毅深度学习笔记 4 - 词向量</title>
-    <link href="https://fengchexz.github.io/posts/28779.html"/>
-    <id>https://fengchexz.github.io/posts/28779.html</id>
-    <published>2020-10-26T13:53:00.000Z</published>
-    <updated>2020-10-27T04:26:10.021Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;我们知道计算机中存储数据都是用二进制的 0 或 1 表示的，那么假设现在有两个词：奔驰、宝马，我们怎样去表示这两个词呢？&lt;/p&gt;
-&lt;p&gt;一种很简单直观的方法就是使用数字序号，也就是 1 表示奔驰，2
-        
-      
-    
-    </summary>
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MO 论文分享：Data-free Learning of Student Networks</title>
     <link href="https://fengchexz.github.io/posts/34070.html"/>
     <id>https://fengchexz.github.io/posts/34070.html</id>
     <published>2020-09-29T05:47:00.000Z</published>
-    <updated>2020-10-25T02:14:41.901Z</updated>
+    <updated>2020-10-29T00:42:32.295Z</updated>
     
     <summary type="html">
     
@@ -204,7 +233,7 @@
     <link href="https://fengchexz.github.io/posts/46698.html"/>
     <id>https://fengchexz.github.io/posts/46698.html</id>
     <published>2020-09-28T01:56:00.000Z</published>
-    <updated>2020-10-25T02:14:48.499Z</updated>
+    <updated>2020-10-29T00:41:24.165Z</updated>
     
     <summary type="html">
     
@@ -332,7 +361,7 @@
     <link href="https://fengchexz.github.io/posts/48156.html"/>
     <id>https://fengchexz.github.io/posts/48156.html</id>
     <published>2020-07-19T14:42:00.000Z</published>
-    <updated>2020-10-25T02:14:21.149Z</updated>
+    <updated>2020-10-29T00:41:14.973Z</updated>
     
     <summary type="html">
     
@@ -614,38 +643,6 @@
         
         
           &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Sherlock Holmes received a note with some strange strings: &lt;code&gt;Let&#39;s date! 3485djDkxh4hhGE 2984akDfkkkkggEdsb
-        
-      
-    
-    </summary>
-    
-      <category term="algorithm" scheme="https://fengchexz.github.io/categories/algorithm/"/>
-    
-      <category term="PAT" scheme="https://fengchexz.github.io/categories/algorithm/PAT/"/>
-    
-    
-      <category term="c/c++" scheme="https://fengchexz.github.io/tags/c-c/"/>
-    
-      <category term="algorithm" scheme="https://fengchexz.github.io/tags/algorithm/"/>
-    
-      <category term="PAT" scheme="https://fengchexz.github.io/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1027 Colors in Mars</title>
-    <link href="https://fengchexz.github.io/posts/31924.html"/>
-    <id>https://fengchexz.github.io/posts/31924.html</id>
-    <published>2020-01-30T07:46:00.000Z</published>
-    <updated>2020-01-30T07:47:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;People in Mars represent the colors in their computers in a similar way as the Earth people. That is, a color
         
       
     

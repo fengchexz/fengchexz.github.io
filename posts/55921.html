@@ -133,16 +133,29 @@
 
 
 
-  <meta name="description" content="风过轻轻，侧耳倾听。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="风车小站">
-<meta property="og:url" content="https://fengchexz.github.io/tags/论文/page/2/index.html">
+  <meta name="description" content="这一节的重点在于自注意力机制（Self-Attention）的引入 RNN 和 CNN 的局限性在笔记三循环神经网络中，我们已经知道了实用 RNN 可以取处理时序的数据。但是 RNN 处理这种数据的方式，是非常低效的：后一个单元需要用到前一个单元的输出或者是中间结果。这就导致了，如果我想要下图中的输出 b^4^，就必须从头到尾将 a^1^~a^4^ 一个个的输入网络。我们想要找到一种并行处理序列数">
+<meta name="keywords" content="机器学习,深度学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李宏毅深度学习笔记 5-Transformer">
+<meta property="og:url" content="https://fengchexz.github.io/posts/55921.html">
 <meta property="og:site_name" content="风车小站">
-<meta property="og:description" content="风过轻轻，侧耳倾听。">
+<meta property="og:description" content="这一节的重点在于自注意力机制（Self-Attention）的引入 RNN 和 CNN 的局限性在笔记三循环神经网络中，我们已经知道了实用 RNN 可以取处理时序的数据。但是 RNN 处理这种数据的方式，是非常低效的：后一个单元需要用到前一个单元的输出或者是中间结果。这就导致了，如果我想要下图中的输出 b^4^，就必须从头到尾将 a^1^~a^4^ 一个个的输入网络。我们想要找到一种并行处理序列数">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7gduay9wj31hc0u042m.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7gr15c91j30km0fftg2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7gth76bxj30xu0jmdv6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7pub4a2oj31hc0u0gq0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7pvz3qdfj31hc0u0tc2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7q523exoj31hc0u0wib.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qbsm9unj31hc0u0wif.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qiyt9umj31hc0u0jwr.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qx9g4ihj31hc0u0wi3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qzesu05j31hc0u0gq1.jpg">
+<meta property="og:updated_time" content="2020-10-30T14:54:36.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风车小站">
-<meta name="twitter:description" content="风过轻轻，侧耳倾听。">
+<meta name="twitter:title" content="李宏毅深度学习笔记 5-Transformer">
+<meta name="twitter:description" content="这一节的重点在于自注意力机制（Self-Attention）的引入 RNN 和 CNN 的局限性在笔记三循环神经网络中，我们已经知道了实用 RNN 可以取处理时序的数据。但是 RNN 处理这种数据的方式，是非常低效的：后一个单元需要用到前一个单元的输出或者是中间结果。这就导致了，如果我想要下图中的输出 b^4^，就必须从头到尾将 a^1^~a^4^ 一个个的输入网络。我们想要找到一种并行处理序列数">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7gduay9wj31hc0u042m.jpg">
 
 
 
@@ -152,7 +165,7 @@
 
   
   
-  <link rel="canonical" href="https://fengchexz.github.io/tags/论文/page/2/">
+  <link rel="canonical" href="https://fengchexz.github.io/posts/55921">
 
 
 
@@ -162,7 +175,7 @@
   };
 </script>
 
-  <title>标签: 论文 | 风车小站</title>
+  <title>李宏毅深度学习笔记 5-Transformer | 风车小站</title>
   
 
 
@@ -210,7 +223,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -380,34 +393,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -453,87 +438,313 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>论文<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fengchexz.github.io/posts/55921.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨fengche丨">
+      <meta itemprop="description" content="风过轻轻，侧耳倾听。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风车小站">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/posts/18035.html" itemprop="url">
-            
-              <span itemprop="name">Fitnets：Hints for Thin Deep Nets</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">李宏毅深度学习笔记 5-Transformer
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-07-09T21:51:00+08:00" content="2020-07-09">
-          07-09
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+			
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-27 21:54:00" itemprop="dateCreated datePublished" datetime="2020-10-27T21:54:00+08:00">2020-10-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-30 22:54:36" itemprop="dateModified" datetime="2020-10-30T22:54:36+08:00">2020-10-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/posts/45831.html" itemprop="url">
-            
-              <span itemprop="name">Distilling the Knowledge in a Neural Network</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-07-09T21:50:00+08:00" content="2020-07-09">
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <meta name="generator" content="Hexo 3.9.0"><p>这一节的重点在于自注意力机制（Self-Attention）的引入</p>
+<h2 id="RNN和CNN的局限性"><a href="#RNN和CNN的局限性" class="headerlink" title="RNN和CNN的局限性"></a>RNN 和 CNN 的局限性</h2><p>在<a href="http://124.70.53.97/posts/39773.html" target="_blank" rel="noopener">笔记三</a>循环神经网络中，我们已经知道了实用 RNN 可以取处理时序的数据。但是 RNN 处理这种数据的方式，是非常低效的：后一个单元需要用到前一个单元的输出或者是中间结果。这就导致了，如果我想要下图中的输出 b^4^，就必须从头到尾将 a^1^~a^4^ 一个个的输入网络。我们想要找到一种并行处理序列数据的能力：考虑将这个序列一字排开输入 CNN。CNN 中不同的卷积核是可以平行计算的，但是 CNN 也有着其局限性：低层的卷积核只拥有很小的视野，如果想要利用好整个序列的数据，必须加深整个网络取高层的卷积核。所以，我们的重点就放在，如何让 CNN 的每个节点都能 “看到” 整个序列的信息。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7gduay9wj31hc0u042m.jpg" alt></p>
+<h2 id="自注意力机制"><a href="#自注意力机制" class="headerlink" title="自注意力机制"></a>自注意力机制</h2><p>对于输入的某个序列数据，自注意力机制的每个单元会输出一个序列，同时内部对序列中每一项的计算是并行的。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7gr15c91j30km0fftg2.jpg" alt></p>
+<p>自注意力机制的计算过程其实并没有看上去那么复杂，直观理解的话，我们在得到每一个输出的时候，都是用了输入序列中所有的信息计算得到的。计算过程图示如下：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7gth76bxj30xu0jmdv6.jpg" alt></p>
+<p>输入序列中的每一项都会做这样的 attention 操作，所以整个过程就可以写成矩阵相乘的形式</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7pub4a2oj31hc0u0gq0.jpg" alt></p>
+<p>除此之外，self-attention 还有一个多头机制 (multi head)。多头机制类似于卷积操作中不同的卷积核，每一个 “头” 都可以有着自己的关注点，各司其职。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7pvz3qdfj31hc0u0tc2.jpg" alt></p>
+<h2 id="自注意力机制的局限性"><a href="#自注意力机制的局限性" class="headerlink" title="自注意力机制的局限性"></a>自注意力机制的局限性</h2><p>虽然自注意力机制给了 CNN 处理卷积序列的能力，但是在做计算的时候，每一个位置都能得到其他所有位置的信息，这样就使得整个过程下来丢失了序列中每一项的先后关系。为此，在原始 paper 里面，每一个 input x^i^ 通过 transform 变成 a^i^ 以后，还要加上一个维度相同的向量 e^i^, e^i^ 是我们自定义的，代表位置的资讯。比如，我们可以在原来的 a^i^ 后面街上一个 one-hot 的向量，1 的位置就代表了当前的词在序列中的位置。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQgy1gk7q523exoj31hc0u0wib.jpg" alt></p>
+<h2 id="Seq2Seq-with-attention"><a href="#Seq2Seq-with-attention" class="headerlink" title="Seq2Seq with  attention"></a>Seq2Seq with  attention</h2><p>这个其实非常的直接，只要把原先 seq2seq 中的 encoder 和 decoder 的 RNN 结构全部换成 self-attention 就行了</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qbsm9unj31hc0u0wif.jpg" alt></p>
+<h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qiyt9umj31hc0u0jwr.jpg" alt></p>
+<p>Transformer 的结构看这个图已经很清晰了，这里稍微提几个点：</p>
+<ol>
+<li>在左边的灰色 block 会重复 N 次，每个 block 的结构为 multi-head attention ——> add&norm  ——> feed forward ——> add&norm</li>
+<li> 上一步的 add 操作是将输入和这个块的输出直接相加，这个和拼接是不一样的（类似于残差的思想？这个不确定）。后面的 norm 操作是 layer norm，batch norm 是对一个 batch 中的所有样本做 normalization，而 layer norm 实对当前样本的输出做 normalization。</li>
+</ol>
+<h2 id="Transformer的可视化"><a href="#Transformer的可视化" class="headerlink" title="Transformer的可视化"></a>Transformer 的可视化</h2><p>在做了 attention 之后，网络会知道词语此之间的某些关系（不同于词向量，词向量也是没有考虑先后关系的），比如图示中 it 会 attend 到其指代对象</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qx9g4ihj31hc0u0wi3.jpg" alt="Snipaste_2020-10-30_22-48-11.jpg"></p>
+<p>下面这张图则是说明了 multi-head 的每个头都是在 “专注于” 不同的事情</p>
+<p><img src="http://ww1.sinaimg.cn/large/005Sr5tQly1gk7qzesu05j31hc0u0gq1.jpg" alt="Snipaste_2020-10-30_22-51-42.jpg"></p>
 
       
     </div>
 
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/images/wechat.png" alt="丨fengche丨 wechat" style="width: 200px; max-width: 100%;">
+  <div>来找我聊天吧~</div>
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>fengche</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://fengchexz.github.io/posts/55921.html" title="李宏毅深度学习笔记 5-Transformer">https://fengchexz.github.io/posts/55921.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/28779.html" rel="next" title="李宏毅深度学习笔记 4 - 词向量">
+                <i class="fa fa-chevron-left"></i> 李宏毅深度学习笔记 4 - 词向量
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/22725.html" rel="prev" title="李宏毅深度学习笔记 6 - 半监督学习">
+                李宏毅深度学习笔记 6 - 半监督学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/论文/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/tags/论文/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -553,8 +764,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1547,6 +1767,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN和CNN的局限性"><span class="nav-number">1.</span> <span class="nav-text">RNN 和 CNN 的局限性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自注意力机制"><span class="nav-number">2.</span> <span class="nav-text">自注意力机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自注意力机制的局限性"><span class="nav-number">3.</span> <span class="nav-text">自注意力机制的局限性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Seq2Seq-with-attention"><span class="nav-number">4.</span> <span class="nav-text">Seq2Seq with  attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformer"><span class="nav-number">5.</span> <span class="nav-text">Transformer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformer的可视化"><span class="nav-number">6.</span> <span class="nav-text">Transformer 的可视化</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1744,6 +1981,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -1768,6 +2009,8 @@
 
   
 
+
+  
 
 
   
@@ -2178,7 +2421,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 
