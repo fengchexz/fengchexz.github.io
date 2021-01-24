@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fengchexz.github.io/"/>
-  <updated>2020-10-29T00:38:35.214Z</updated>
+  <updated>2021-01-24T12:49:10.413Z</updated>
   <id>https://fengchexz.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>李宏毅深度学习笔记 7 - 生成式对抗网络综述</title>
+    <link href="https://fengchexz.github.io/posts/21399.html"/>
+    <id>https://fengchexz.github.io/posts/21399.html</id>
+    <published>2021-01-24T12:14:00.000Z</published>
+    <updated>2021-01-24T12:49:10.413Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;/head&gt;&lt;body&gt;&lt;p&gt;从 2014 年 GAN 提出来开始，到现在已经多到两个字母的缩写不够用的情况。我们把这些 GAN
+        
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="GAN" scheme="https://fengchexz.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/GAN/"/>
+    
+    
+      <category term="机器学习" scheme="https://fengchexz.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="GAN" scheme="https://fengchexz.github.io/tags/GAN/"/>
+    
+  </entry>
   
   <entry>
     <title>李宏毅深度学习笔记 6 - 半监督学习</title>
@@ -596,11 +630,11 @@
   </entry>
   
   <entry>
-    <title>生成式对抗网络综述</title>
+    <title>几种经典的生成式对抗网络</title>
     <link href="https://fengchexz.github.io/posts/32841.html"/>
     <id>https://fengchexz.github.io/posts/32841.html</id>
     <published>2020-07-08T14:18:00.000Z</published>
-    <updated>2020-09-29T09:56:08.428Z</updated>
+    <updated>2021-01-24T12:11:50.462Z</updated>
     
     <summary type="html">
     
@@ -626,38 +660,6 @@
       <category term="深度学习" scheme="https://fengchexz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="GAN" scheme="https://fengchexz.github.io/tags/GAN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1061 Dating</title>
-    <link href="https://fengchexz.github.io/posts/21107.html"/>
-    <id>https://fengchexz.github.io/posts/21107.html</id>
-    <published>2020-01-30T12:30:00.000Z</published>
-    <updated>2020-06-07T09:23:54.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Sherlock Holmes received a note with some strange strings: &lt;code&gt;Let&#39;s date! 3485djDkxh4hhGE 2984akDfkkkkggEdsb
-        
-      
-    
-    </summary>
-    
-      <category term="algorithm" scheme="https://fengchexz.github.io/categories/algorithm/"/>
-    
-      <category term="PAT" scheme="https://fengchexz.github.io/categories/algorithm/PAT/"/>
-    
-    
-      <category term="c/c++" scheme="https://fengchexz.github.io/tags/c-c/"/>
-    
-      <category term="algorithm" scheme="https://fengchexz.github.io/tags/algorithm/"/>
-    
-      <category term="PAT" scheme="https://fengchexz.github.io/tags/PAT/"/>
     
   </entry>
   
